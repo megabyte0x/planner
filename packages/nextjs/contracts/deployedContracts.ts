@@ -4,6 +4,958 @@
  */
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  8453: {
+    ERC20_Planner: {
+      address: "0xd706388bbe9c3861e08d7bf989799743b570cc24",
+      abi: [
+        {
+          type: "constructor",
+          inputs: [
+            {
+              name: "_owner",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "_router",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "_token",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "accounted",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "allowedStable",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "assigned_token",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "cancelPlan",
+          inputs: [],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "createPlan",
+          inputs: [
+            {
+              name: "stable",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "interval",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "executeDepositSwap",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "stable",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amountIn",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "minOut",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "path",
+              type: "bytes",
+              internalType: "bytes",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "executePlan",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "minOut",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "path",
+              type: "bytes",
+              internalType: "bytes",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "owner",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "plans",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "stable",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "interval",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "nextExec",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "active",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "renounceOwnership",
+          inputs: [],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "rescueERC20",
+          inputs: [
+            {
+              name: "token",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "to",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "router",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "contract ISwapRouterV3",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "setStable",
+          inputs: [
+            {
+              name: "stable",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "allowed",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "transferOwnership",
+          inputs: [
+            {
+              name: "newOwner",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "event",
+          name: "DepositSwapExecuted",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "stable",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "amountIn",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "amountOut",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "OwnershipTransferred",
+          inputs: [
+            {
+              name: "previousOwner",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "newOwner",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "PlanCancelled",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "PlanCreated",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "stable",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "interval",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "firstExecAt",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "PlanExecuted",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "stable",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "amountIn",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "amountOut",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "nextExecAt",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "StableAllowed",
+          inputs: [
+            {
+              name: "stable",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "allowed",
+              type: "bool",
+              indexed: false,
+              internalType: "bool",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "error",
+          name: "OwnableInvalidOwner",
+          inputs: [
+            {
+              name: "owner",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+        },
+        {
+          type: "error",
+          name: "OwnableUnauthorizedAccount",
+          inputs: [
+            {
+              name: "account",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+        },
+        {
+          type: "error",
+          name: "ReentrancyGuardReentrantCall",
+          inputs: [],
+        },
+      ],
+      inheritedFunctions: {},
+      deployedOnBlock: 36098704,
+    },
+  },
+  31337: {
+    ERC20_Planner: {
+      address: "0xd706388bbe9c3861e08d7bf989799743b570cc24",
+      abi: [
+        {
+          type: "constructor",
+          inputs: [
+            {
+              name: "_owner",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "_router",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "_token",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "accounted",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "allowedStable",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "assigned_token",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "cancelPlan",
+          inputs: [],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "createPlan",
+          inputs: [
+            {
+              name: "stable",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "interval",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "executeDepositSwap",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "stable",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amountIn",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "minOut",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "path",
+              type: "bytes",
+              internalType: "bytes",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "executePlan",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "minOut",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "path",
+              type: "bytes",
+              internalType: "bytes",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "owner",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "plans",
+          inputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [
+            {
+              name: "stable",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "interval",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "nextExec",
+              type: "uint256",
+              internalType: "uint256",
+            },
+            {
+              name: "active",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "renounceOwnership",
+          inputs: [],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "rescueERC20",
+          inputs: [
+            {
+              name: "token",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "to",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "router",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "contract ISwapRouterV3",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "setStable",
+          inputs: [
+            {
+              name: "stable",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "allowed",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "transferOwnership",
+          inputs: [
+            {
+              name: "newOwner",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+        {
+          type: "event",
+          name: "DepositSwapExecuted",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "stable",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "amountIn",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "amountOut",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "OwnershipTransferred",
+          inputs: [
+            {
+              name: "previousOwner",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "newOwner",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "PlanCancelled",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "PlanCreated",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "stable",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "amount",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "interval",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "firstExecAt",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "PlanExecuted",
+          inputs: [
+            {
+              name: "user",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "stable",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "amountIn",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "amountOut",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+            {
+              name: "nextExecAt",
+              type: "uint256",
+              indexed: false,
+              internalType: "uint256",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "event",
+          name: "StableAllowed",
+          inputs: [
+            {
+              name: "stable",
+              type: "address",
+              indexed: true,
+              internalType: "address",
+            },
+            {
+              name: "allowed",
+              type: "bool",
+              indexed: false,
+              internalType: "bool",
+            },
+          ],
+          anonymous: false,
+        },
+        {
+          type: "error",
+          name: "OwnableInvalidOwner",
+          inputs: [
+            {
+              name: "owner",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+        },
+        {
+          type: "error",
+          name: "OwnableUnauthorizedAccount",
+          inputs: [
+            {
+              name: "account",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+        },
+        {
+          type: "error",
+          name: "ReentrancyGuardReentrantCall",
+          inputs: [],
+        },
+      ],
+      inheritedFunctions: {},
+    },
+  },
+} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;

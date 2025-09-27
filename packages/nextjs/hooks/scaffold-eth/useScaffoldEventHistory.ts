@@ -129,8 +129,10 @@ export const useScaffoldEventHistory = <
     fromBlock !== undefined
       ? fromBlock
       : BigInt(
-          deployedContractData && "deployedOnBlock" in deployedContractData
-            ? deployedContractData.deployedOnBlock || 0
+          deployedContractData &&
+            "deployedOnBlock" in deployedContractData &&
+            typeof (deployedContractData as any).deployedOnBlock === "number"
+            ? (deployedContractData as any).deployedOnBlock
             : 0,
         );
 
@@ -177,7 +179,7 @@ export const useScaffoldEventHistory = <
     },
     enabled: enabled && isContractAddressAndClientReady && !isPollingActive, // Disable when polling starts
     initialPageParam: fromBlockValue,
-    getNextPageParam: (lastPage, allPages, lastPageParam) => {
+    getNextPageParam: (_lastPage, _allPages, lastPageParam) => {
       if (!blockNumber || fromBlockValue >= blockNumber) return undefined;
 
       const nextBlock = lastPageParam + BigInt(blocksBatchSize);

@@ -2,7 +2,8 @@
 pragma solidity ^0.8.19;
 
 import "./DeployHelpers.s.sol";
-import { DeployYourContract } from "./DeployYourContract.s.sol";
+import { DeployETHPlanner } from "./DeployETHPlanner.s.sol";
+import { DeployERC20Planner } from "./DeployERC20Planner.s.sol";
 
 /**
  * @notice Main deployment script for all contracts
@@ -12,14 +13,15 @@ import { DeployYourContract } from "./DeployYourContract.s.sol";
  */
 contract DeployScript is ScaffoldETHDeploy {
     function run() external {
-        // Deploys all your contracts sequentially
-        // Add new deployments here when needed
+        address ROUTER = 0x2626664c2603336E57B271c5C0b26F421741e481;
+        address DEPLOYER = 0x0492D453e080Cb0f0b7D85533354589f62852d61;
 
-        DeployYourContract deployYourContract = new DeployYourContract();
-        deployYourContract.run();
+        address weth = 0x4200000000000000000000000000000000000006;
+        DeployETHPlanner deployEthPlanner = new DeployETHPlanner();
+        deployEthPlanner.run(DEPLOYER, ROUTER, weth);
 
-        // Deploy another contract
-        // DeployMyContract myContract = new DeployMyContract();
-        // myContract.run();
+        address cbbtc = 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf;
+        DeployERC20Planner deployCBBTC = new DeployERC20Planner();
+        deployCBBTC.run(DEPLOYER, ROUTER, cbbtc);
     }
 }

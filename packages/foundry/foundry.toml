@@ -28,7 +28,7 @@ pgn = "https://rpc.publicgoods.network"
 pgnTestnet = "https://sepolia.publicgoods.network"
 
 
-localhost = "http://127.0.0.1:8545"
+localhost = "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
 
 [etherscan]
 polygonMumbai = { key = "${ETHERSCAN_API_KEY}" }

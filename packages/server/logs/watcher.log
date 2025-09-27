@@ -1,0 +1,253 @@
+2025-09-27 21:24:37 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:24:37 [warn]: Low wallet balance
+{
+  "balance": "0.0",
+  "address": "0x0492D453e080Cb0f0b7D85533354589f62852d61"
+}
+2025-09-27 21:27:12 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:27:12 [warn]: Low wallet balance
+{
+  "balance": "0.0",
+  "address": "0x0492D453e080Cb0f0b7D85533354589f62852d61"
+}
+2025-09-27 21:30:15 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:30:15 [warn]: Low wallet balance
+{
+  "balance": "0.0",
+  "address": "0x0492D453e080Cb0f0b7D85533354589f62852d61"
+}
+2025-09-27 21:30:54 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:30:54 [warn]: Low wallet balance
+{
+  "balance": "0.0",
+  "address": "0x0492D453e080Cb0f0b7D85533354589f62852d61"
+}
+2025-09-27 21:31:47 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:31:47 [warn]: Low wallet balance
+{
+  "balance": "0.0",
+  "address": "0x0492D453e080Cb0f0b7D85533354589f62852d61"
+}
+2025-09-27 21:32:29 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:32:29 [warn]: Low wallet balance
+{
+  "balance": "0.0",
+  "address": "0x0492D453e080Cb0f0b7D85533354589f62852d61"
+}
+2025-09-27 21:33:25 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:33:25 [warn]: Low wallet balance
+{
+  "balance": "0.001231137769226809",
+  "address": "0x0492D453e080Cb0f0b7D85533354589f62852d61"
+}
+2025-09-27 21:33:45 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:33:46 [error]: Failed to start DCA Watcher Service
+{
+  "error": {}
+}
+2025-09-27 21:33:59 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:34:00 [error]: Failed to start DCA Watcher Service
+{
+  "error": {}
+}
+2025-09-27 21:35:23 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:35:24 [error]: Failed to start DCA Watcher Service
+{
+  "error": {}
+}
+2025-09-27 21:35:39 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:35:40 [error]: Failed to start DCA Watcher Service
+{
+  "error": {}
+}
+2025-09-27 21:37:06 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:37:07 [error]: Failed to start DCA Watcher Service
+{
+  "error": {}
+}
+2025-09-27 21:39:23 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:39:23 [info]: Starting configuration validation...
+2025-09-27 21:39:23 [info]: Checking wallet health...
+2025-09-27 21:39:24 [info]: Wallet health check passed
+2025-09-27 21:39:57 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:39:57 [info]: Starting configuration validation...
+2025-09-27 21:39:57 [info]: Checking wallet health...
+2025-09-27 21:39:58 [info]: Wallet health check passed
+2025-09-27 21:40:54 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:40:54 [info]: Starting configuration validation...
+2025-09-27 21:40:54 [info]: Checking wallet health...
+2025-09-27 21:40:55 [info]: Wallet health check passed
+2025-09-27 21:40:55 [info]: Validating contract addresses...
+2025-09-27 21:40:55 [info]: Checking ethPlanner: 0x29C7Ea81e877497f65ac0a4003b81D4CB5afA1B6
+2025-09-27 21:40:55 [info]: Checking erc20Planner: 0xd706388bbe9c3861e08d7bf989799743b570cc24
+2025-09-27 21:40:55 [info]: Checking uniswapV3Router: 0x2626664c2603336E57B271c5C0b26F421741e481
+2025-09-27 21:40:55 [info]: Checking uniswapV3Factory: 0x1F98431c8aD98523631AE4a59f267346ea31F984
+2025-09-27 21:40:55 [info]: Checking usdc: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-27 21:40:55 [info]: Checking dai: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-27 21:40:55 [info]: Checking weth: 0x4200000000000000000000000000000000000006
+2025-09-27 21:40:55 [info]: Checking cbbtc: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+2025-09-27 21:40:55 [info]: All contract addresses validated
+2025-09-27 21:40:55 [info]: Testing blockchain connection...
+2025-09-27 21:40:55 [info]: Configuration validated successfully
+{
+  "latestBlock": 36100054,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "network": "base",
+  "chainId": 8453
+}
+2025-09-27 21:41:36 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:41:36 [info]: Starting configuration validation...
+2025-09-27 21:41:36 [info]: Checking wallet health...
+2025-09-27 21:41:37 [info]: Wallet health check passed
+2025-09-27 21:41:37 [info]: Validating contract addresses...
+2025-09-27 21:41:37 [info]: Checking ethPlanner: 0x29C7Ea81e877497f65ac0a4003b81D4CB5afA1B6
+2025-09-27 21:41:37 [info]: Checking erc20Planner: 0xd706388bbe9c3861e08d7bf989799743b570cc24
+2025-09-27 21:41:37 [info]: Checking uniswapV3Router: 0x2626664c2603336E57B271c5C0b26F421741e481
+2025-09-27 21:41:37 [info]: Checking uniswapV3Factory: 0x1F98431c8aD98523631AE4a59f267346ea31F984
+2025-09-27 21:41:37 [info]: Checking usdc: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-27 21:41:37 [info]: Checking dai: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-27 21:41:37 [info]: Checking weth: 0x4200000000000000000000000000000000000006
+2025-09-27 21:41:37 [info]: Checking cbbtc: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+2025-09-27 21:41:37 [info]: All contract addresses validated
+2025-09-27 21:41:37 [info]: Testing blockchain connection...
+2025-09-27 21:41:37 [info]: Configuration validated successfully
+{
+  "latestBlock": 36100075,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "network": "base",
+  "chainId": 8453
+}
+2025-09-27 21:45:35 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:45:35 [info]: Starting configuration validation...
+2025-09-27 21:45:35 [info]: Checking wallet health...
+2025-09-27 21:45:36 [info]: Wallet health check passed
+2025-09-27 21:45:36 [info]: Validating contract addresses...
+2025-09-27 21:45:36 [info]: Checking ethPlanner: 0x29C7Ea81e877497f65ac0a4003b81D4CB5afA1B6
+2025-09-27 21:45:36 [info]: Checking erc20Planner: 0xd706388bbe9c3861e08d7bf989799743b570cc24
+2025-09-27 21:45:36 [info]: Checking uniswapV3Router: 0x2626664c2603336E57B271c5C0b26F421741e481
+2025-09-27 21:45:36 [info]: Checking uniswapV3Factory: 0x1F98431c8aD98523631AE4a59f267346ea31F984
+2025-09-27 21:45:36 [info]: Checking usdc: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-27 21:45:36 [info]: Checking dai: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-27 21:45:36 [info]: Checking weth: 0x4200000000000000000000000000000000000006
+2025-09-27 21:45:36 [info]: Checking cbbtc: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+2025-09-27 21:45:36 [info]: All contract addresses validated
+2025-09-27 21:45:36 [info]: Testing blockchain connection...
+2025-09-27 21:45:36 [info]: Configuration validated successfully
+{
+  "latestBlock": 36100194,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "network": "base",
+  "chainId": 8453
+}
+2025-09-27 21:47:32 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-27 21:47:32 [info]: Starting configuration validation...
+2025-09-27 21:47:32 [info]: Checking wallet health...
+2025-09-27 21:47:33 [info]: Wallet health check passed
+2025-09-27 21:47:33 [info]: Validating contract addresses...
+2025-09-27 21:47:33 [info]: Checking ethPlanner: 0x29C7Ea81e877497f65ac0a4003b81D4CB5afA1B6
+2025-09-27 21:47:33 [info]: Checking erc20Planner: 0xd706388bbe9c3861e08d7bf989799743b570cc24
+2025-09-27 21:47:33 [info]: Checking uniswapV3Router: 0x2626664c2603336E57B271c5C0b26F421741e481
+2025-09-27 21:47:33 [info]: Checking uniswapV3Factory: 0x1F98431c8aD98523631AE4a59f267346ea31F984
+2025-09-27 21:47:33 [info]: Checking usdc: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-27 21:47:33 [info]: Checking dai: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-27 21:47:33 [info]: Checking weth: 0x4200000000000000000000000000000000000006
+2025-09-27 21:47:33 [info]: Checking cbbtc: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+2025-09-27 21:47:33 [info]: All contract addresses validated
+2025-09-27 21:47:33 [info]: Testing blockchain connection...
+2025-09-27 21:47:33 [info]: Configuration validated successfully
+{
+  "latestBlock": 36100253,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "network": "base",
+  "chainId": 8453
+}
