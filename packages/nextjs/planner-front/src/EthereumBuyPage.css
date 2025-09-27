@@ -1,0 +1,330 @@
+/* Ethereum Buy Page Styles */
+.ethereum-buy-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f0fdf4 0%, #ffffff 50%);
+  font-family: system-ui, -apple-system, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Back Button */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Header Section */
+.ethereum-header {
+  background-image: url('/eth-banner.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 20px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Price Section */
+.price-section {
+  text-align: center;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.current-price {
+  font-size: 48px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 8px;
+  font-family: system-ui, -apple-system, sans-serif;
+  text-align: center;
+}
+
+.price-change {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.price-change.positive {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.price-change.negative {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+/* Asset Summary */
+.asset-summary {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.asset-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.asset-icon {
+  width: 40px;
+  height: 40px;
+  background: #fce7f3;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eth-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.asset-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.asset-symbol {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 2px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.asset-name {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.asset-value {
+  text-align: right;
+}
+
+.value-amount {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 2px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.value-quantity {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Chart Section */
+.chart-section {
+  margin: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.chart-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chart-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.chart-period {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.chart-placeholder {
+  height: 200px;
+  position: relative;
+  background: #f8fafc;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.chart-line {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-area {
+  fill: url(#chartGradient);
+}
+
+.chart-grid {
+  stroke: #e2e8f0;
+  stroke-width: 1;
+  opacity: 0.5;
+}
+
+.chart-axis {
+  stroke: #94a3b8;
+  stroke-width: 1;
+}
+
+.chart-labels {
+  font-size: 12px;
+  fill: #64748b;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Investment Summary */
+.investment-summary {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.summary-row:last-child {
+  margin-bottom: 0;
+}
+
+.summary-label {
+  font-size: 16px;
+  color: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.summary-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Buy Directly Button */
+.buy-directly-btn {
+  margin: 20px;
+  width: calc(100% - 40px);
+  background: #22c55e;
+  color: black;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Instructional Text */
+.instruction-text {
+  margin: 20px;
+  padding: 0 0 40px 0;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .current-price {
+    font-size: 36px;
+  }
+  
+  .price-change {
+    font-size: 16px;
+  }
+  
+  .chart-placeholder {
+    height: 150px;
+  }
+  
+  .buy-directly-btn {
+    font-size: 14px;
+    padding: 14px;
+  }
+  
+  .asset-summary,
+  .chart-section,
+  .investment-summary {
+    margin: 16px;
+  }
+  
+  .buy-directly-btn {
+    margin: 16px;
+    width: calc(100% - 32px);
+  }
+  
+  .instruction-text {
+    margin: 16px;
+  }
+}

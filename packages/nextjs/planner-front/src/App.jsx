@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import BitcoinPage from './BitcoinPage';
 import EthereumPage from './EthereumPage';
+import BitcoinBuyPage from './BitcoinBuyPage';
+import EthereumBuyPage from './EthereumBuyPage';
 import './App.css'
 import './Dashboard.css'
 
@@ -47,8 +49,16 @@ function App() {
     setCurrentPage('ethereum');
   };
 
+  const goToBitcoinBuyPage = () => {
+    setCurrentPage('bitcoin-buy');
+  };
+
+  const goToEthereumBuyPage = () => {
+    setCurrentPage('ethereum-buy');
+  };
+
   const goBack = () => {
-    if (currentPage === 'bitcoin' || currentPage === 'ethereum') {
+    if (currentPage === 'bitcoin' || currentPage === 'ethereum' || currentPage === 'bitcoin-buy' || currentPage === 'ethereum-buy') {
       setCurrentPage('dashboard');
     } else if (currentPage === 'dashboard') {
       setCurrentPage('home');
@@ -63,6 +73,16 @@ function App() {
   // If on Ethereum page, show Ethereum page
   if (currentPage === 'ethereum') {
     return <EthereumPage onBack={goBack} />;
+  }
+  
+  // If on Bitcoin Buy page, show Bitcoin Buy page
+  if (currentPage === 'bitcoin-buy') {
+    return <BitcoinBuyPage onBack={goBack} />;
+  }
+  
+  // If on Ethereum Buy page, show Ethereum Buy page
+  if (currentPage === 'ethereum-buy') {
+    return <EthereumBuyPage onBack={goBack} />;
   }
 
   // If wallet is connected, show dashboard
@@ -146,7 +166,7 @@ function App() {
                 <div className="test-btc-price">$98,000</div>
               </div>
             </div>
-            <button className="start-btn" onClick={goToBitcoinPage}>Start</button>
+            <button className="start-btn" onClick={goToBitcoinBuyPage}>Start</button>
           </div>
 
           <div className="test-eth-card">
@@ -159,7 +179,7 @@ function App() {
                 <div className="test-eth-price">$4,300</div>
               </div>
             </div>
-            <button className="start-btn" onClick={goToEthereumPage}>Start</button>
+            <button className="start-btn" onClick={goToEthereumBuyPage}>Start</button>
           </div>
         </div>
       </div>
