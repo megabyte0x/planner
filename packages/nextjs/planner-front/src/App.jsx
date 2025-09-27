@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import BitcoinPage from './BitcoinPage';
 import './App.css'
 import './Dashboard.css'
 
 function App() {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
   const [walletAddress, setWalletAddress] = useState("");
+  const [currentPage, setCurrentPage] = useState('home'); // 'home', 'dashboard', 'bitcoin'
 
   const connectWallet = async () => {
     try {
@@ -19,6 +21,7 @@ function App() {
         if (accounts.length > 0) {
           setWalletAddress(accounts[0]);
           setIsWalletConnected(true);
+          setCurrentPage('dashboard');
         }
       } else {
         alert('MetaMask is not installed. Please install MetaMask to connect your wallet.');
@@ -32,10 +35,33 @@ function App() {
   const disconnectWallet = () => {
     setIsWalletConnected(false);
     setWalletAddress("");
+    setCurrentPage('home');
   };
 
+  const goToBitcoinPage = () => {
+    setCurrentPage('bitcoin');
+  };
+
+  const goToEthereumPage = () => {
+    // For now, just show an alert - you can create Ethereum page later
+    alert('Ethereum page coming soon!');
+  };
+
+  const goBack = () => {
+    if (currentPage === 'bitcoin') {
+      setCurrentPage('dashboard');
+    } else if (currentPage === 'dashboard') {
+      setCurrentPage('home');
+    }
+  };
+
+  // If on Bitcoin page, show Bitcoin page
+  if (currentPage === 'bitcoin') {
+    return <BitcoinPage onBack={goBack} />;
+  }
+
   // If wallet is connected, show dashboard
-  if (isWalletConnected) {
+  if (isWalletConnected && currentPage === 'dashboard') {
     return (
       <div className="dashboard-container">
         {/* Key Balance Section */}
@@ -77,7 +103,7 @@ function App() {
                 <div className="crypto-name">Ethereum</div>
                 <div className="crypto-price">$4300 <span className="price-change positive">+5.32%</span></div>
               </div>
-              <button className="start-btn">Start</button>
+              <button className="start-btn" onClick={goToEthereumPage}>Start</button>
             </div>
 
             <div className="crypto-card">
@@ -88,7 +114,7 @@ function App() {
                 <div className="crypto-name">Bitcoin</div>
                 <div className="crypto-price">$98,000 <span className="price-change negative">-7.76%</span></div>
               </div>
-              <button className="start-btn">Start</button>
+              <button className="start-btn" onClick={goToBitcoinPage}>Start</button>
             </div>
           </div>
         </div>
@@ -110,7 +136,7 @@ function App() {
                 <div className="crypto-name">Ethereum</div>
                 <div className="crypto-price">$4300 <span className="price-change positive">+5.32%</span></div>
               </div>
-              <button className="start-btn">Start</button>
+              <button className="start-btn" onClick={goToEthereumPage}>Start</button>
             </div>
 
             <div className="crypto-card">
@@ -121,7 +147,7 @@ function App() {
                 <div className="crypto-name">Bitcoin</div>
                 <div className="crypto-price">$98,000 <span className="price-change negative">-7.76%</span></div>
               </div>
-              <button className="start-btn">Start</button>
+              <button className="start-btn" onClick={goToBitcoinPage}>Start</button>
             </div>
           </div>
         </div>

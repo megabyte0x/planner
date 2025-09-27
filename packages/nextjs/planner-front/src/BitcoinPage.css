@@ -1,0 +1,295 @@
+/* Bitcoin Page Mobile-First Styles */
+.bitcoin-page-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: white;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Back Button */
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Header Section */
+.bitcoin-header {
+  background-image: url('/btc-banner.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.bitcoin-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.bitcoin-header > * {
+  position: relative;
+  z-index: 2;
+}
+
+.page-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #374151;
+  margin: 0 0 16px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.current-price {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 8px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.price-change {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.price-change.negative {
+  color: #dc2626;
+}
+
+/* Asset Summary */
+.asset-summary {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.asset-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.asset-icon {
+  width: 40px;
+  height: 40px;
+  background: #fce7f3;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btc-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.asset-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.asset-symbol {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 2px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.asset-name {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.asset-value {
+  text-align: right;
+}
+
+.value-amount {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 2px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.value-quantity {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Chart Container */
+.chart-container {
+  margin: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.chart {
+  position: relative;
+  height: 200px;
+}
+
+.chart-grid {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(to right, #f3f4f6 1px, transparent 1px),
+              linear-gradient(to bottom, #f3f4f6 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.y-axis {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.chart-line {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(45deg, #dc2626, #fca5a5);
+  clip-path: polygon(0% 100%, 20% 80%, 40% 60%, 60% 40%, 80% 30%, 100% 20%);
+  opacity: 0.8;
+}
+
+.x-axis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Investment Summary */
+.investment-summary {
+  margin: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.summary-value {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Create Plan Button */
+.create-plan-btn {
+  margin: 20px;
+  width: calc(100% - 40px);
+  background: #22c55e;
+  color: black;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Instructional Text */
+.instruction-text {
+  margin: 20px;
+  padding: 0 0 40px 0;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .bitcoin-header {
+    padding: 50px 16px 30px 16px;
+  }
+  
+  .current-price {
+    font-size: 28px;
+  }
+  
+  .asset-summary,
+  .chart-container,
+  .investment-summary {
+    margin: 16px;
+  }
+  
+  .create-plan-btn {
+    margin: 16px;
+    width: calc(100% - 32px);
+  }
+  
+  .instruction-text {
+    margin: 16px;
+  }
+}
