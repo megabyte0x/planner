@@ -4,13 +4,14 @@ import BitcoinPage from './BitcoinPage';
 import EthereumPage from './EthereumPage';
 import BitcoinBuyPage from './BitcoinBuyPage';
 import EthereumBuyPage from './EthereumBuyPage';
+import PortfolioPage from './PortfolioPage';
 import './App.css'
 import './Dashboard.css'
 
 function App() {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
   const [walletAddress, setWalletAddress] = useState("");
-  const [currentPage, setCurrentPage] = useState('home'); // 'home', 'dashboard', 'bitcoin'
+  const [currentPage, setCurrentPage] = useState('home'); // 'home', 'dashboard', 'bitcoin', 'portfolio'
 
   const connectWallet = async () => {
     try {
@@ -57,11 +58,17 @@ function App() {
     setCurrentPage('ethereum-buy');
   };
 
+  const goToPortfolioPage = () => {
+    setCurrentPage('portfolio');
+  };
+
   const goBack = () => {
     if (currentPage === 'bitcoin' || currentPage === 'ethereum' || currentPage === 'bitcoin-buy' || currentPage === 'ethereum-buy') {
       setCurrentPage('dashboard');
     } else if (currentPage === 'dashboard') {
       setCurrentPage('home');
+    } else if (currentPage === 'portfolio') {
+      setCurrentPage('dashboard');
     }
   };
 
@@ -84,6 +91,11 @@ function App() {
   if (currentPage === 'ethereum-buy') {
     return <EthereumBuyPage onBack={goBack} />;
   }
+  
+  // If on Portfolio page, show Portfolio page
+  if (currentPage === 'portfolio') {
+    return <PortfolioPage onBack={goBack} />;
+  }
 
   // If wallet is connected, show dashboard
   if (isWalletConnected && currentPage === 'dashboard') {
@@ -93,7 +105,7 @@ function App() {
         <div className="key-balance-section">
           <h2 className="section-title">Key Balance</h2>
           <div className="balance-amount">$12,931.523</div>
-          <button className="view-portfolio-btn">View Portfolio</button>
+          <button className="view-portfolio-btn" onClick={goToPortfolioPage}>View Portfolio</button>
         </div>
 
         {/* Connected Wallet Section */}
@@ -106,7 +118,9 @@ function App() {
             <div className="wallet-info">
               <div className="wallet-name">Megabyte.eth</div>
             </div>
-            <button className="disconnect-btn" onClick={disconnectWallet}>×</button>
+            <button className="disconnect-btn" onClick={disconnectWallet}>
+              <img src="/cancel-button.svg" alt="Disconnect" className="disconnect-icon" />
+            </button>
           </div>
         </div>
 

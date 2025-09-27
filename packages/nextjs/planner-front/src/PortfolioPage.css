@@ -1,0 +1,370 @@
+/* Portfolio Page Styles */
+.portfolio-page {
+  width: 100vw;
+  min-height: 100vh;
+  background: white;
+  padding: 0 0 40px 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Header */
+.portfolio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: white;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.profile-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Key Balance Section */
+.key-balance-section {
+  padding: 40px 20px;
+  text-align: center;
+  background: white;
+  border: none;
+  box-shadow: none;
+}
+
+.balance-label {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 12px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.balance-amount {
+  font-size: 48px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Holdings Section */
+.holdings-section {
+  padding: 0 20px 32px 20px;
+  background: white;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 20px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.holding-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+}
+
+.crypto-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
+}
+
+.crypto-symbol-img {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+}
+
+.crypto-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.crypto-symbol {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.crypto-name {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.price-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  justify-content: flex-start;
+  margin-left: -4px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.price-change {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.price-change.positive {
+  color: #16a34a;
+  background: #f0fdf4;
+}
+
+.price-change.negative {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.crypto-stats {
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.stat-row:last-child {
+  margin-bottom: 0;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #000;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.stat-value {
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.stat-value.positive {
+  color: #16a34a;
+}
+
+/* Transactions Section */
+.transactions-section {
+  padding: 0 20px 40px 20px;
+  background: white;
+}
+
+.transaction-item {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.transaction-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.transaction-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+}
+
+.block-number {
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.deposit-tag {
+  background: #dcfce7;
+  color: #16a34a;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-block;
+  font-family: system-ui, -apple-system, sans-serif;
+  width: fit-content;
+}
+
+.transaction-creator {
+  font-size: 12px;
+  color: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .portfolio-page {
+    padding: 0 0 20px 0;
+  }
+  
+  .portfolio-header {
+    padding: 16px;
+  }
+  
+  .key-balance-section {
+    padding: 30px 16px;
+  }
+  
+  .balance-amount {
+    font-size: 36px;
+  }
+  
+  .holdings-section,
+  .transactions-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .holding-card {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .crypto-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .btc-icon,
+  .eth-icon {
+    font-size: 14px;
+  }
+  
+  .crypto-symbol {
+    font-size: 15px;
+  }
+  
+  .crypto-name {
+    font-size: 13px;
+  }
+  
+  .stat-label,
+  .stat-value {
+    font-size: 13px;
+  }
+  
+  .price {
+    font-size: 15px;
+  }
+  
+  .price-change {
+    font-size: 13px;
+  }
+  
+  .transaction-item {
+    padding: 14px;
+  }
+  
+  .block-number {
+    font-size: 13px;
+  }
+  
+  .timestamp {
+    font-size: 11px;
+  }
+  
+  .deposit-tag {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+  
+  .transaction-creator {
+    font-size: 11px;
+  }
+}
