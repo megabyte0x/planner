@@ -94,28 +94,31 @@ function App() {
             entry price balanced over time.
           </p>
           
-          <div className="crypto-cards">
-            <div className="crypto-card">
-              {/* <div className="crypto-icon ethereum-icon"> */}
-                {/* <img src="/eth-frame.png" alt="Ethereum" /> */}
-              {/* </div> */}
-              <div className="crypto-info">
-                <div className="crypto-name">Ethereum</div>
-                <div className="crypto-price">$4300 <span className="price-change positive">+5.32%</span></div>
+          {/* TEST COMPONENTS - SIMPLE BTC AND ETH - DO NOT MODIFY */}
+          <div className="test-btc-card">
+            <div className="test-btc-info">
+              <div className="test-btc-icon">
+                <img src="/btc.svg" alt="Bitcoin" />
               </div>
-              <button className="start-btn" onClick={goToEthereumPage}>Start</button>
+              <div className="test-btc-details">
+                <div className="test-btc-name">Bitcoin</div>
+                <div className="test-btc-price">$98,000</div>
+              </div>
             </div>
+            <button className="start-btn" onClick={goToBitcoinPage}>Start</button>
+          </div>
 
-            <div className="crypto-card">
-              {/* <div className="crypto-icon bitcoin-icon"> */}
-                {/* <img src="/btc-frame.svg" alt="Bitcoin" /> */}
-              {/* </div> */}
-              <div className="crypto-info">
-                <div className="crypto-name">Bitcoin</div>
-                <div className="crypto-price">$98,000 <span className="price-change negative">-7.76%</span></div>
+          <div className="test-eth-card">
+            <div className="test-eth-info">
+              <div className="test-eth-icon">
+                <img src="/eth.svg" alt="Ethereum" />
               </div>
-              <button className="start-btn" onClick={goToBitcoinPage}>Start</button>
+              <div className="test-eth-details">
+                <div className="test-eth-name">Ethereum</div>
+                <div className="test-eth-price">$4,300</div>
+              </div>
             </div>
+            <button className="start-btn" onClick={goToEthereumPage}>Start</button>
           </div>
         </div>
 
@@ -127,28 +130,31 @@ function App() {
             when prices move sharply. A seamless way to act quickly during sudden highs or lows.
           </p>
           
-          <div className="crypto-cards">
-            <div className="crypto-card">
-              {/* <div className="crypto-icon ethereum-icon">
-                <img src="/eth-frame.png" alt="Ethereum" />
-              </div> */}
-              <div className="crypto-info">
-                <div className="crypto-name">Ethereum</div>
-                <div className="crypto-price">$4300 <span className="price-change positive">+5.32%</span></div>
+          {/* TEST COMPONENTS - SIMPLE BTC AND ETH - DO NOT MODIFY */}
+          <div className="test-btc-card">
+            <div className="test-btc-info">
+              <div className="test-btc-icon">
+                <img src="/btc.svg" alt="Bitcoin" />
               </div>
-              <button className="start-btn" onClick={goToEthereumPage}>Start</button>
+              <div className="test-btc-details">
+                <div className="test-btc-name">Bitcoin</div>
+                <div className="test-btc-price">$98,000</div>
+              </div>
             </div>
+            <button className="start-btn" onClick={goToBitcoinPage}>Start</button>
+          </div>
 
-            <div className="crypto-card">
-              {/* <div className="crypto-icon bitcoin-icon">
-                <img src="/btc-frame.svg" alt="Bitcoin" />
-              </div> */}
-              <div className="crypto-info">
-                <div className="crypto-name">Bitcoin</div>
-                <div className="crypto-price">$98,000 <span className="price-change negative">-7.76%</span></div>
+          <div className="test-eth-card">
+            <div className="test-eth-info">
+              <div className="test-eth-icon">
+                <img src="/eth.svg" alt="Ethereum" />
               </div>
-              <button className="start-btn" onClick={goToBitcoinPage}>Start</button>
+              <div className="test-eth-details">
+                <div className="test-eth-name">Ethereum</div>
+                <div className="test-eth-price">$4,300</div>
+              </div>
             </div>
+            <button className="start-btn" onClick={goToEthereumPage}>Start</button>
           </div>
         </div>
       </div>
@@ -168,7 +174,7 @@ function App() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img src="/Vector.png" alt="Logo" className="logo-image" />
+            <img src="/logo.svg" alt="Logo" className="logo-image" />
             
             {/* Bitcoin icons - left side (pink) */}
             <div className="crypto-icon bitcoin-left-1">
