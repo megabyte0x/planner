@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import BitcoinPage from './BitcoinPage';
+import EthereumPage from './EthereumPage';
 import './App.css'
 import './Dashboard.css'
 
@@ -43,12 +44,11 @@ function App() {
   };
 
   const goToEthereumPage = () => {
-    // For now, just show an alert - you can create Ethereum page later
-    alert('Ethereum page coming soon!');
+    setCurrentPage('ethereum');
   };
 
   const goBack = () => {
-    if (currentPage === 'bitcoin') {
+    if (currentPage === 'bitcoin' || currentPage === 'ethereum') {
       setCurrentPage('dashboard');
     } else if (currentPage === 'dashboard') {
       setCurrentPage('home');
@@ -58,6 +58,11 @@ function App() {
   // If on Bitcoin page, show Bitcoin page
   if (currentPage === 'bitcoin') {
     return <BitcoinPage onBack={goBack} />;
+  }
+  
+  // If on Ethereum page, show Ethereum page
+  if (currentPage === 'ethereum') {
+    return <EthereumPage onBack={goBack} />;
   }
 
   // If wallet is connected, show dashboard
