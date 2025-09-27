@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './BitcoinBuyPage.css';
+import BuyDirectlyModal from './BuyDirectlyModal';
+import SuccessCelebrationModal from './SuccessCelebrationModal';
 
 const BitcoinBuyPage = ({ onBack }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [purchaseData, setPurchaseData] = useState({ amount: '', token: 'BTC' });
+
+  const handleBuyDirectly = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalConfirm = (buyData) => {
+    console.log('Buy directly confirmed:', buyData);
+    // Here you would typically send the data to your backend
+    
+    // Show success celebration
+    setPurchaseData(buyData);
+    setShowSuccess(true);
+  };
+
+  const handleSuccessClose = () => {
+    setShowSuccess(false);
+  };
+
   return (
     <div className="bitcoin-buy-page">
       {/* Back Button */}
@@ -97,13 +120,29 @@ const BitcoinBuyPage = ({ onBack }) => {
       </div>
 
       {/* Buy Directly Button */}
-      <button className="buy-directly-btn">Buy Directly</button>
+      <button className="buy-directly-btn" onClick={handleBuyDirectly}>Buy Directly</button>
 
       {/* Instructional Text */}
       <div className="instruction-text">
         Skip the exchange delays—send funds directly to an ENS contract and instantly buy 
         when prices move sharply. A seamless way to act quickly during sudden highs or lows.
       </div>
+
+      {/* Buy Directly Modal */}
+      <BuyDirectlyModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={handleModalConfirm}
+        token="BTC"
+      />
+
+      {/* Success Celebration Modal */}
+      <SuccessCelebrationModal
+        isOpen={showSuccess}
+        onClose={handleSuccessClose}
+        amount={purchaseData.amount}
+        token={purchaseData.token}
+      />
     </div>
   );
 };
