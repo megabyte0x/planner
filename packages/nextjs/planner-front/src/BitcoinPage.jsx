@@ -1,7 +1,19 @@
 import { motion } from "framer-motion";
+import { useState } from 'react';
 import './BitcoinPage.css'
+import InvestmentPlanModal from './InvestmentPlanModal';
 
 function BitcoinPage({ onBack }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleCreatePlan = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalConfirm = (planData) => {
+    console.log('Investment plan created:', planData);
+    // Here you would typically send the data to your backend
+  };
   return (
     <div className="bitcoin-page-container">
       {/* Back Button */}
@@ -99,14 +111,22 @@ function BitcoinPage({ onBack }) {
         className="create-plan-btn"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
+        onClick={handleCreatePlan}
       >
         Create a Plan
       </motion.button>
 
       {/* Instructional Text */}
       <div className="instruction-text">
-        Choose how much you want to invest and how often — for example, ₹1,000 in Ethereum every week or $50 in Bitcoin every day. Your purchases will run automatically, helping you average out the price over time.
+        Choose how much you want to invest and how often — for example, ₹1,000 in Bitcoin every week or $50 in Bitcoin every day. Your purchases will run automatically, helping you average out the price over time.
       </div>
+
+      {/* Investment Plan Modal */}
+      <InvestmentPlanModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={handleModalConfirm}
+      />
     </div>
   )
 }

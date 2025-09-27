@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './EthereumPage.css';
+import InvestmentPlanModal from './InvestmentPlanModal';
 
 const EthereumPage = ({ onBack }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleCreatePlan = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalConfirm = (planData) => {
+    console.log('Investment plan created:', planData);
+    // Here you would typically send the data to your backend
+  };
+
   return (
     <div className="ethereum-page">
       {/* Back Button */}
@@ -99,12 +111,19 @@ const EthereumPage = ({ onBack }) => {
       </div>
 
       {/* Create Plan Button */}
-      <button className="create-plan-btn">Create A Plan</button>
+      <button className="create-plan-btn" onClick={handleCreatePlan}>Create A Plan</button>
 
       {/* Instructional Text */}
       <div className="instruction-text">
-        Choose how much you want to invest and how often — for example, ₹1,000 in Ethereum every week or $50 in Bitcoin every day. Your purchases will run automatically, helping you average out the price over time.
+        Choose how much you want to invest and how often — for example, ₹1,000 in Ethereum every week or $50 in Ethereum every day. Your purchases will run automatically, helping you average out the price over time.
       </div>
+
+      {/* Investment Plan Modal */}
+      <InvestmentPlanModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={handleModalConfirm}
+      />
     </div>
   );
 };
