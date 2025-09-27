@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import './App.css'
+import './Dashboard.css'
 
 function App() {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
@@ -69,7 +70,9 @@ function App() {
           
           <div className="crypto-cards">
             <div className="crypto-card">
-              <div className="crypto-icon ethereum-icon">B</div>
+              {/* <div className="crypto-icon ethereum-icon"> */}
+                {/* <img src="/eth-frame.png" alt="Ethereum" /> */}
+              {/* </div> */}
               <div className="crypto-info">
                 <div className="crypto-name">Ethereum</div>
                 <div className="crypto-price">$4300 <span className="price-change positive">+5.32%</span></div>
@@ -78,7 +81,9 @@ function App() {
             </div>
 
             <div className="crypto-card">
-              <div className="crypto-icon bitcoin-icon">⬡</div>
+              {/* <div className="crypto-icon bitcoin-icon"> */}
+                {/* <img src="/btc-frame.svg" alt="Bitcoin" /> */}
+              {/* </div> */}
               <div className="crypto-info">
                 <div className="crypto-name">Bitcoin</div>
                 <div className="crypto-price">$98,000 <span className="price-change negative">-7.76%</span></div>
@@ -98,7 +103,9 @@ function App() {
           
           <div className="crypto-cards">
             <div className="crypto-card">
-              <div className="crypto-icon ethereum-icon">B</div>
+              {/* <div className="crypto-icon ethereum-icon">
+                <img src="/eth-frame.png" alt="Ethereum" />
+              </div> */}
               <div className="crypto-info">
                 <div className="crypto-name">Ethereum</div>
                 <div className="crypto-price">$4300 <span className="price-change positive">+5.32%</span></div>
@@ -107,7 +114,9 @@ function App() {
             </div>
 
             <div className="crypto-card">
-              <div className="crypto-icon bitcoin-icon">⬡</div>
+              {/* <div className="crypto-icon bitcoin-icon">
+                <img src="/btc-frame.svg" alt="Bitcoin" />
+              </div> */}
               <div className="crypto-info">
                 <div className="crypto-name">Bitcoin</div>
                 <div className="crypto-price">$98,000 <span className="price-change negative">-7.76%</span></div>

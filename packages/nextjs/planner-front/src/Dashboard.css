@@ -1,0 +1,252 @@
+/* Dashboard Mobile-First Styles */
+.dashboard-container {
+  width: 100vw;
+  min-height: 120vh;
+  background: white;
+  padding: 0 0 80px 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Key Balance Section */
+.key-balance-section {
+  background: linear-gradient(to bottom, #dcfce7 0%, #f0fdf4 25%, #ffffff 60%);
+  padding: 60px 20px 40px 20px;
+  text-align: center;
+  margin: 0;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 12px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.balance-amount {
+  font-size: 50px;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 24px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.view-portfolio-btn {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+}
+
+/* Connected Wallet Section */
+.connected-wallet-section {
+  padding: 24px 20px;
+  background: white;
+}
+
+.wallet-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+}
+
+.wallet-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff6b6b, #ffa500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.avatar-icon {
+  font-size: 20px;
+}
+
+.wallet-info {
+  flex: 1;
+}
+
+.wallet-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.disconnect-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  border: none;
+  color: #000;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Create a Plan Section */
+.create-plan-section {
+  padding: 0 20px 24px 20px;
+  background: white;
+}
+
+.section-description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.crypto-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.crypto-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+  margin-bottom: 12px;
+}
+
+.crypto-card .crypto-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.crypto-card .crypto-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.crypto-card .ethereum-icon {
+  background: #fce7f3;
+}
+
+.crypto-card .bitcoin-icon {
+  background: #e9d5ff;
+}
+
+.crypto-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.crypto-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  margin: 0 0 4px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.crypto-price {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+}
+
+.price-change {
+  font-weight: 500;
+}
+
+.price-change.positive {
+  color: #16a34a;
+}
+
+.price-change.negative {
+  color: #dc2626;
+}
+
+.start-btn {
+  background: #dcfce7;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Buy Directly Section */
+.buy-directly-section {
+  padding: 0 20px 40px 20px;
+  background: white;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 0;
+  }
+  
+  .key-balance-section {
+    padding: 50px 16px 30px 16px;
+  }
+  
+  .balance-amount {
+    font-size: 24px;
+  }
+  
+  .connected-wallet-section,
+  .create-plan-section,
+  .buy-directly-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .crypto-card {
+    padding: 14px;
+  }
+  
+  .crypto-card .crypto-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  
+  .crypto-name {
+    font-size: 15px;
+  }
+  
+  .crypto-price {
+    font-size: 13px;
+  }
+}
