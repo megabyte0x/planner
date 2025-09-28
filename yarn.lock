@@ -3499,6 +3499,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pythnetwork/hermes-client@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@pythnetwork/hermes-client@npm:2.0.0"
+  dependencies:
+    "@zodios/core": ^10.9.6
+    eventsource: ^3.0.5
+    zod: ^3.23.8
+  checksum: d5432c7c83617993a8e32fa4fde578e3b167ea348e5d3e2c681ee7bcf0e311824e00423d5529628f376f3541c888b9a12ed6c04135ea2e2f5872ab638a2dd31c
+  languageName: node
+  linkType: hard
+
 "@rainbow-me/rainbowkit@npm:2.2.8":
   version: 2.2.8
   resolution: "@rainbow-me/rainbowkit@npm:2.2.8"
@@ -5868,6 +5879,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@zodios/core@npm:^10.9.6":
+  version: 10.9.6
+  resolution: "@zodios/core@npm:10.9.6"
+  peerDependencies:
+    axios: ^0.x || ^1.0.0
+    zod: ^3.x
+  checksum: 482a80bd4da661734f9ed276a92d9275fa1b76011bef26ede4a851e4c495d9103e6c9456074b9e50e4c89ad7e83fcead6ea45ffba615e6ff54b8088433ba47fc
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -7761,6 +7782,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dca-watcher-server@workspace:packages/server"
   dependencies:
+    "@pythnetwork/hermes-client": ^2.0.0
     "@types/express": ^4.17.21
     "@types/jest": ^29.5.12
     "@types/node": ^22.5.4
@@ -9268,6 +9290,22 @@ __metadata:
   version: 3.3.0
   resolution: "events@npm:3.3.0"
   checksum: f6f487ad2198aa41d878fa31452f1a3c00958f46e9019286ff4787c84aac329332ab45c9cdc8c445928fc6d7ded294b9e005a7fce9426488518017831b272780
+  languageName: node
+  linkType: hard
+
+"eventsource-parser@npm:^3.0.1":
+  version: 3.0.6
+  resolution: "eventsource-parser@npm:3.0.6"
+  checksum: b90ec27f8d992afa7df171db202faaedb1782214f64e50690cbf78bc2629f7751575aa27a72d8ae447e5a7094938406b1a3ea1d89e5f0f2d6916cc8a694b6587
+  languageName: node
+  linkType: hard
+
+"eventsource@npm:^3.0.5":
+  version: 3.0.7
+  resolution: "eventsource@npm:3.0.7"
+  dependencies:
+    eventsource-parser: ^3.0.1
+  checksum: cd8cbc3418238b9d751b6652edf442d4b869829fbc3b73444abca1816fe3d23dc707130dd9a990360bc27c281d986f2f62059d870921173425c3ac28d20a8414
   languageName: node
   linkType: hard
 
@@ -18281,7 +18319,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.22.4":
+"zod@npm:^3.22.4, zod@npm:^3.23.8":
   version: 3.25.76
   resolution: "zod@npm:3.25.76"
   checksum: c9a403a62b329188a5f6bd24d5d935d2bba345f7ab8151d1baa1505b5da9f227fb139354b043711490c798e91f3df75991395e40142e6510a4b16409f302b849

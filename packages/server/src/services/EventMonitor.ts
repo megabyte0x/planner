@@ -52,6 +52,19 @@ export class EventMonitor {
       return;
     }
 
+    // Check if webhooks are enabled - if so, skip WebSocket monitoring
+    if (config.webhook?.enabled) {
+      logger.info('Webhooks are enabled, WebSocket monitoring will be disabled');
+      logger.info('Deposit detection will be handled via Alchemy address activity webhooks');
+      logger.info(`Webhook endpoint: ${config.webhook.path}`);
+      logger.info(`Monitoring USDC: ${config.network.tokens.usdc}`);
+      logger.info(`Monitoring DAI: ${config.network.tokens.dai}`);
+      logger.info(`ETH Planner: ${config.network.contracts.ethPlanner}`);
+      logger.info(`ERC20 Planner: ${config.network.contracts.erc20Planner}`);
+      this.isMonitoring = true;
+      return;
+    }
+
     logger.info('Starting Alchemy WebSocket event monitoring for deposit detection...');
     this.isMonitoring = true;
 
@@ -73,6 +86,7 @@ export class EventMonitor {
 
   private async connectToAlchemy(onDepositDetected: (deposit: DepositEvent) => Promise<void>) {
     const wsUrl = config.network.rpcWs.replace('http', 'ws');
+    console.debug("🚀 ~ EventMonitor ~ connectToAlchemy ~ wsUrl:", wsUrl)
 
     this.alchemyWs = new WebSocket(wsUrl);
 
@@ -234,7 +248,7 @@ export class EventMonitor {
     logger.info('Stopping event monitoring...');
     this.isMonitoring = false;
 
-    // Close Alchemy WebSocket connection
+    // Close Alchemy WebSocket connection if it exists
     if (this.alchemyWs) {
       this.alchemyWs.close();
       this.alchemyWs = null;

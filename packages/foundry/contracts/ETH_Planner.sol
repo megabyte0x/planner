@@ -14,7 +14,6 @@ interface ISwapRouterV3 {
     struct ExactInputParams {
         bytes path; // tokenIn .. fee .. mid .. fee .. tokenOut
         address recipient; // receives WETH here (we unwrap to ETH after)
-        uint256 deadline;
         uint256 amountIn;
         uint256 amountOutMinimum;
     }
@@ -209,7 +208,6 @@ contract ETHPlanner is Ownable, ReentrancyGuard {
             ISwapRouterV3.ExactInputParams({
                 path: path, // must end in WETH
                 recipient: address(this),
-                deadline: block.timestamp,
                 amountIn: amountIn,
                 amountOutMinimum: minOut
             })

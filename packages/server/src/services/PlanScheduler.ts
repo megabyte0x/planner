@@ -129,10 +129,18 @@ export class PlanScheduler {
     }
   }
 
-  private async getPlanEvents(contract: ethers.Contract, plannerType: PlannerType): Promise<Array<{user: string}>> {
+  private async getPlanEvents(contract: ethers.Contract, plannerType: PlannerType): Promise<Array<{ user: string }>> {
+    // When webhooks are enabled, we don't query for historical events
+    // Instead, we rely on webhook notifications for new plan events
+    if (config.webhook?.enabled) {
+      logger.info(`Skipping historical plan event query for ${plannerType} - webhooks enabled`);
+      return [];
+    }
+
     try {
       const currentBlock = await this.provider.getBlockNumber();
-      const fromBlock = Math.max(0, currentBlock - 10000); // Look back 10k blocks
+      // Use smaller block range to avoid Alchemy free tier limits
+      const fromBlock = Math.max(0, currentBlock - 10); // Look back only 10 blocks
 
       const filter = contract.filters.PlanCreated();
       const events = await contract.queryFilter(filter, fromBlock);
@@ -429,7 +437,7 @@ export class PlanScheduler {
     return this.activePlans.size;
   }
 
-  getActivePlans(): Array<{user: string, plannerType: PlannerType, nextExecution: string}> {
+  getActivePlans(): Array<{ user: string, plannerType: PlannerType, nextExecution: string }> {
     return Array.from(this.activePlans.entries()).map(([_key, execution]) => ({
       user: execution.user,
       plannerType: execution.plannerType,
@@ -439,5 +447,49 @@ export class PlanScheduler {
 
   isActive(): boolean {
     return this.isRunning;
+  }
+
+  // Method to handle plan events received via webhooks
+  async handlePlanEventFromWebhook(eventData: {
+    user: string;
+    stable: string;
+    amount: string;
+    interval: string;
+    firstExecAt: string;
+    plannerContract: string;
+  }): Promise<void> {
+    try {
+      // Determine planner type based on contract address
+      const plannerType = eventData.plannerContract.toLowerCase() === config.network.contracts.ethPlanner.toLowerCase()
+        ? PlannerType.ETH
+        : PlannerType.ERC20;
+
+      const plan: Plan = {
+        stable: eventData.stable,
+        amount: eventData.amount,
+        interval: Number(eventData.interval),
+        nextExec: Number(eventData.firstExecAt),
+        active: true
+      };
+
+      const planKey = `${eventData.user}-${plannerType}`;
+      this.activePlans.set(planKey, {
+        user: eventData.user,
+        plannerType,
+        plan,
+        nextExecution: new Date(Number(eventData.firstExecAt) * 1000)
+      });
+
+      logger.info('Plan added from webhook', {
+        user: eventData.user,
+        plannerType,
+        stable: plan.stable,
+        amount: ethers.utils.formatUnits(plan.amount, this.getTokenDecimals(plan.stable)),
+        nextExecution: new Date(plan.nextExec * 1000).toISOString()
+      });
+
+    } catch (error) {
+      logger.error('Failed to handle plan event from webhook', { error, eventData });
+    }
   }
 }

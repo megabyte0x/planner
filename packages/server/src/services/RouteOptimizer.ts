@@ -4,6 +4,7 @@ import { AlphaRouter, SwapType } from '@uniswap/smart-order-router';
 import logger from '../utils/logger';
 import { config } from '../config';
 import { RouteInfo } from '../types';
+import { priceFeedService } from './PriceFeedService';
 
 export class RouteOptimizer {
   private provider: ethers.providers.JsonRpcProvider;
@@ -31,6 +32,12 @@ export class RouteOptimizer {
         slippageTolerance
       });
 
+      // Check for zero or very small amounts
+      const parsedAmount = parseFloat(amountIn);
+      if (parsedAmount <= 0 || parsedAmount < 0.01) {
+        throw new Error(`Amount too small for routing: ${amountIn}`);
+      }
+
       // Create token objects
       const tokenIn = await this.createToken(tokenInAddress);
       const tokenOut = await this.createToken(tokenOutAddress);
@@ -40,7 +47,6 @@ export class RouteOptimizer {
         tokenIn,
         ethers.utils.parseUnits(amountIn, tokenIn.decimals).toString()
       );
-
       // Find route using AlphaRouter
       const route = await this.alphaRouter.route(
         typedValueParsed,
@@ -54,8 +60,8 @@ export class RouteOptimizer {
         }
       );
 
-      if (!route) {
-        throw new Error('No route found');
+      if (!route || !route.route || route.route.length === 0) {
+        throw new Error('No route found by AlphaRouter');
       }
 
       // Check if we should use single-hop instead
@@ -139,23 +145,41 @@ export class RouteOptimizer {
     return null;
   }
 
+  private getTokenDecimals(address: string): number {
+    const symbol = this.getTokenSymbol(address);
+    if (!symbol) return 18; // Default to 18 decimals
+
+    const decimals: { [key: string]: number } = {
+      ETH: 18,
+      WETH: 18,
+      CBBTC: 18,
+      USDC: 6,
+      DAI: 18
+    };
+    return decimals[symbol] || 18;
+  }
+
   private encodePathFromRoute(route: any): string {
-    // Encode the path for Uniswap V3
+    // Encode the path for Uniswap V3 using solidityPack for correct 43-byte encoding
     // Format: [token0, fee, token1, fee, token2, ...]
     const tokens = route.tokenPath;
     const fees = route.pools.map((pool: any) => pool.fee);
 
-    let path = tokens[0].address;
+    // Build the types and values arrays for solidityPack
+    const types = [];
+    const values = [];
 
-    for (let i = 0; i < fees.length; i++) {
-      // Fee is encoded as 3 bytes (uint24)
-      const fee = fees[i];
-      const feeHex = ethers.utils.hexZeroPad(ethers.utils.hexlify(fee), 3);
-      path += feeHex.slice(2); // Remove '0x' prefix
-      path += tokens[i + 1].address.slice(2); // Remove '0x' prefix
+    for (let i = 0; i < tokens.length; i++) {
+      types.push("address");
+      values.push(tokens[i].address);
+
+      if (i < fees.length) {
+        types.push("uint24");
+        values.push(fees[i]);
+      }
     }
 
-    return path;
+    return ethers.utils.solidityPack(types, values);
   }
 
   private async constructFallbackRoute(
@@ -201,20 +225,25 @@ export class RouteOptimizer {
   }
 
   private encodePath(pathData: Array<{ address: string; fee?: number }>): string {
-    let path = pathData[0].address;
+    // Build the types and values arrays for solidityPack for correct 43-byte encoding
+    const types = [];
+    const values = [];
 
-    for (let i = 1; i < pathData.length; i++) {
-      const previousFee = pathData[i - 1].fee;
-      if (previousFee === undefined) {
-        throw new Error('Missing fee in path encoding');
+    for (let i = 0; i < pathData.length; i++) {
+      types.push("address");
+      values.push(pathData[i].address);
+
+      if (i < pathData.length - 1) {
+        const fee = pathData[i].fee;
+        if (fee === undefined) {
+          throw new Error('Missing fee in path encoding');
+        }
+        types.push("uint24");
+        values.push(fee);
       }
-
-      const feeHex = ethers.utils.hexZeroPad(ethers.utils.hexlify(previousFee), 3);
-      path += feeHex.slice(2); // Remove '0x' prefix
-      path += pathData[i].address.slice(2); // Remove '0x' prefix
     }
 
-    return path;
+    return ethers.utils.solidityPack(types, values);
   }
 
   // Get estimated output for a given input (for UI purposes)
@@ -232,11 +261,110 @@ export class RouteOptimizer {
     }
   }
 
-  // Calculate minimum amount out based on slippage
+  // Calculate minimum amount out based on slippage (deprecated - use calculateMinAmountOutWithPrice)
   calculateMinAmountOut(expectedOutput: string, slippageBps: number): string {
     const slippageMultiplier = (10000 - slippageBps) / 10000;
     const expectedBigInt = ethers.utils.parseUnits(expectedOutput, 18); // Assuming 18 decimals for calculation
     const minAmount = expectedBigInt.mul(Math.floor(slippageMultiplier * 10000)).div(10000);
     return ethers.utils.formatUnits(minAmount, 18);
+  }
+
+  // Calculate minimum amount out using real price feeds from Pyth/Hermes
+  async calculateMinAmountOutWithPrice(
+    tokenInAddress: string,
+    tokenOutAddress: string,
+    amountIn: string,
+    slippageBps: number = config.slippageBps
+  ): Promise<string> {
+    try {
+      // Get token symbols from addresses
+      const tokenInSymbol = this.getTokenSymbol(tokenInAddress);
+      const tokenOutSymbol = this.getTokenSymbol(tokenOutAddress);
+
+      if (!tokenInSymbol || !tokenOutSymbol) {
+        logger.warn('Token symbol not found, falling back to old calculation method');
+        // Fallback to route-based calculation if we can't identify tokens
+        const route = await this.findOptimalRoute(tokenInAddress, tokenOutAddress, amountIn, slippageBps);
+        return this.calculateMinAmountOut(route.expectedOutput, slippageBps);
+      }
+
+      // Convert input amount to USD
+      const inputAmountNumber = parseFloat(amountIn);
+      const amountInUSD = await priceFeedService.convertToUSD(tokenInSymbol, inputAmountNumber);
+
+      // Calculate minimum amount out using price feeds
+      const minAmountOut = await priceFeedService.calculateMinAmountOutWithPrice(
+        tokenInSymbol,
+        tokenOutSymbol,
+        amountInUSD,
+        slippageBps
+      );
+
+      logger.info('Calculated minimum amount out with price feed', {
+        tokenIn: tokenInSymbol,
+        tokenOut: tokenOutSymbol,
+        amountIn,
+        amountInUSD,
+        slippageBps,
+        minAmountOut
+      });
+
+      return minAmountOut;
+
+    } catch (error) {
+      logger.error('Failed to calculate minimum amount out with price feed, falling back', { error });
+      // Fallback to route-based calculation
+      const route = await this.findOptimalRoute(tokenInAddress, tokenOutAddress, amountIn, slippageBps);
+      return this.calculateMinAmountOut(route.expectedOutput, slippageBps);
+    }
+  }
+
+  // Validate minimum amount against actual market price
+  async validateMinAmountOut(
+    tokenInAddress: string,
+    tokenOutAddress: string,
+    amountIn: string,
+    minAmountOut: string,
+    slippageBps: number = config.slippageBps
+  ): Promise<{ isValid: boolean; expectedMinimum: string; actualRatio?: number }> {
+    try {
+      const expectedMinimum = await this.calculateMinAmountOutWithPrice(
+        tokenInAddress,
+        tokenOutAddress,
+        amountIn,
+        slippageBps
+      );
+
+      // Get token decimals for proper BigNumber conversion
+      const tokenDecimals = this.getTokenDecimals(tokenOutAddress);
+
+      const expectedMinBigInt = ethers.utils.parseUnits(expectedMinimum, tokenDecimals);
+      const actualMinBigInt = ethers.utils.parseUnits(minAmountOut, tokenDecimals);
+
+      // Check if actual minimum is at least 95% of expected minimum (some tolerance for price movements)
+      const tolerance = expectedMinBigInt.mul(95).div(100);
+      const isValid = actualMinBigInt.gte(tolerance);
+
+      const actualRatio = actualMinBigInt.mul(10000).div(expectedMinBigInt).toNumber() / 100;
+
+      logger.info('Validated minimum amount out', {
+        amountIn,
+        expectedMinimum,
+        minAmountOut,
+        isValid,
+        actualRatio
+      });
+
+      return {
+        isValid,
+        expectedMinimum,
+        actualRatio
+      };
+
+    } catch (error) {
+      logger.error('Failed to validate minimum amount out', { error });
+      // If validation fails, assume it's valid to not break existing functionality
+      return { isValid: true, expectedMinimum: minAmountOut };
+    }
   }
 }

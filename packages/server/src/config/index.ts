@@ -13,6 +13,11 @@ export interface Config {
   logLevel: string;
   logFile: string;
   port: number;
+  webhook?: {
+    enabled: boolean;
+    secret?: string;
+    path: string;
+  };
 }
 
 function getRequiredEnv(key: string): string {
@@ -43,6 +48,11 @@ export const config: Config = {
   logLevel: process.env.LOG_LEVEL || 'info',
   logFile: process.env.LOG_FILE || './logs/watcher.log',
   port: getEnvNumber('PORT', 3001),
+  webhook: process.env.WEBHOOK_ENABLED === 'true' ? {
+    enabled: true,
+    secret: process.env.WEBHOOK_SECRET,
+    path: process.env.WEBHOOK_PATH || '/webhook/alchemy'
+  } : undefined,
 };
 
 export * from './networks';

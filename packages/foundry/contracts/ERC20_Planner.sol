@@ -13,7 +13,6 @@ interface ISwapRouterV3 {
     struct ExactInputParams {
         bytes path;
         address recipient;
-        uint256 deadline;
         uint256 amountIn;
         uint256 amountOutMinimum;
     }
@@ -203,7 +202,6 @@ contract ERC20_Planner is Ownable, ReentrancyGuard {
             ISwapRouterV3.ExactInputParams({
                 path: path, // must end in assigned_token
                 recipient: address(this), // receive ERC 20 here to then forward to user
-                deadline: block.timestamp,
                 amountIn: amountIn,
                 amountOutMinimum: minOut
             })

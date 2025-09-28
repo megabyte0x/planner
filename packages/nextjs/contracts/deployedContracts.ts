@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   8453: {
     ERC20_Planner: {
-      address: "0xd706388bbe9c3861e08d7bf989799743b570cc24",
+      address: "0x487ed8087dc66f32c5009244c2399702b4d81067",
       abi: [
         {
           type: "constructor",
@@ -478,7 +478,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deployedOnBlock: 36098704,
+      deployedOnBlock: 36113960,
     },
   },
   31337: {

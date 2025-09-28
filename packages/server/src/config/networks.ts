@@ -52,8 +52,8 @@ export const NETWORKS: Record<string, NetworkConfig> = {
     rpcHttp: process.env.BASE_RPC_HTTP || "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya",
     rpcWs: process.env.BASE_RPC_WS || "",
     contracts: {
-      ethPlanner: process.env.BASE_ETH_PLANNER || "",
-      erc20Planner: process.env.BASE_ERC20_PLANNER || "",
+      ethPlanner: process.env.BASE_ETH_PLANNER || "0x5CbAFAE58F8722673026032d4975a85F79e1299f",
+      erc20Planner: process.env.BASE_ERC20_PLANNER || "0x487ed8087dC66F32c5009244C2399702b4D81067",
       uniswapV3Router: process.env.UNISWAP_V3_ROUTER || "0x2626664c2603336E57B271c5C0b26F421741e481",
       uniswapV3Factory: process.env.UNISWAP_V3_FACTORY || "0x1F98431c8aD98523631AE4a59f267346ea31F984",
     },
@@ -80,7 +80,7 @@ export const NETWORKS: Record<string, NetworkConfig> = {
       ethPlanner: process.env.MAINNET_ETH_PLANNER || "",
       erc20Planner: process.env.MAINNET_ERC20_PLANNER || "",
       uniswapV3Router: "0xE592427A0AEce92De3Edee1F18E0157C05861564",
-      uniswapV3Factory: "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+      uniswapV3Factory: "0x33128a8fC17869897dcE68Ed026d694621f6FDfD",
     },
     tokens: {
       usdc: "0xA0b86991c31cC62c2B995C44C4E57EeE33b1c20B0",

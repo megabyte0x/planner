@@ -4,13 +4,15 @@ import { config } from './config';
 import { EventMonitor } from './services/EventMonitor';
 import { SwapExecutor } from './services/SwapExecutor';
 import { PlanScheduler } from './services/PlanScheduler';
-import { DepositEvent } from './types';
+import { WebhookService } from './services/WebhookService';
+import { DepositEvent, AlchemyAddressActivityWebhook } from './types';
 
 class DCAWatcherService {
   private app: express.Application;
   private eventMonitor: EventMonitor;
   private swapExecutor: SwapExecutor;
   private planScheduler: PlanScheduler;
+  private webhookService: WebhookService;
   private isShuttingDown = false;
 
   constructor() {
@@ -18,6 +20,7 @@ class DCAWatcherService {
     this.eventMonitor = new EventMonitor();
     this.swapExecutor = new SwapExecutor();
     this.planScheduler = new PlanScheduler();
+    this.webhookService = new WebhookService();
 
     this.setupExpress();
     this.setupGracefulShutdown();
@@ -62,8 +65,11 @@ class DCAWatcherService {
     });
 
     // Status endpoint
-    this.app.get('/status', (_req, res) => {
+    this.app.get('/status', async (_req, res) => {
       try {
+        const pendingDepositsInfo = this.swapExecutor.getPendingDepositsInfo();
+        const failedDepositsStats = await this.swapExecutor.getFailedDepositsStats();
+
         const status = {
           network: config.network.name,
           chainId: config.network.chainId,
@@ -73,7 +79,13 @@ class DCAWatcherService {
           },
           tokens: config.network.tokens,
           activePlans: this.planScheduler.getActivePlans(),
-          isMonitoring: this.eventMonitor.isRunning()
+          isMonitoring: this.eventMonitor.isRunning(),
+          deposits: {
+            pending: pendingDepositsInfo.pendingCount,
+            processing: pendingDepositsInfo.processingCount,
+            pendingDeposits: pendingDepositsInfo.deposits
+          },
+          failedDeposits: failedDepositsStats
         };
 
         res.json(status);
@@ -101,6 +113,116 @@ class DCAWatcherService {
         });
       }
     });
+
+    // Clear stuck deposits endpoint (for admin)
+    this.app.post('/admin/clear-stuck-deposits', async (_req, res) => {
+      try {
+        const beforeInfo = this.swapExecutor.getPendingDepositsInfo();
+        this.swapExecutor.clearStuckDeposits();
+
+        logger.info('Cleared stuck deposits', {
+          clearedPending: beforeInfo.pendingCount,
+          clearedProcessing: beforeInfo.processingCount
+        });
+
+        res.json({
+          message: 'Stuck deposits cleared',
+          clearedPending: beforeInfo.pendingCount,
+          clearedProcessing: beforeInfo.processingCount
+        });
+      } catch (error) {
+        logger.error('Failed to clear stuck deposits', { error });
+        res.status(500).json({
+          error: 'Failed to clear stuck deposits'
+        });
+      }
+    });
+
+    // Retry failed deposits endpoint (for admin)
+    this.app.post('/admin/retry-failed-deposits', async (_req, res) => {
+      try {
+        logger.info('Manual retry of failed deposits requested');
+
+        // Trigger retry in background to avoid request timeout
+        this.swapExecutor.retryFailedDeposits().catch(error => {
+          logger.error('Background retry failed', { error });
+        });
+
+        const stats = await this.swapExecutor.getFailedDepositsStats();
+
+        res.json({
+          message: 'Failed deposits retry triggered',
+          stats
+        });
+      } catch (error) {
+        logger.error('Failed to retry failed deposits', { error });
+        res.status(500).json({
+          error: 'Failed to retry failed deposits'
+        });
+      }
+    });
+
+    // Cleanup old failed deposits endpoint (for admin)
+    this.app.post('/admin/cleanup-old-deposits', async (_req, res) => {
+      try {
+        const cleanedCount = await this.swapExecutor.cleanupOldFailedDeposits();
+
+        res.json({
+          message: 'Old failed deposits cleaned up',
+          cleanedCount
+        });
+      } catch (error) {
+        logger.error('Failed to cleanup old deposits', { error });
+        res.status(500).json({
+          error: 'Failed to cleanup old deposits'
+        });
+      }
+    });
+
+    // Alchemy webhook endpoint
+    if (config.webhook?.enabled) {
+      this.app.post(config.webhook.path, async (req, res) => {
+        try {
+          const signature = req.headers['x-alchemy-signature'] as string;
+          const payload = JSON.stringify(req.body);
+
+          // Verify webhook signature if secret is configured
+          if (config.webhook?.secret && !this.webhookService.verifyWebhookSignature(payload, signature)) {
+            logger.warn('Invalid webhook signature', {
+              signature: signature?.substring(0, 10) + '...'
+            });
+            res.status(401).json({ error: 'Invalid signature' });
+            return;
+          }
+
+          // Process address activity webhook
+          if (req.body.type === 'ADDRESS_ACTIVITY') {
+            await this.webhookService.processAddressActivityWebhook(
+              req.body as AlchemyAddressActivityWebhook,
+              this.handleDepositEvent.bind(this)
+            );
+          } else {
+            logger.info('Received non-address-activity webhook', { type: req.body.type });
+          }
+
+          res.status(200).json({ success: true });
+
+        } catch (error) {
+          logger.error('Webhook processing failed', {
+            error: error instanceof Error ? {
+              message: error.message,
+              stack: error.stack,
+              name: error.name
+            } : error,
+            requestBody: req.body,
+            headers: req.headers
+          });
+          res.status(500).json({ error: 'Internal server error' });
+        }
+      });
+
+      logger.info(`Webhook endpoint configured at ${config.webhook.path}`);
+    }
 
     // Error handling middleware
     this.app.use((error: Error, req: express.Request, res: express.Response, _next: express.NextFunction) => {
@@ -194,12 +316,13 @@ class DCAWatcherService {
         chainId: config.network.chainId,
         port: config.port
       });
-      console.log("crossed 197")
 
       // Validate configuration
       await this.validateConfiguration();
 
-      console.log("crossed 201")
+      // Retry any failed deposits from previous runs
+      logger.info('Checking for failed deposits to retry...');
+      await this.swapExecutor.retryFailedDeposits();
 
       // Start services
       logger.info('Starting event monitoring...');
