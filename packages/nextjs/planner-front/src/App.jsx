@@ -17,6 +17,42 @@ function App() {
     try {
       // Check if MetaMask is installed
       if (typeof window.ethereum !== 'undefined') {
+        // Switch to Base mainnet
+        try {
+          await window.ethereum.request({
+            method: 'wallet_switchEthereumChain',
+            params: [{ chainId: '0x2105' }], // Base mainnet chain ID
+          });
+        } catch (switchError) {
+          // If Base mainnet is not added, add it
+          if (switchError.code === 4902) {
+            try {
+              await window.ethereum.request({
+                method: 'wallet_addEthereumChain',
+                params: [{
+                  chainId: '0x2105',
+                  chainName: 'Base',
+                  nativeCurrency: {
+                    name: 'Ethereum',
+                    symbol: 'ETH',
+                    decimals: 18,
+                  },
+                  rpcUrls: ['https://mainnet.base.org'],
+                  blockExplorerUrls: ['https://basescan.org'],
+                }],
+              });
+            } catch (addError) {
+              console.error('Error adding Base network:', addError);
+              alert('Failed to add Base network. Please add it manually in MetaMask.');
+              return;
+            }
+          } else {
+            console.error('Error switching to Base network:', switchError);
+            alert('Failed to switch to Base network. Please try again.');
+            return;
+          }
+        }
+
         // Request account access
         const accounts = await window.ethereum.request({
           method: 'eth_requestAccounts'
