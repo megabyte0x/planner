@@ -7,14 +7,16 @@ export default defineConfig({
   base: '/',
   define: {
     // Disable Sentry in production to avoid ad-blocker issues
-    'process.env.SENTRY_DISABLED': JSON.stringify(true)
+    'process.env.SENTRY_DISABLED': JSON.stringify(true),
+    global: 'globalThis'
   },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'terser',
+    minify: 'esbuild',
     rollupOptions: {
+      external: [],
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
@@ -23,6 +25,9 @@ export default defineConfig({
         }
       }
     }
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'wagmi', 'viem', 'framer-motion', '@pythnetwork/hermes-client']
   },
   server: {
     port: 5173,
