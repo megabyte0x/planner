@@ -101,7 +101,7 @@ export class PriceFeedService {
     const decimals: { [key: string]: number } = {
       ETH: 18,
       WETH: 18,
-      CBBTC: 18,
+      CBBTC: 8,
       USDC: 6,
       DAI: 18
     };
@@ -129,6 +129,9 @@ export class PriceFeedService {
       // Get the correct decimal places for the output token
       const outputTokenDecimals = this.getTokenDecimals(tokenOutSymbol);
 
+      // Convert to token units (multiply by 10^decimals)
+      const minAmountOutInTokenUnits = minAmountOut * Math.pow(10, outputTokenDecimals);
+
       logger.info(`Calculated minimum amount out`, {
         tokenInSymbol,
         tokenOutSymbol,
@@ -137,11 +140,12 @@ export class PriceFeedService {
         expectedOutputAmount,
         slippageBps,
         minAmountOut,
-        outputTokenDecimals
+        outputTokenDecimals,
+        minAmountOutInTokenUnits: minAmountOutInTokenUnits.toString()
       });
 
-      // Return as string with appropriate precision for the token
-      return minAmountOut.toFixed(outputTokenDecimals);
+      // Return as string in token units (wei-like format)
+      return Math.floor(minAmountOutInTokenUnits).toString();
 
     } catch (error) {
       logger.error('Failed to calculate minimum amount out with price', { error });

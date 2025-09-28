@@ -6,11 +6,11 @@ import { DepositStorage } from './DepositStorage';
 import { DepositEvent, SwapExecutionResult, PlannerType } from '../types';
 
 const ETH_PLANNER_ABI = [
-  'function executeDepositSwap(address user, address stable, uint256 amountIn, uint256 minOut, bytes calldata path) external'
+  'function executeDepositSwap(address user, address stable, uint256 amountIn, uint256 minOut, bytes calldata path, bytes32 depositTxHash) external'
 ];
 
 const ERC20_PLANNER_ABI = [
-  'function executeDepositSwap(address user, address stable, uint256 amountIn, uint256 minOut, bytes calldata path) external'
+  'function executeDepositSwap(address user, address stable, uint256 amountIn, uint256 minOut, bytes calldata path, bytes32 depositTxHash) external'
 ];
 
 export class SwapExecutor {
@@ -239,12 +239,8 @@ export class SwapExecutor {
         ? this.ethPlannerContract
         : this.erc20PlannerContract;
 
-      // Parse minAmountOut to correct decimals
-      const targetDecimals = 18; // Both ETH and CBBTC use 18 decimals
-
-      // Truncate minAmountOut to target decimals to avoid "fractional component exceeds decimals" error
-      const truncatedMinAmountOut = parseFloat(minAmountOut).toFixed(targetDecimals);
-      const minAmountOutParsed = ethers.utils.parseUnits(truncatedMinAmountOut, targetDecimals);
+      // minAmountOut is already in token units (wei-like format), just convert to BigNumber
+      const minAmountOutParsed = ethers.BigNumber.from(minAmountOut);
 
       // Estimate gas before execution
       const gasEstimate = await contract.estimateGas.executeDepositSwap(
@@ -252,7 +248,8 @@ export class SwapExecutor {
         deposit.token,
         deposit.amount,
         minAmountOutParsed,
-        path
+        path,
+        deposit.transactionHash
       );
 
       // Check gas price
@@ -268,6 +265,7 @@ export class SwapExecutor {
         deposit.amount,
         minAmountOutParsed,
         path,
+        deposit.transactionHash,
         {
           gasLimit: gasEstimate.mul(120).div(100), // Add 20% buffer
           gasPrice: gasPrice.gasPrice
@@ -309,12 +307,8 @@ export class SwapExecutor {
         ? this.ethPlannerContract
         : this.erc20PlannerContract;
 
-      // Parse minAmountOut to correct decimals
-      const targetDecimals = 18; // Both ETH and CBBTC use 18 decimals
-
-      // Truncate minAmountOut to target decimals to avoid "fractional component exceeds decimals" error
-      const truncatedMinAmountOut = parseFloat(minAmountOut).toFixed(targetDecimals);
-      const minAmountOutParsed = ethers.utils.parseUnits(truncatedMinAmountOut, targetDecimals);
+      // minAmountOut is already in token units (wei-like format), just convert to BigNumber
+      const minAmountOutParsed = ethers.BigNumber.from(minAmountOut);
 
       // Create single-hop path for executeDepositSwap
       const targetToken = this.getTargetToken(plannerType);
@@ -331,7 +325,8 @@ export class SwapExecutor {
         deposit.token,
         deposit.amount,
         minAmountOutParsed,
-        singleHopPath
+        singleHopPath,
+        deposit.transactionHash
       );
 
       // Check gas price
@@ -347,6 +342,7 @@ export class SwapExecutor {
         deposit.amount,
         minAmountOutParsed,
         singleHopPath,
+        deposit.transactionHash,
         {
           gasLimit: gasEstimate.mul(120).div(100), // Add 20% buffer
           gasPrice: gasPrice.gasPrice

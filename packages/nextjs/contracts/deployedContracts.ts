@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   8453: {
     ERC20_Planner: {
-      address: "0x487ed8087dc66f32c5009244c2399702b4d81067",
+      address: "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146",
       abi: [
         {
           type: "constructor",
@@ -29,25 +29,6 @@ const deployedContracts = {
             },
           ],
           stateMutability: "nonpayable",
-        },
-        {
-          type: "function",
-          name: "accounted",
-          inputs: [
-            {
-              name: "",
-              type: "address",
-              internalType: "address",
-            },
-          ],
-          outputs: [
-            {
-              name: "",
-              type: "uint256",
-              internalType: "uint256",
-            },
-          ],
-          stateMutability: "view",
         },
         {
           type: "function",
@@ -140,6 +121,11 @@ const deployedContracts = {
               type: "bytes",
               internalType: "bytes",
             },
+            {
+              name: "depositTxHash",
+              type: "bytes32",
+              internalType: "bytes32",
+            },
           ],
           outputs: [],
           stateMutability: "nonpayable",
@@ -166,6 +152,40 @@ const deployedContracts = {
           ],
           outputs: [],
           stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "isDepositProcessed",
+          inputs: [
+            {
+              name: "depositTxHash",
+              type: "bytes32",
+              internalType: "bytes32",
+            },
+            {
+              name: "user",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "stable",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amountIn",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "processed",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "view",
         },
         {
           type: "function",
@@ -213,6 +233,25 @@ const deployedContracts = {
             },
             {
               name: "active",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "processedDeposits",
+          inputs: [
+            {
+              name: "",
+              type: "bytes32",
+              internalType: "bytes32",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
               type: "bool",
               internalType: "bool",
             },
@@ -320,6 +359,12 @@ const deployedContracts = {
               type: "uint256",
               indexed: false,
               internalType: "uint256",
+            },
+            {
+              name: "depositTxHash",
+              type: "bytes32",
+              indexed: true,
+              internalType: "bytes32",
             },
           ],
           anonymous: false,
@@ -478,7 +523,7 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {},
-      deployedOnBlock: 36113960,
+      deployedOnBlock: 36115871,
     },
   },
   31337: {
@@ -505,25 +550,6 @@ const deployedContracts = {
             },
           ],
           stateMutability: "nonpayable",
-        },
-        {
-          type: "function",
-          name: "accounted",
-          inputs: [
-            {
-              name: "",
-              type: "address",
-              internalType: "address",
-            },
-          ],
-          outputs: [
-            {
-              name: "",
-              type: "uint256",
-              internalType: "uint256",
-            },
-          ],
-          stateMutability: "view",
         },
         {
           type: "function",
@@ -616,6 +642,11 @@ const deployedContracts = {
               type: "bytes",
               internalType: "bytes",
             },
+            {
+              name: "depositTxHash",
+              type: "bytes32",
+              internalType: "bytes32",
+            },
           ],
           outputs: [],
           stateMutability: "nonpayable",
@@ -642,6 +673,40 @@ const deployedContracts = {
           ],
           outputs: [],
           stateMutability: "nonpayable",
+        },
+        {
+          type: "function",
+          name: "isDepositProcessed",
+          inputs: [
+            {
+              name: "depositTxHash",
+              type: "bytes32",
+              internalType: "bytes32",
+            },
+            {
+              name: "user",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "stable",
+              type: "address",
+              internalType: "address",
+            },
+            {
+              name: "amountIn",
+              type: "uint256",
+              internalType: "uint256",
+            },
+          ],
+          outputs: [
+            {
+              name: "processed",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "view",
         },
         {
           type: "function",
@@ -689,6 +754,25 @@ const deployedContracts = {
             },
             {
               name: "active",
+              type: "bool",
+              internalType: "bool",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "processedDeposits",
+          inputs: [
+            {
+              name: "",
+              type: "bytes32",
+              internalType: "bytes32",
+            },
+          ],
+          outputs: [
+            {
+              name: "",
               type: "bool",
               internalType: "bool",
             },
@@ -796,6 +880,12 @@ const deployedContracts = {
               type: "uint256",
               indexed: false,
               internalType: "uint256",
+            },
+            {
+              name: "depositTxHash",
+              type: "bytes32",
+              indexed: true,
+              internalType: "bytes32",
             },
           ],
           anonymous: false,

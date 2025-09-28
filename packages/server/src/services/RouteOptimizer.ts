@@ -152,7 +152,7 @@ export class RouteOptimizer {
     const decimals: { [key: string]: number } = {
       ETH: 18,
       WETH: 18,
-      CBBTC: 18,
+      CBBTC: 8,
       USDC: 6,
       DAI: 18
     };

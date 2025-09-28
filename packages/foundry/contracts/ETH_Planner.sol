@@ -48,8 +48,8 @@ contract ETHPlanner is Ownable, ReentrancyGuard {
     // stable => allowed?
     mapping(address => bool) public allowedStable;
 
-    // track uncredited pushed deposits so we don't double-spend
-    mapping(address => uint256) public accounted; // stable => accountedBalance
+    // track processed deposits to prevent double-spending
+    mapping(bytes32 => bool) public processedDeposits; // depositId => processed
 
     /*//////////////////////////////////////////////////////////////
                                  PLANS
@@ -70,7 +70,13 @@ contract ETHPlanner is Ownable, ReentrancyGuard {
     //////////////////////////////////////////////////////////////*/
 
     event StableAllowed(address indexed stable, bool allowed);
-    event DepositSwapExecuted(address indexed user, address indexed stable, uint256 amountIn, uint256 amountOutETH);
+    event DepositSwapExecuted(
+        address indexed user,
+        address indexed stable,
+        uint256 amountIn,
+        uint256 amountOutETH,
+        bytes32 indexed depositTxHash
+    );
     event PlanCreated(
         address indexed user, address indexed stable, uint256 amount, uint256 interval, uint256 firstExecAt
     );
@@ -111,20 +117,26 @@ contract ETHPlanner is Ownable, ReentrancyGuard {
      * @param minOut   min ETH out for slippage protection (wei, equals WETH units)
      * @param path     Uniswap V3 path bytes (must start at `stable` and end at `WETH`)
      */
-    function executeDepositSwap(address user, address stable, uint256 amountIn, uint256 minOut, bytes calldata path)
-        external
-        nonReentrant
-    {
+    function executeDepositSwap(
+        address user,
+        address stable,
+        uint256 amountIn,
+        uint256 minOut,
+        bytes calldata path,
+        bytes32 depositTxHash
+    ) external nonReentrant onlyOwner {
         require(user != address(0), "bad user");
         require(allowedStable[stable], "stable not allowed");
         require(amountIn > 0, "amount=0");
         _assertPathEndsInWETH(stable, path);
 
-        // ensure we don't spend more than newly pushed deposits
-        uint256 bal = IERC20(stable).balanceOf(address(this));
-        uint256 uncredited = bal - accounted[stable];
-        require(amountIn <= uncredited, "exceeds uncredited");
-        accounted[stable] += amountIn;
+        // Create composite key to prevent double-spending
+        bytes32 depositId = keccak256(abi.encodePacked(depositTxHash, user, stable, amountIn));
+
+        require(!processedDeposits[depositId], "deposit already processed");
+
+        // Mark deposit as processed before external calls
+        processedDeposits[depositId] = true;
 
         uint256 ethOut = _swapStableForETH_Path(stable, amountIn, minOut, path);
 
@@ -132,7 +144,7 @@ contract ETHPlanner is Ownable, ReentrancyGuard {
         (bool ok,) = user.call{ value: ethOut }("");
         require(ok, "eth transfer failed");
 
-        emit DepositSwapExecuted(user, stable, amountIn, ethOut);
+        emit DepositSwapExecuted(user, stable, amountIn, ethOut, depositTxHash);
     }
 
     /*//////////////////////////////////////////////////////////////
@@ -172,7 +184,7 @@ contract ETHPlanner is Ownable, ReentrancyGuard {
      * @param minOut min ETH out (wei) for slippage protection
      * @param path   Uniswap V3 path starting at plan.stable and ending at WETH
      */
-    function executePlan(address user, uint256 minOut, bytes calldata path) external nonReentrant {
+    function executePlan(address user, uint256 minOut, bytes calldata path) external nonReentrant onlyOwner {
         Plan storage p = plans[user];
         require(p.active, "inactive");
         require(block.timestamp >= p.nextExec, "not due");
@@ -249,6 +261,27 @@ contract ETHPlanner is Ownable, ReentrancyGuard {
             start := add(add(path.offset, path.length), sub(0, 20))
             token := shr(96, calldataload(start))
         }
+    }
+
+    /*//////////////////////////////////////////////////////////////
+                                  UTILITIES
+    //////////////////////////////////////////////////////////////*/
+
+    /**
+     * @notice Check if a specific deposit has been processed
+     * @param depositTxHash Original deposit transaction hash
+     * @param user Beneficiary address
+     * @param stable Stable token address
+     * @param amountIn Amount that was deposited
+     * @return processed Whether this specific deposit has been processed
+     */
+    function isDepositProcessed(bytes32 depositTxHash, address user, address stable, uint256 amountIn)
+        external
+        view
+        returns (bool processed)
+    {
+        bytes32 depositId = keccak256(abi.encodePacked(depositTxHash, user, stable, amountIn));
+        return processedDeposits[depositId];
     }
 
     /*//////////////////////////////////////////////////////////////
