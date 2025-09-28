@@ -25,20 +25,8 @@ const useWalletData = () => {
           const address = accounts[0];
           setWalletAddress(address);
 
-          // Try to resolve ENS name
-          try {
-            const response = await fetch(`https://api.ensideas.com/ens/reverse/${address}`);
-            const data = await response.json();
-            if (data.name) {
-              setEnsName(data.name);
-            } else {
-              // Generate a short display address if no ENS
-              setEnsName(`${address.slice(0, 6)}...${address.slice(-4)}`);
-            }
-          } catch (ensError) {
-            console.log('ENS resolution failed, using short address');
-            setEnsName(`${address.slice(0, 6)}...${address.slice(-4)}`);
-          }
+          // Generate a short display address (no ENS for now to avoid issues)
+          setEnsName(`${address.slice(0, 6)}...${address.slice(-4)}`);
 
           // Fetch token balances
           await fetchTokenBalances(address);
@@ -142,9 +130,13 @@ const useWalletData = () => {
     return total;
   };
 
+  // Create display name: same as ensName for now (which is the shortened address)
+  const displayName = ensName;
+
   return {
     walletAddress,
     ensName,
+    displayName,
     balances,
     loading,
     error,

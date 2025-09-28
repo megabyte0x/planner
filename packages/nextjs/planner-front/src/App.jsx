@@ -30,7 +30,7 @@ function AppContent() {
   const ETH_PRICE_ID = "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace";
   const { price: btcPrice, priceChange: btcPriceChange, loading: btcLoading } = usePythPrice(BTC_PRICE_ID);
   const { price: ethPrice, priceChange: ethPriceChange, loading: ethLoading } = usePythPrice(ETH_PRICE_ID);
-  const { ensName, balances, loading: walletLoading, calculateTotalPortfolioValue } = useWalletData();
+  const { ensName, displayName, balances, loading: walletLoading, calculateTotalPortfolioValue } = useWalletData();
 
   // Calculate total portfolio value
   const totalPortfolioValue = calculateTotalPortfolioValue(btcPrice, ethPrice);
@@ -201,10 +201,10 @@ function AppContent() {
           <h2 className="section-title">Connected Wallet</h2>
           <div className="wallet-card">
             <div className="wallet-avatar">
-              <div className="avatar-icon">{ensName ? ensName.charAt(0).toUpperCase() : '🔥'}</div>
+              <div className="avatar-icon">{displayName ? displayName.charAt(0).toUpperCase() : '🔥'}</div>
             </div>
             <div className="wallet-info">
-              <div className="wallet-name">{walletLoading ? 'Loading...' : ensName || 'Wallet'}</div>
+              <div className="wallet-name">{walletLoading ? 'Loading...' : displayName || 'Wallet'}</div>
             </div>
             <button className="disconnect-btn" onClick={disconnectWallet}>
               <img src="/cancel-button.svg" alt="Disconnect" className="disconnect-icon" />

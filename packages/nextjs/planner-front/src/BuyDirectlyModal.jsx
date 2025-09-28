@@ -10,41 +10,16 @@ const BuyDirectlyModal = ({ isOpen, onClose, onConfirm, token = 'BTC' }) => {
 
   const presetAmounts = ['1', '5', '10', '20', '50', '75', '100', '200', '500', '1000'];
 
-  const handleAmountClick = (presetAmount) => {
-    setAmount(presetAmount);
+  // ENS domain mapping
+  const ensDomains = {
+    'BTC': 'btc.swapswap.eth',
+    'ETH': 'eth.swapswap.eth'
   };
 
-  // Resolve ENS domain to address
-  const resolveEnsDomain = async (domain) => {
-    try {
-      // Use a public ENS resolver service
-      const response = await fetch(`https://api.ensideas.com/ens/resolve/${domain}`);
-      const data = await response.json();
-      
-      if (data.address) {
-        return data.address;
-      }
-      
-      // Fallback: try to resolve using eth_call to ENS resolver
-      const ensResolver = '0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e'; // ENS Registry
-      const namehash = await window.ethereum.request({
-        method: 'eth_call',
-        params: [{
-          to: ensResolver,
-          data: `0x0178b8bf${domain.split('.').reverse().join('')}` // namehash
-        }, 'latest']
-      });
-      
-      return namehash;
-    } catch (error) {
-      console.error('Error resolving ENS domain:', error);
-      // Return placeholder addresses for demo purposes
-      const placeholderAddresses = {
-        'btc.swapswap.eth': '0x2B7A919B1B1eFbbDCBb941d7e85e124bFBe0F146',
-        'eth.swapswap.eth': '0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060'
-      };
-      return placeholderAddresses[domain] || '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6';
-    }
+  const targetDomain = ensDomains[token] || 'btc.swapswap.eth';
+
+  const handleAmountClick = (presetAmount) => {
+    setAmount(presetAmount);
   };
 
   // Fetch USDC balance
@@ -84,29 +59,25 @@ const BuyDirectlyModal = ({ isOpen, onClose, onConfirm, token = 'BTC' }) => {
   const handleConfirm = async () => {
     if (amount && !isLoading) {
       setIsLoading(true);
-      
+
       try {
         // Get user's address
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         const userAddress = accounts[0];
-        
+
         // USDC contract address on Base mainnet
         const usdcContractAddress = '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913';
-        
+
         // Convert amount to USDC units (6 decimals)
         const amountInUsdc = Math.floor(parseFloat(amount) * Math.pow(10, 6));
         const amountHex = '0x' + amountInUsdc.toString(16).padStart(16, '0');
-        
-        // ENS domain mapping
-        const ensDomains = {
-          'BTC': 'btc.swapswap.eth',
-          'ETH': 'eth.swapswap.eth'
+
+        // Use placeholder address for now
+        const placeholderAddresses = {
+          'btc.swapswap.eth': '0x2B7A919B1B1eFbbDCBb941d7e85e124bFBe0F146',
+          'eth.swapswap.eth': '0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060'
         };
-        
-        const targetDomain = ensDomains[token] || 'btc.swapswap.eth';
-        
-        // Resolve ENS domain to address
-        const targetAddress = await resolveEnsDomain(targetDomain);
+        const targetAddress = placeholderAddresses[targetDomain] || '0x742d35Cc6634C0532925a3b8D4C9db96C4b4d8b6';
         
         // Prepare the transfer transaction
         const transferData = {
@@ -202,19 +173,13 @@ const BuyDirectlyModal = ({ isOpen, onClose, onConfirm, token = 'BTC' }) => {
           ))}
         </div>
 
-        {/* Description */}
-        {/* <p className="modal-description">
-          Skip the exchange delays—send funds directly to an ENS contract and instantly buy 
-          when prices move sharply. A seamless way to act quickly during sudden highs or lows.
-        </p> */}
-
         {/* Send Button */}
         <button
           className="send-btn"
           onClick={handleConfirm}
           disabled={!amount || isLoading || parseFloat(amount) > parseFloat(usdcBalance) || parseFloat(amount) < 0.5}
         >
-          {isLoading ? 'Sending USDC...' : `Send to ${token.toLowerCase()}.swapswap.eth`}
+          {isLoading ? 'Sending USDC...' : `Send to ${targetDomain}`}
         </button>
         
         {parseFloat(amount) > parseFloat(usdcBalance) && amount && (

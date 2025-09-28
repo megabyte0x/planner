@@ -11,7 +11,7 @@ const PortfolioPage = ({ onBack }) => {
   const { price: btcPrice, priceChange: btcPriceChange, loading: btcLoading } = usePythPrice(BTC_PRICE_ID);
   const { price: ethPrice, priceChange: ethPriceChange, loading: ethLoading } = usePythPrice(ETH_PRICE_ID);
 
-  const { walletAddress, ensName, balances, loading: walletLoading, calculateTotalPortfolioValue } = useWalletData();
+  const { walletAddress, ensName, displayName, balances, loading: walletLoading, calculateTotalPortfolioValue } = useWalletData();
 
   // Calculate portfolio values
   const totalPortfolioValue = calculateTotalPortfolioValue(btcPrice, ethPrice);
@@ -24,8 +24,8 @@ const PortfolioPage = ({ onBack }) => {
       <div className="portfolio-header">
         <button className="back-btn" onClick={onBack}>←</button>
         <div className="profile-section">
-          <div className="profile-avatar">{ensName ? ensName.charAt(0).toUpperCase() : 'W'}</div>
-          <span className="profile-name">{walletLoading ? 'Loading...' : ensName || 'Wallet'}</span>
+          <div className="profile-avatar">{displayName ? displayName.charAt(0).toUpperCase() : 'W'}</div>
+          <span className="profile-name">{walletLoading ? 'Loading...' : displayName || 'Wallet'}</span>
         </div>
       </div>
 

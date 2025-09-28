@@ -41,7 +41,7 @@ const EthereumPage = ({ onBack }) => {
 
       // Step 1: Approve ETH Planner contract to use USDC
       const totalAmountInUsdc = Math.floor(totalAmount * Math.pow(10, 6)); // Convert to USDC units (6 decimals)
-      const totalAmountHex = '0x' + totalAmountInUsdc.toString(16).padStart(64, '0');
+      const totalAmountHex = totalAmountInUsdc.toString(16).padStart(64, '0');
 
       const approvalData = {
         to: USDC_ADDRESS,
@@ -57,6 +57,34 @@ const EthereumPage = ({ onBack }) => {
       });
 
       console.log('Approval transaction sent:', approvalTxHash);
+
+      // Wait for approval confirmation
+      console.log('Waiting for approval confirmation...');
+
+      // Step 2: Create plan on ETH_Planner contract
+      const planAmountInUsdc = Math.floor(numericAmount * Math.pow(10, 6)); // Single execution amount in USDC units
+      const stableAddressHex = USDC_ADDRESS.slice(2).padStart(64, '0');
+      const planAmountHex = planAmountInUsdc.toString(16).padStart(64, '0');
+
+      // Frequency mapping: daily=86400, weekly=604800, monthly=2592000 seconds
+      const frequencySeconds = planData.frequency === 'daily' ? 86400 :
+                              planData.frequency === 'weekly' ? 604800 : 2592000;
+      const frequencyHex = frequencySeconds.toString(16).padStart(64, '0');
+
+      const createPlanData = {
+        to: ETH_PLANNER_ADDRESS,
+        from: userAddress,
+        data: `0x5a7c017c${stableAddressHex}${planAmountHex}${frequencyHex}`, // createPlan(address,uint256,uint256)
+        value: '0x0'
+      };
+
+      console.log('Creating investment plan...');
+      const createPlanTxHash = await window.ethereum.request({
+        method: 'eth_sendTransaction',
+        params: [createPlanData]
+      });
+
+      console.log('Create plan transaction sent:', createPlanTxHash);
 
       // Step 2: Create plan on ETH_Planner contract
       // Note: This requires the ETH_Planner contract to be deployed first
@@ -84,17 +112,17 @@ const EthereumPage = ({ onBack }) => {
         
         {/* Ethereum Price Display */}
         <div className="price-section">
-          {loading ? (
+          {ethLoading ? (
             <div className="current-price">Loading...</div>
           ) : error ? (
             <div className="current-price">$4,300.00</div>
           ) : (
             <>
               <div className="current-price">
-                ${price ? price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '4,300.00'}
+                ${ethPrice ? ethPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '4,300.00'}
               </div>
-              <div className={`price-change ${priceChange >= 0 ? 'positive' : 'negative'}`}>
-                {priceChange ? `${priceChange >= 0 ? '+' : ''}${priceChange.toFixed(2)}%` : '+7.76%'}
+              <div className={`price-change ${ethPriceChange >= 0 ? 'positive' : 'negative'}`}>
+                {ethPriceChange ? `${ethPriceChange >= 0 ? '+' : ''}${ethPriceChange.toFixed(2)}%` : '+7.76%'}
               </div>
             </>
           )}

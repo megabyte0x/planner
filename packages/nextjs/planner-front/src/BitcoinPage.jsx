@@ -21,7 +21,6 @@ function BitcoinPage({ onBack }) {
 
   const handleModalConfirm = (planData) => {
     console.log('Investment plan created:', planData);
-    // Here you would typically send the data to your backend
   };
   return (
     <div className="bitcoin-page-container">
