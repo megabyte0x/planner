@@ -1,0 +1,6 @@
+{
+  "env": {
+    "SENTRY_DISABLED": "true",
+    "VITE_SENTRY_DISABLED": "true"
+  }
+}

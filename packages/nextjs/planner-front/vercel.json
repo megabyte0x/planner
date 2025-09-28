@@ -1,16 +1,16 @@
 {
-  "functions": {
-    "app/api/hello.js": {
-      "runtime": "@vercel/node"
-    }
-  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
   "env": {
     "SENTRY_DISABLED": "true",
-    "DISABLE_SENTRY": "true"
+    "DISABLE_SENTRY": "true",
+    "VITE_SENTRY_DISABLED": "true"
   },
   "build": {
     "env": {
-      "SENTRY_DISABLED": "true"
+      "SENTRY_DISABLED": "true",
+      "VITE_SENTRY_DISABLED": "true"
     }
   },
   "headers": [
@@ -20,6 +20,10 @@
         {
           "key": "X-Sentry-Disabled",
           "value": "true"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
         }
       ]
     }
