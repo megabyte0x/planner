@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './BuyDirectlyModal.css';
+import { useToast } from './ToastProvider';
 
 const BuyDirectlyModal = ({ isOpen, onClose, onConfirm, token = 'BTC' }) => {
   const [amount, setAmount] = useState('');
   const [usdcBalance, setUsdcBalance] = useState('0.00');
   const [isLoading, setIsLoading] = useState(false);
+  const { showError, showSuccess } = useToast();
 
   const presetAmounts = ['1', '5', '10', '20', '50', '75', '100', '200', '500', '1000'];
 
@@ -126,9 +128,6 @@ const BuyDirectlyModal = ({ isOpen, onClose, onConfirm, token = 'BTC' }) => {
         // In a real app, you might want to wait for confirmation
         // const receipt = await waitForTransactionReceipt(txHash);
         
-        // Show success message with transaction hash
-        alert(`Transaction successful!\n\nAmount: ${amount} USDC\nTo: ${targetDomain}\nTransaction Hash: ${txHash}\n\nYou can view it on BaseScan: https://basescan.org/tx/${txHash}`);
-        
         // Call the original confirm handler with transaction details
         onConfirm({ 
           amount, 
@@ -145,11 +144,11 @@ const BuyDirectlyModal = ({ isOpen, onClose, onConfirm, token = 'BTC' }) => {
       } catch (error) {
         console.error('Error processing payment:', error);
         if (error.code === 4001) {
-          alert('Transaction rejected by user.');
+          showError('Transaction rejected by user.');
         } else if (error.code === -32603) {
-          alert('Transaction failed. Please check your USDC balance and try again.');
+          showError('Transaction failed. Please check your USDC balance and try again.');
         } else {
-          alert(`Payment failed: ${error.message || 'Please try again.'}`);
+          showError(`Payment failed: ${error.message || 'Please try again.'}`);
         }
       } finally {
         setIsLoading(false);

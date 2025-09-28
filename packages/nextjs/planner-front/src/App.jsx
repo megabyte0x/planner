@@ -7,10 +7,11 @@ import EthereumBuyPage from './EthereumBuyPage';
 import PortfolioPage from './PortfolioPage';
 import BuyDirectlyModal from './BuyDirectlyModal';
 import SuccessCelebrationModal from './SuccessCelebrationModal';
+import { ToastProvider, useToast } from './ToastProvider';
 import './App.css'
 import './Dashboard.css'
 
-function App() {
+function AppContent() {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
   const [walletAddress, setWalletAddress] = useState("");
   const [currentPage, setCurrentPage] = useState('home'); // 'home', 'dashboard', 'bitcoin', 'portfolio'
@@ -18,6 +19,7 @@ function App() {
   const [buyModalToken, setBuyModalToken] = useState('BTC');
   const [showSuccess, setShowSuccess] = useState(false);
   const [purchaseData, setPurchaseData] = useState({ amount: '', token: 'BTC' });
+  const { showError, showSuccess: showToastSuccess } = useToast();
 
   const connectWallet = async () => {
     try {
@@ -49,12 +51,12 @@ function App() {
               });
             } catch (addError) {
               console.error('Error adding Base network:', addError);
-              alert('Failed to add Base network. Please add it manually in MetaMask.');
+              showError('Failed to add Base network. Please add it manually in MetaMask.');
               return;
             }
           } else {
             console.error('Error switching to Base network:', switchError);
-            alert('Failed to switch to Base network. Please try again.');
+            showError('Failed to switch to Base network. Please try again.');
             return;
           }
         }
@@ -70,11 +72,11 @@ function App() {
           setCurrentPage('dashboard');
         }
       } else {
-        alert('MetaMask is not installed. Please install MetaMask to connect your wallet.');
+        showError('MetaMask is not installed. Please install MetaMask to connect your wallet.');
       }
     } catch (error) {
       console.error('Error connecting wallet:', error);
-      alert('Failed to connect wallet. Please try again.');
+      showError('Failed to connect wallet. Please try again.');
     }
   };
 
@@ -344,6 +346,14 @@ function App() {
       </div>
     </div>
   )
+}
+
+function App() {
+  return (
+    <ToastProvider>
+      <AppContent />
+    </ToastProvider>
+  );
 }
 
 export default App
