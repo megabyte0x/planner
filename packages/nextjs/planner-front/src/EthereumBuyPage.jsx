@@ -2,20 +2,11 @@ import React, { useState } from 'react';
 import './EthereumBuyPage.css';
 import BuyDirectlyModal from './BuyDirectlyModal';
 import SuccessCelebrationModal from './SuccessCelebrationModal';
-import usePythPrice from './hooks/usePythPrice';
-import useWalletData from './hooks/useWalletData';
 
 const EthereumBuyPage = ({ onBack }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [purchaseData, setPurchaseData] = useState({ amount: '', token: 'ETH' });
-
-  // ETH/USD price feed ID from Pyth
-  const ETH_PRICE_ID = "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace";
-  const { price: ethPrice, priceChange: ethPriceChange, loading: ethLoading } = usePythPrice(ETH_PRICE_ID);
-  const { balances, loading: walletLoading } = useWalletData();
-
-  const ethHoldings = (balances.ETH || 0) + (balances.WETH || 0);
 
   const handleBuyDirectly = () => {
     setIsModalOpen(true);
@@ -39,40 +30,9 @@ const EthereumBuyPage = ({ onBack }) => {
       {/* Back Button */}
       <button className="back-btn" onClick={onBack}>← Back</button>
 
-      {/* Header Section with Banner */}
+      {/* Header Section */}
       <div className="ethereum-header">
-        <h1 className="page-title">Ethereum Price</h1>
-        
-        {/* Ethereum Price Display */}
-        <div className="price-section">
-          <div className="current-price">
-            {ethLoading ? 'Loading...' : `$${ethPrice ? ethPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '4,300.00'}`}
-          </div>
-          <div className={`price-change ${ethPriceChange >= 0 ? 'positive' : 'negative'}`}>
-            {ethPriceChange ? `${ethPriceChange >= 0 ? '+' : ''}${ethPriceChange.toFixed(2)}%` : '+7.76%'}
-          </div>
-        </div>
-      </div>
-
-      {/* Ethereum Asset Summary */}
-      <div className="asset-summary">
-        <div className="asset-info">
-          <div className="asset-icon">
-            <img src="/eth.svg" alt="Ethereum" className="eth-icon" />
-          </div>
-          <div className="asset-details">
-            <div className="asset-symbol">ETH</div>
-            <div className="asset-name">Ethereum</div>
-          </div>
-        </div>
-        <div className="asset-value">
-          <div className="value-amount">
-            {ethLoading ? 'Loading...' : `$${ethPrice ? ethPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '4,300.00'}`}
-          </div>
-          <div className="value-quantity">
-            {walletLoading ? 'Loading...' : `${ethHoldings.toFixed(6)} ETH`}
-          </div>
-        </div>
+        <h1 className="page-title">Buy Ethereum Directly</h1>
       </div>
 
       {/* Chart Section */}
@@ -126,23 +86,6 @@ const EthereumBuyPage = ({ onBack }) => {
         </div>
       </div>
 
-      {/* Investment Summary */}
-      <div className="investment-summary">
-        <div className="summary-row">
-          <span className="summary-label">Holdings Value</span>
-          <span className="summary-value">
-            {walletLoading || ethLoading ? 'Loading...' :
-              `$${(ethHoldings * (ethPrice || 0)).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-            }
-          </span>
-        </div>
-        <div className="summary-row">
-          <span className="summary-label">24h Change</span>
-          <span className={`summary-value ${ethPriceChange >= 0 ? 'positive' : 'negative'}`}>
-            {ethPriceChange ? `${ethPriceChange >= 0 ? '+' : ''}${ethPriceChange.toFixed(2)}%` : '+7.76%'}
-          </span>
-        </div>
-      </div>
 
       {/* Buy Directly Button */}
       <button className="buy-directly-btn" onClick={handleBuyDirectly}>Buy Directly</button>

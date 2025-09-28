@@ -2,20 +2,11 @@ import React, { useState } from 'react';
 import './BitcoinBuyPage.css';
 import BuyDirectlyModal from './BuyDirectlyModal';
 import SuccessCelebrationModal from './SuccessCelebrationModal';
-import usePythPrice from './hooks/usePythPrice';
-import useWalletData from './hooks/useWalletData';
 
 const BitcoinBuyPage = ({ onBack }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [purchaseData, setPurchaseData] = useState({ amount: '', token: 'BTC' });
-
-  // BTC/USD price feed ID from Pyth
-  const BTC_PRICE_ID = "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43";
-  const { price, priceChange, loading: btcLoading, error } = usePythPrice(BTC_PRICE_ID);
-  const { balances, loading: walletLoading } = useWalletData();
-
-  const btcHoldings = balances.WETH || 0; // Using WETH as proxy for BTC holdings
 
   const handleBuyDirectly = () => {
     setIsModalOpen(true);
@@ -39,46 +30,9 @@ const BitcoinBuyPage = ({ onBack }) => {
       {/* Back Button */}
       <button className="back-btn" onClick={onBack}>← Back</button>
 
-      {/* Header Section with Banner */}
+      {/* Header Section */}
       <div className="bitcoin-header">
-        <h1 className="page-title">Bitcoin Price</h1>
-        
-        {/* Bitcoin Price Display */}
-        <div className="price-section">
-          {loading ? (
-            <div className="current-price">Loading...</div>
-          ) : error ? (
-            <div className="current-price">$98,945.00</div>
-          ) : (
-            <>
-              <div className="current-price">
-                ${price ? price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '98,945.00'}
-              </div>
-              <div className={`price-change ${priceChange >= 0 ? 'positive' : 'negative'}`}>
-                {priceChange ? `${priceChange >= 0 ? '+' : ''}${priceChange.toFixed(2)}%` : '-7.76%'}
-              </div>
-            </>
-          )}
-        </div>
-      </div>
-
-      {/* Bitcoin Asset Summary */}
-      <div className="asset-summary">
-        <div className="asset-info">
-          <div className="asset-icon">
-            <img src="/btc.svg" alt="Bitcoin" className="btc-icon" />
-          </div>
-          <div className="asset-details">
-            <div className="asset-symbol">BTC</div>
-            <div className="asset-name">Bitcoin</div>
-          </div>
-        </div>
-        <div className="asset-value">
-          <div className="value-amount">
-            ${price ? price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '98,945.00'}
-          </div>
-          <div className="value-quantity">1.00 BTC</div>
-        </div>
+        <h1 className="page-title">Buy Bitcoin Directly</h1>
       </div>
 
       {/* Price Chart */}
@@ -130,23 +84,6 @@ const BitcoinBuyPage = ({ onBack }) => {
         </div>
       </div>
 
-      {/* Investment Summary */}
-      <div className="investment-summary">
-        <div className="summary-row">
-          <span className="summary-label">Holdings Value</span>
-          <span className="summary-value">
-            {walletLoading || btcLoading ? 'Loading...' :
-              `$${(btcHoldings * (price || 0)).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-            }
-          </span>
-        </div>
-        <div className="summary-row">
-          <span className="summary-label">24h Change</span>
-          <span className={`summary-value ${priceChange >= 0 ? 'positive' : 'negative'}`}>
-            {priceChange ? `${priceChange >= 0 ? '+' : ''}${priceChange.toFixed(2)}%` : '-7.76%'}
-          </span>
-        </div>
-      </div>
 
       {/* Buy Directly Button */}
       <button className="buy-directly-btn" onClick={handleBuyDirectly}>Buy Directly</button>

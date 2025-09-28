@@ -49,25 +49,6 @@ function BitcoinPage({ onBack }) {
         )}
       </div>
 
-      {/* Bitcoin Asset Summary */}
-      <div className="asset-summary">
-        <div className="asset-info">
-          <div className="asset-icon">
-            <img src="/btc.svg" alt="Bitcoin" className="btc-icon" />
-          </div>
-          <div className="asset-details">
-            <div className="asset-symbol">BTC</div>
-            <div className="asset-name">Bitcoin</div>
-          </div>
-        </div>
-        <div className="asset-value">
-          <div className="value-amount">
-            ${price ? price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '98,945.00'}
-          </div>
-          <div className="value-quantity">1.00 BTC</div>
-        </div>
-      </div>
-
       {/* Price Chart */}
       <div className="chart-container">
         <div className="chart-header">

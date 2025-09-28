@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import './EthereumPage.css';
 import InvestmentPlanModal from './InvestmentPlanModal';
 import usePythPrice from './hooks/usePythPrice';
+import useWalletData from './hooks/useWalletData';
 
 const EthereumPage = ({ onBack }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // ETH/USD price feed ID from Pyth
   const ETH_PRICE_ID = "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace";
-  const { price, priceChange, loading, error } = usePythPrice(ETH_PRICE_ID);
+  const { price: ethPrice, priceChange: ethPriceChange, loading: ethLoading, error } = usePythPrice(ETH_PRICE_ID);
+  const { balances, loading: walletLoading } = useWalletData();
 
   const handleCreatePlan = () => {
     setIsModalOpen(true);
@@ -99,25 +101,6 @@ const EthereumPage = ({ onBack }) => {
         </div>
       </div>
 
-      {/* Ethereum Asset Summary */}
-      <div className="asset-summary">
-        <div className="asset-info">
-          <div className="asset-icon">
-            <img src="/eth.svg" alt="Ethereum" className="eth-icon" />
-          </div>
-          <div className="asset-details">
-            <div className="asset-symbol">ETH</div>
-            <div className="asset-name">Ethereum</div>
-          </div>
-        </div>
-        <div className="asset-value">
-          <div className="value-amount">
-            ${price ? price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '4,300.00'}
-          </div>
-          <div className="value-quantity">1.00 ETH</div>
-        </div>
-      </div>
-
       {/* Chart Section */}
       <div className="chart-section">
         <div className="chart-container">
@@ -172,12 +155,18 @@ const EthereumPage = ({ onBack }) => {
       {/* Investment Summary */}
       <div className="investment-summary">
         <div className="summary-row">
-          <span className="summary-label">Total Investments</span>
-          <span className="summary-value">139,071</span>
+          <span className="summary-label">Holdings Value</span>
+          <span className="summary-value">
+            {walletLoading || ethLoading ? 'Loading...' :
+              `$${((balances.ETH + (balances.WETH || 0)) * (ethPrice || 0)).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+            }
+          </span>
         </div>
         <div className="summary-row">
-          <span className="summary-label">Current Values</span>
-          <span className="summary-value">139,071</span>
+          <span className="summary-label">24h Change</span>
+          <span className={`summary-value ${ethPriceChange >= 0 ? 'positive' : 'negative'}`}>
+            {ethPriceChange ? `${ethPriceChange >= 0 ? '+' : ''}${ethPriceChange.toFixed(2)}%` : '+0.00%'}
+          </span>
         </div>
       </div>
 

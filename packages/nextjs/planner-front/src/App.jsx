@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BitcoinPage from './BitcoinPage';
 import EthereumPage from './EthereumPage';
 import BitcoinBuyPage from './BitcoinBuyPage';
@@ -8,6 +8,10 @@ import PortfolioPage from './PortfolioPage';
 import BuyDirectlyModal from './BuyDirectlyModal';
 import SuccessCelebrationModal from './SuccessCelebrationModal';
 import { ToastProvider, useToast } from './ToastProvider';
+import usePythPrice from './hooks/usePythPrice';
+import useWalletData from './hooks/useWalletData';
+import DynamicPortfolio from './components/DynamicPortfolio';
+import AnimatedPrice from './components/AnimatedPrice';
 import './App.css'
 import './Dashboard.css'
 
@@ -20,6 +24,24 @@ function AppContent() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [purchaseData, setPurchaseData] = useState({ amount: '', token: 'BTC' });
   const { showError, showSuccess: showToastSuccess } = useToast();
+
+  // Price feeds for dashboard
+  const BTC_PRICE_ID = "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43";
+  const ETH_PRICE_ID = "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace";
+  const { price: btcPrice, priceChange: btcPriceChange, loading: btcLoading } = usePythPrice(BTC_PRICE_ID);
+  const { price: ethPrice, priceChange: ethPriceChange, loading: ethLoading } = usePythPrice(ETH_PRICE_ID);
+  const { ensName, balances, loading: walletLoading, calculateTotalPortfolioValue } = useWalletData();
+
+  // Calculate total portfolio value
+  const totalPortfolioValue = calculateTotalPortfolioValue(btcPrice, ethPrice);
+  const [previousPortfolioValue, setPreviousPortfolioValue] = useState(totalPortfolioValue);
+
+  // Update previous value when total changes
+  useEffect(() => {
+    if (totalPortfolioValue !== previousPortfolioValue) {
+      setTimeout(() => setPreviousPortfolioValue(totalPortfolioValue), 1000);
+    }
+  }, [totalPortfolioValue]);
 
   const connectWallet = async () => {
     try {
@@ -163,7 +185,14 @@ function AppContent() {
         {/* Key Balance Section */}
         <div className="key-balance-section">
           <h2 className="section-title">Key Balance</h2>
-          <div className="balance-amount">$12,931.523</div>
+          <DynamicPortfolio
+            totalValue={totalPortfolioValue}
+            previousValue={previousPortfolioValue}
+            loading={walletLoading || btcLoading || ethLoading}
+            btcPrice={btcPrice}
+            ethPrice={ethPrice}
+            balances={balances}
+          />
           <button className="view-portfolio-btn" onClick={goToPortfolioPage}>View Portfolio</button>
         </div>
 
@@ -172,10 +201,10 @@ function AppContent() {
           <h2 className="section-title">Connected Wallet</h2>
           <div className="wallet-card">
             <div className="wallet-avatar">
-              <div className="avatar-icon">🔥</div>
+              <div className="avatar-icon">{ensName ? ensName.charAt(0).toUpperCase() : '🔥'}</div>
             </div>
             <div className="wallet-info">
-              <div className="wallet-name">Megabyte.eth</div>
+              <div className="wallet-name">{walletLoading ? 'Loading...' : ensName || 'Wallet'}</div>
             </div>
             <button className="disconnect-btn" onClick={disconnectWallet}>
               <img src="/cancel-button.svg" alt="Disconnect" className="disconnect-icon" />
@@ -187,12 +216,11 @@ function AppContent() {
         <div className="create-plan-section">
           <h2 className="section-title">Create a Plan</h2>
           <p className="section-description">
-            Automate your Bitcoin and Ethereum purchases on an hourly, daily, or weekly basis. 
-            Smooth out market volatility with a disciplined DCA strategy that keeps your average 
+            Automate your Bitcoin and Ethereum purchases on an hourly, daily, or weekly basis.
+            Smooth out market volatility with a disciplined DCA strategy that keeps your average
             entry price balanced over time.
           </p>
-          
-          {/* TEST COMPONENTS - SIMPLE BTC AND ETH - DO NOT MODIFY */}
+
           <div className="test-btc-card">
             <div className="test-btc-info">
               <div className="test-btc-icon">
@@ -200,7 +228,14 @@ function AppContent() {
               </div>
               <div className="test-btc-details">
                 <div className="test-btc-name">Bitcoin</div>
-                <div className="test-btc-price">$98,000</div>
+                <div className="test-btc-price">
+                  <AnimatedPrice
+                    price={btcPrice}
+                    priceChange={btcPriceChange}
+                    loading={btcLoading}
+                    decimals={0}
+                  />
+                </div>
               </div>
             </div>
             <button className="start-btn" onClick={goToBitcoinPage}>Start</button>
@@ -213,7 +248,14 @@ function AppContent() {
               </div>
               <div className="test-eth-details">
                 <div className="test-eth-name">Ethereum</div>
-                <div className="test-eth-price">$4,300</div>
+                <div className="test-eth-price">
+                  <AnimatedPrice
+                    price={ethPrice}
+                    priceChange={ethPriceChange}
+                    loading={ethLoading}
+                    decimals={0}
+                  />
+                </div>
               </div>
             </div>
             <button className="start-btn" onClick={goToEthereumPage}>Start</button>
@@ -228,7 +270,6 @@ function AppContent() {
             when prices move sharply. A seamless way to act quickly during sudden highs or lows.
           </p>
           
-          {/* TEST COMPONENTS - SIMPLE BTC AND ETH - DO NOT MODIFY */}
           <div className="test-btc-card">
             <div className="test-btc-info">
               <div className="test-btc-icon">
@@ -236,7 +277,14 @@ function AppContent() {
               </div>
               <div className="test-btc-details">
                 <div className="test-btc-name">Bitcoin</div>
-                <div className="test-btc-price">$98,000</div>
+                <div className="test-btc-price">
+                  <AnimatedPrice
+                    price={btcPrice}
+                    priceChange={btcPriceChange}
+                    loading={btcLoading}
+                    decimals={0}
+                  />
+                </div>
               </div>
             </div>
             <button className="start-btn" onClick={() => openBuyModal('BTC')}>Start</button>
@@ -249,7 +297,14 @@ function AppContent() {
               </div>
               <div className="test-eth-details">
                 <div className="test-eth-name">Ethereum</div>
-                <div className="test-eth-price">$4,300</div>
+                <div className="test-eth-price">
+                  <AnimatedPrice
+                    price={ethPrice}
+                    priceChange={ethPriceChange}
+                    loading={ethLoading}
+                    decimals={0}
+                  />
+                </div>
               </div>
             </div>
             <button className="start-btn" onClick={() => openBuyModal('ETH')}>Start</button>
