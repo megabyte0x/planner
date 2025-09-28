@@ -203,16 +203,16 @@ const BuyDirectlyModal = ({ isOpen, onClose, onConfirm, token = 'BTC' }) => {
         </div>
 
         {/* Description */}
-        <p className="modal-description">
+        {/* <p className="modal-description">
           Skip the exchange delays—send funds directly to an ENS contract and instantly buy 
           when prices move sharply. A seamless way to act quickly during sudden highs or lows.
-        </p>
+        </p> */}
 
         {/* Send Button */}
-        <button 
-          className="send-btn" 
+        <button
+          className="send-btn"
           onClick={handleConfirm}
-          disabled={!amount || isLoading || parseFloat(amount) > parseFloat(usdcBalance)}
+          disabled={!amount || isLoading || parseFloat(amount) > parseFloat(usdcBalance) || parseFloat(amount) < 0.5}
         >
           {isLoading ? 'Sending USDC...' : `Send to ${token.toLowerCase()}.swapswap.eth`}
         </button>
@@ -220,6 +220,12 @@ const BuyDirectlyModal = ({ isOpen, onClose, onConfirm, token = 'BTC' }) => {
         {parseFloat(amount) > parseFloat(usdcBalance) && amount && (
           <div className="error-message">
             Insufficient USDC balance
+          </div>
+        )}
+
+        {parseFloat(amount) < 0.5 && amount && (
+          <div className="error-message">
+            Minimum amount is 0.5 USDC
           </div>
         )}
       </div>

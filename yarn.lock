@@ -8836,9 +8836,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.218":
-  version: 1.5.225
-  resolution: "electron-to-chromium@npm:1.5.225"
-  checksum: 78051ebb8583117085db6cf3f5b9073d9c6e387e93e8281c3db9c2a88fd94bd6797b86dbaa630999aab0ef80194e637c5e09c91cfc63abe86a2c78e922b3f7dc
+  version: 1.5.226
+  resolution: "electron-to-chromium@npm:1.5.226"
+  checksum: 4502fff2692bfe0d420133af43c5ae68b56327681e0638ca0c30c70a9f6071a748d9a778b6995365f1d3f853e99b67230ff294716908dc311ab40dfe15deba2b
   languageName: node
   linkType: hard
 
@@ -15558,6 +15558,7 @@ __metadata:
   resolution: "planner-front@workspace:packages/nextjs/planner-front"
   dependencies:
     "@eslint/js": ^9.36.0
+    "@pythnetwork/hermes-client": ^2.0.0
     "@tailwindcss/postcss": ^4.1.13
     "@types/react": ^19.1.13
     "@types/react-dom": ^19.1.9

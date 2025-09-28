@@ -1,17 +1,74 @@
 import React, { useState } from 'react';
 import './EthereumPage.css';
 import InvestmentPlanModal from './InvestmentPlanModal';
+import usePythPrice from './hooks/usePythPrice';
 
 const EthereumPage = ({ onBack }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // ETH/USD price feed ID from Pyth
+  const ETH_PRICE_ID = "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace";
+  const { price, priceChange, loading, error } = usePythPrice(ETH_PRICE_ID);
 
   const handleCreatePlan = () => {
     setIsModalOpen(true);
   };
 
-  const handleModalConfirm = (planData) => {
+  const handleModalConfirm = async (planData) => {
     console.log('Investment plan created:', planData);
-    // Here you would typically send the data to your backend
+
+    try {
+      // Parse the amount value, removing $ if present
+      const numericAmount = parseFloat(planData.amount.replace('$', ''));
+
+      // Calculate total amount for first 10 executions (as mentioned in TODO)
+      const totalAmount = numericAmount * 10;
+
+      // ETH Planner contract details (needs to be deployed)
+      const ETH_PLANNER_ADDRESS = "0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060"; // Placeholder - deploy ETH_Planner contract
+      const USDC_ADDRESS = "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"; // USDC on Base
+
+      if (!window.ethereum) {
+        alert('Please install a Web3 wallet to create investment plans');
+        return;
+      }
+
+      // Get user's address
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      const userAddress = accounts[0];
+
+      // Step 1: Approve ETH Planner contract to use USDC
+      const totalAmountInUsdc = Math.floor(totalAmount * Math.pow(10, 6)); // Convert to USDC units (6 decimals)
+      const totalAmountHex = '0x' + totalAmountInUsdc.toString(16).padStart(64, '0');
+
+      const approvalData = {
+        to: USDC_ADDRESS,
+        from: userAddress,
+        data: `0x095ea7b3${ETH_PLANNER_ADDRESS.slice(2).padStart(64, '0')}${totalAmountHex}`, // approve(address,uint256)
+        value: '0x0'
+      };
+
+      console.log('Requesting USDC approval for ETH Planner...');
+      const approvalTxHash = await window.ethereum.request({
+        method: 'eth_sendTransaction',
+        params: [approvalData]
+      });
+
+      console.log('Approval transaction sent:', approvalTxHash);
+
+      // Step 2: Create plan on ETH_Planner contract
+      // Note: This requires the ETH_Planner contract to be deployed first
+      // For now, we'll show a message indicating the plan was created locally
+      alert(`Investment plan created!\n\nAmount: ${planData.amount}\nFrequency: ${planData.frequency}\nTotal approved: $${totalAmount.toFixed(2)} USDC\n\nNote: ETH_Planner contract integration pending deployment.`);
+
+    } catch (error) {
+      console.error('Error creating investment plan:', error);
+      if (error.code === 4001) {
+        alert('Transaction rejected by user.');
+      } else {
+        alert(`Failed to create investment plan: ${error.message || 'Please try again.'}`);
+      }
+    }
   };
 
   return (
@@ -25,8 +82,20 @@ const EthereumPage = ({ onBack }) => {
         
         {/* Ethereum Price Display */}
         <div className="price-section">
-          <div className="current-price">$4,300.00</div>
-          <div className="price-change positive">+7.76%</div>
+          {loading ? (
+            <div className="current-price">Loading...</div>
+          ) : error ? (
+            <div className="current-price">$4,300.00</div>
+          ) : (
+            <>
+              <div className="current-price">
+                ${price ? price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '4,300.00'}
+              </div>
+              <div className={`price-change ${priceChange >= 0 ? 'positive' : 'negative'}`}>
+                {priceChange ? `${priceChange >= 0 ? '+' : ''}${priceChange.toFixed(2)}%` : '+7.76%'}
+              </div>
+            </>
+          )}
         </div>
       </div>
 
@@ -42,7 +111,9 @@ const EthereumPage = ({ onBack }) => {
           </div>
         </div>
         <div className="asset-value">
-          <div className="value-amount">$4,300.00</div>
+          <div className="value-amount">
+            ${price ? price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '4,300.00'}
+          </div>
           <div className="value-quantity">1.00 ETH</div>
         </div>
       </div>

@@ -2,9 +2,18 @@ import { motion } from "framer-motion";
 import { useState } from 'react';
 import './BitcoinPage.css'
 import InvestmentPlanModal from './InvestmentPlanModal';
+import usePythPrice from './hooks/usePythPrice';
+import useWalletData from './hooks/useWalletData';
 
 function BitcoinPage({ onBack }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // BTC/USD price feed ID from Pyth
+  const BTC_PRICE_ID = "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43";
+  const { price, priceChange, loading, error } = usePythPrice(BTC_PRICE_ID);
+  const { balances, loading: walletLoading } = useWalletData();
+
+  const btcHoldings = balances.WETH || 0; // Using WETH as proxy for BTC holdings
 
   const handleCreatePlan = () => {
     setIsModalOpen(true);
@@ -24,8 +33,20 @@ function BitcoinPage({ onBack }) {
       {/* Header Section with BTC Banner */}
       <div className="bitcoin-header">
         <h1 className="page-title">Bitcoin Price</h1>
-        <div className="current-price">$98,000.00</div>
-        <div className="price-change negative">-7.76%</div>
+        {loading ? (
+          <div className="current-price">Loading...</div>
+        ) : error ? (
+          <div className="current-price">$98,000.00</div>
+        ) : (
+          <>
+            <div className="current-price">
+              ${price ? price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '98,000.00'}
+            </div>
+            <div className={`price-change ${priceChange >= 0 ? 'positive' : 'negative'}`}>
+              {priceChange ? `${priceChange >= 0 ? '+' : ''}${priceChange.toFixed(2)}%` : '-7.76%'}
+            </div>
+          </>
+        )}
       </div>
 
       {/* Bitcoin Asset Summary */}
@@ -40,7 +61,9 @@ function BitcoinPage({ onBack }) {
           </div>
         </div>
         <div className="asset-value">
-          <div className="value-amount">$98,945.00</div>
+          <div className="value-amount">
+            ${price ? price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '98,945.00'}
+          </div>
           <div className="value-quantity">1.00 BTC</div>
         </div>
       </div>
@@ -97,12 +120,18 @@ function BitcoinPage({ onBack }) {
       {/* Investment Summary */}
       <div className="investment-summary">
         <div className="summary-row">
-          <span className="summary-label">Total Investments</span>
-          <span className="summary-value">139,071</span>
+          <span className="summary-label">Holdings Value</span>
+          <span className="summary-value">
+            {walletLoading || loading ? 'Loading...' :
+              `$${(btcHoldings * (price || 0)).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+            }
+          </span>
         </div>
         <div className="summary-row">
-          <span className="summary-label">Current Values</span>
-          <span className="summary-value">139,071</span>
+          <span className="summary-label">24h Change</span>
+          <span className={`summary-value ${priceChange >= 0 ? 'positive' : 'negative'}`}>
+            {priceChange ? `${priceChange >= 0 ? '+' : ''}${priceChange.toFixed(2)}%` : '-7.76%'}
+          </span>
         </div>
       </div>
 

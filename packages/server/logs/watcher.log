@@ -18826,3 +18826,4882 @@
 {
   "signature": "8327de1d32..."
 }
+2025-09-28 07:14:52 [info]: Webhook endpoint configured at /
+2025-09-28 07:14:52 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-28 07:14:52 [info]: Starting configuration validation...
+2025-09-28 07:14:52 [info]: Checking wallet health...
+2025-09-28 07:14:53 [info]: Wallet health check passed
+2025-09-28 07:14:53 [info]: Validating contract addresses...
+2025-09-28 07:14:53 [info]: Checking ethPlanner: 0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060
+2025-09-28 07:14:53 [info]: Checking erc20Planner: 0x2B7A919B1B1eFbbDCBb941d7e85e124bFBe0F146
+2025-09-28 07:14:53 [info]: Checking uniswapV3Router: 0x2626664c2603336E57B271c5C0b26F421741e481
+2025-09-28 07:14:53 [info]: Checking uniswapV3Factory: 0x33128a8fC17869897dcE68Ed026d694621f6FDfD
+2025-09-28 07:14:53 [info]: Checking usdc: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:14:53 [info]: Checking dai: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:14:53 [info]: Checking weth: 0x4200000000000000000000000000000000000006
+2025-09-28 07:14:53 [info]: Checking cbbtc: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+2025-09-28 07:14:53 [info]: All contract addresses validated
+2025-09-28 07:14:53 [info]: Testing blockchain connection...
+2025-09-28 07:14:53 [info]: Configuration validated successfully
+{
+  "latestBlock": 36117272,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "network": "base",
+  "chainId": 8453
+}
+2025-09-28 07:14:53 [info]: Checking for failed deposits to retry...
+2025-09-28 07:14:53 [info]: Starting retry of failed deposits
+2025-09-28 07:14:53 [info]: No deposits to retry
+2025-09-28 07:14:53 [info]: Starting event monitoring...
+2025-09-28 07:14:53 [info]: Webhooks are enabled, WebSocket monitoring will be disabled
+2025-09-28 07:14:53 [info]: Deposit detection will be handled via Alchemy address activity webhooks
+2025-09-28 07:14:53 [info]: Webhook endpoint: /
+2025-09-28 07:14:53 [info]: Monitoring USDC: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:14:53 [info]: Monitoring DAI: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:14:53 [info]: ETH Planner: 0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060
+2025-09-28 07:14:53 [info]: ERC20 Planner: 0x2B7A919B1B1eFbbDCBb941d7e85e124bFBe0F146
+2025-09-28 07:14:53 [info]: Starting plan scheduler...
+2025-09-28 07:14:53 [info]: Starting DCA plan scheduler...
+2025-09-28 07:14:53 [info]: Loading existing DCA plans...
+2025-09-28 07:14:53 [info]: Skipping historical plan event query for ETH - webhooks enabled
+2025-09-28 07:14:53 [info]: Skipping historical plan event query for ERC20 - webhooks enabled
+2025-09-28 07:14:53 [info]: Loaded 0 active DCA plans
+2025-09-28 07:14:53 [info]: Event listeners set up for plan management
+2025-09-28 07:14:53 [info]: Cron job started with 30s interval
+2025-09-28 07:14:53 [info]: DCA plan scheduler started successfully
+2025-09-28 07:14:53 [info]: DCA Watcher Service running on port 3001
+2025-09-28 07:14:53 [info]: Services started successfully:
+{
+  "eventMonitor": true,
+  "planScheduler": true,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61"
+}
+2025-09-28 07:19:13 [info]: Webhook endpoint configured at /
+2025-09-28 07:19:13 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-28 07:19:13 [info]: Starting configuration validation...
+2025-09-28 07:19:13 [info]: Checking wallet health...
+2025-09-28 07:19:14 [info]: Wallet health check passed
+2025-09-28 07:19:14 [info]: Validating contract addresses...
+2025-09-28 07:19:14 [info]: Checking ethPlanner: 0x5CbAFAE58F8722673026032d4975a85F79e1299f
+2025-09-28 07:19:14 [info]: Checking erc20Planner: 0x487ed8087dC66F32c5009244C2399702b4D81067
+2025-09-28 07:19:14 [info]: Checking uniswapV3Router: 0x2626664c2603336E57B271c5C0b26F421741e481
+2025-09-28 07:19:14 [info]: Checking uniswapV3Factory: 0x1F98431c8aD98523631AE4a59f267346ea31F984
+2025-09-28 07:19:14 [info]: Checking usdc: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:19:14 [info]: Checking dai: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:19:14 [info]: Checking weth: 0x4200000000000000000000000000000000000006
+2025-09-28 07:19:14 [info]: Checking cbbtc: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+2025-09-28 07:19:14 [info]: All contract addresses validated
+2025-09-28 07:19:14 [info]: Testing blockchain connection...
+2025-09-28 07:19:14 [info]: Configuration validated successfully
+{
+  "latestBlock": 36117403,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "network": "base",
+  "chainId": 8453
+}
+2025-09-28 07:19:14 [info]: Checking for failed deposits to retry...
+2025-09-28 07:19:14 [info]: Starting retry of failed deposits
+2025-09-28 07:19:14 [info]: No deposits to retry
+2025-09-28 07:19:14 [info]: Starting event monitoring...
+2025-09-28 07:19:14 [info]: Webhooks are enabled, WebSocket monitoring will be disabled
+2025-09-28 07:19:14 [info]: Deposit detection will be handled via Alchemy address activity webhooks
+2025-09-28 07:19:14 [info]: Webhook endpoint: /
+2025-09-28 07:19:14 [info]: Monitoring USDC: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:19:14 [info]: Monitoring DAI: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:19:14 [info]: ETH Planner: 0x5CbAFAE58F8722673026032d4975a85F79e1299f
+2025-09-28 07:19:14 [info]: ERC20 Planner: 0x487ed8087dC66F32c5009244C2399702b4D81067
+2025-09-28 07:19:14 [info]: Starting plan scheduler...
+2025-09-28 07:19:14 [info]: Starting DCA plan scheduler...
+2025-09-28 07:19:14 [info]: Loading existing DCA plans...
+2025-09-28 07:19:14 [info]: Querying plan events for ETH from block 36092203 to 36117403
+2025-09-28 07:19:14 [info]: Querying plan events for ERC20 from block 36092203 to 36117403
+2025-09-28 07:19:14 [error]: Failed to get plan events for ETH
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 01:49:14 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985f9547eea29e4a-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "61d74159-db3d-48a7-8564-232f456beb61",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=8oTg02l4C_FUV4xxbL7FkaV_Al2LQerD.mZcwoHY35A-1759024154886-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":47,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x226b92b, 0x226b934]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x226b92b\",\"toBlock\":\"latest\",\"address\":\"0x5cbafae58f8722673026032d4975a85f79e1299f\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":47,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:19:14 [warn]: Block range too large for ETH, trying smaller range
+2025-09-28 07:19:14 [error]: Failed to get plan events for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 01:49:14 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985f9547e8703e06-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "ec2b8eab-0ce7-49c8-b5fb-36ee9cfc6c9f",
+      "x-envoy-upstream-service-time": "4",
+      "set-cookie": "_cfuvid=8oTg02l4C_FUV4xxbL7FkaV_Al2LQerD.mZcwoHY35A-1759024154886-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":48,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x226b92b, 0x226b934]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x226b92b\",\"toBlock\":\"latest\",\"address\":\"0x487ed8087dc66f32c5009244c2399702b4d81067\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":48,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:19:14 [warn]: Block range too large for ERC20, trying smaller range
+2025-09-28 07:19:15 [error]: Batch query also failed for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 01:49:15 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985f954b68149e4a-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "7f893f37-4920-4071-a654-9e454dcda55b",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=5SkzWivI76jKFRqKY1ns3sGOqNukuhv9ER6Ir3QCrTk-1759024155445-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":54,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x2270813, 0x227081c]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x2270813\",\"toBlock\":\"0x2271b9b\",\"address\":\"0x487ed8087dc66f32c5009244c2399702b4d81067\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":54,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:25:26 [info]: Processing address activity webhook
+{
+  "webhookId": "wh_qhgtb68ly2rodeby",
+  "event": {
+    "network": "BASE_MAINNET",
+    "activity": [
+      {
+        "fromAddress": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+        "toAddress": "0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060",
+        "blockNum": "0x2271c55",
+        "hash": "0x740a0c508e87120f1d391235a5c9cf483971669a5d2c79c7443b2cc16c95cc60",
+        "value": 0.5,
+        "asset": "USDC",
+        "category": "token",
+        "rawContract": {
+          "rawValue": "0x000000000000000000000000000000000000000000000000000000000007a120",
+          "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "decimals": 6
+        },
+        "log": {
+          "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000002acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+            "0x0000000000000000000000004ed34e5b1e85080ef5011dcd7272e4cfd9ef5060"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000000007a120",
+          "blockHash": "0x9227b32cdda455797f8d15f47e6fe869e3e8cde737eb2d48411cbc5c840382ac",
+          "blockNumber": "0x2271c55",
+          "blockTimestamp": "0x68d8958d",
+          "transactionHash": "0x740a0c508e87120f1d391235a5c9cf483971669a5d2c79c7443b2cc16c95cc60",
+          "transactionIndex": "0x57",
+          "logIndex": "0x103",
+          "removed": false
+        }
+      }
+    ],
+    "source": "chainlake-kafka"
+  }
+}
+2025-09-28 07:25:26 [info]: Found activity data
+{
+  "activityCount": 1
+}
+2025-09-28 07:25:26 [info]: USDC deposit detected via webhook
+{
+  "from": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "to": "0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060",
+  "amount": "0.5",
+  "txHash": "0x740a0c508e87120f1d391235a5c9cf483971669a5d2c79c7443b2cc16c95cc60",
+  "blockNumber": 36117589
+}
+2025-09-28 07:25:26 [info]: Processing deposit event
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "amount": "500000",
+  "plannerContract": "0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060"
+}
+2025-09-28 07:25:26 [info]: Starting deposit swap execution
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "amount": "500000",
+  "plannerContract": "0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060"
+}
+2025-09-28 07:25:26 [info]: Waiting for 1 confirmations
+{
+  "txHash": "0x740a0c508e87120f1d391235a5c9cf483971669a5d2c79c7443b2cc16c95cc60"
+}
+2025-09-28 07:25:26 [info]: Transaction confirmed with 1 confirmations
+{
+  "txHash": "0x740a0c508e87120f1d391235a5c9cf483971669a5d2c79c7443b2cc16c95cc60",
+  "blockNumber": 36117589
+}
+2025-09-28 07:25:26 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.5",
+  "slippageTolerance": 50
+}
+2025-09-28 07:25:31 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 07:25:31 [info]: Constructing fallback route
+2025-09-28 07:25:31 [info]: Fetching price for USDC
+{
+  "priceId": "0xeaa020c61cc479712813461ce153894a96a6c00b21ed0cfc2798d1f9a9e9c94a"
+}
+2025-09-28 07:25:31 [info]: Retrieved price for USDC
+{
+  "price": 0.9997459000000001,
+  "confidence": 0.0008108,
+  "publishTime": 1759024530
+}
+2025-09-28 07:25:31 [info]: Fetching price for ETH
+{
+  "priceId": "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace"
+}
+2025-09-28 07:25:32 [info]: Processing address activity webhook
+{
+  "webhookId": "wh_qhgtb68ly2rodeby",
+  "event": {
+    "network": "BASE_MAINNET",
+    "activity": [
+      {
+        "fromAddress": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+        "toAddress": "0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060",
+        "blockNum": "0x2271c55",
+        "hash": "0x740a0c508e87120f1d391235a5c9cf483971669a5d2c79c7443b2cc16c95cc60",
+        "value": 0.5,
+        "asset": "USDC",
+        "category": "token",
+        "rawContract": {
+          "rawValue": "0x000000000000000000000000000000000000000000000000000000000007a120",
+          "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "decimals": 6
+        },
+        "log": {
+          "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000002acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+            "0x0000000000000000000000004ed34e5b1e85080ef5011dcd7272e4cfd9ef5060"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000000007a120",
+          "blockHash": "0x9227b32cdda455797f8d15f47e6fe869e3e8cde737eb2d48411cbc5c840382ac",
+          "blockNumber": "0x2271c55",
+          "blockTimestamp": "0x68d8958d",
+          "transactionHash": "0x740a0c508e87120f1d391235a5c9cf483971669a5d2c79c7443b2cc16c95cc60",
+          "transactionIndex": "0x57",
+          "logIndex": "0x103",
+          "removed": false
+        }
+      }
+    ],
+    "source": "chainlake-kafka"
+  }
+}
+2025-09-28 07:25:32 [info]: Found activity data
+{
+  "activityCount": 1
+}
+2025-09-28 07:25:32 [info]: USDC deposit detected via webhook
+{
+  "from": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "to": "0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060",
+  "amount": "0.5",
+  "txHash": "0x740a0c508e87120f1d391235a5c9cf483971669a5d2c79c7443b2cc16c95cc60",
+  "blockNumber": 36117589
+}
+2025-09-28 07:25:32 [info]: Processing deposit event
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "amount": "500000",
+  "plannerContract": "0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060"
+}
+2025-09-28 07:25:32 [info]: Starting deposit swap execution
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "amount": "500000",
+  "plannerContract": "0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060"
+}
+2025-09-28 07:25:32 [info]: Ignoring older deposit, newer one already pending
+{
+  "existingBlock": 36117589,
+  "newBlock": 36117589,
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+}
+2025-09-28 07:25:32 [error]: Deposit swap failed
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "error": "Newer deposit already pending for this user+token combination"
+}
+2025-09-28 07:25:32 [info]: Retrieved price for ETH
+{
+  "price": 3999.51877501,
+  "confidence": 1.27463631,
+  "publishTime": 1759024530
+}
+2025-09-28 07:25:32 [info]: Calculated minimum amount out
+{
+  "tokenInSymbol": "USDC",
+  "tokenOutSymbol": "WETH",
+  "amountInUSD": 0.49987295000000004,
+  "outputTokenPrice": 3999.51877501,
+  "expectedOutputAmount": 0.00012498327376866738,
+  "slippageBps": 50,
+  "minAmountOut": 0.00012435835739982404,
+  "outputTokenDecimals": 18,
+  "minAmountOutInTokenUnits": "124358357399824.05"
+}
+2025-09-28 07:25:32 [info]: Calculated minimum amount out with price feed
+{
+  "tokenIn": "USDC",
+  "tokenOut": "WETH",
+  "amountIn": "0.5",
+  "amountInUSD": 0.49987295000000004,
+  "slippageBps": 50,
+  "minAmountOut": "124358357399824"
+}
+2025-09-28 07:25:34 [info]: Single-hop swap transaction sent
+{
+  "txHash": "0x8abdf38cb5d7c7548bb750fd0a273216fa34bebb2499873908dbf9e868065199",
+  "fee": 500
+}
+2025-09-28 07:25:35 [info]: Deposit swap execution completed
+{
+  "success": true,
+  "txHash": "0x8abdf38cb5d7c7548bb750fd0a273216fa34bebb2499873908dbf9e868065199",
+  "outputAmount": "124358357399824",
+  "gasUsed": "175312"
+}
+2025-09-28 07:25:35 [info]: Deposit swap completed successfully
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "txHash": "0x8abdf38cb5d7c7548bb750fd0a273216fa34bebb2499873908dbf9e868065199",
+  "outputAmount": "124358357399824",
+  "gasUsed": "175312"
+}
+2025-09-28 07:25:38 [info]: Processing address activity webhook
+{
+  "webhookId": "wh_qhgtb68ly2rodeby",
+  "event": {
+    "network": "BASE_MAINNET",
+    "activity": [
+      {
+        "fromAddress": "0x0492d453e080cb0f0b7d85533354589f62852d61",
+        "toAddress": "0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060",
+        "blockNum": "0x2271c5b",
+        "hash": "0x8abdf38cb5d7c7548bb750fd0a273216fa34bebb2499873908dbf9e868065199",
+        "value": 0,
+        "asset": "ETH",
+        "category": "external",
+        "rawContract": {
+          "rawValue": "0x0",
+          "decimals": 18
+        }
+      }
+    ],
+    "source": "chainlake-kafka"
+  }
+}
+2025-09-28 07:25:38 [info]: Found activity data
+{
+  "activityCount": 1
+}
+2025-09-28 07:25:38 [warn]: Invalid webhook signature
+{
+  "signature": "b69eff729c..."
+}
+2025-09-28 07:25:38 [warn]: Invalid webhook signature
+{
+  "signature": "b7f7aca5ba..."
+}
+2025-09-28 07:25:55 [warn]: Invalid webhook signature
+{
+  "signature": "b69eff729c..."
+}
+2025-09-28 07:26:04 [info]: Webhook endpoint configured at /
+2025-09-28 07:26:04 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-28 07:26:04 [info]: Starting configuration validation...
+2025-09-28 07:26:04 [info]: Checking wallet health...
+2025-09-28 07:26:05 [info]: Wallet health check passed
+2025-09-28 07:26:05 [info]: Validating contract addresses...
+2025-09-28 07:26:05 [info]: Checking ethPlanner: 0x5CbAFAE58F8722673026032d4975a85F79e1299f
+2025-09-28 07:26:05 [info]: Checking erc20Planner: 0x487ed8087dC66F32c5009244C2399702b4D81067
+2025-09-28 07:26:05 [info]: Checking uniswapV3Router: 0x2626664c2603336E57B271c5C0b26F421741e481
+2025-09-28 07:26:05 [info]: Checking uniswapV3Factory: 0x1F98431c8aD98523631AE4a59f267346ea31F984
+2025-09-28 07:26:05 [info]: Checking usdc: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:26:05 [info]: Checking dai: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:26:05 [info]: Checking weth: 0x4200000000000000000000000000000000000006
+2025-09-28 07:26:05 [info]: Checking cbbtc: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+2025-09-28 07:26:05 [info]: All contract addresses validated
+2025-09-28 07:26:05 [info]: Testing blockchain connection...
+2025-09-28 07:26:06 [info]: Configuration validated successfully
+{
+  "latestBlock": 36117609,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "network": "base",
+  "chainId": 8453
+}
+2025-09-28 07:26:06 [info]: Checking for failed deposits to retry...
+2025-09-28 07:26:06 [info]: Starting retry of failed deposits
+2025-09-28 07:26:06 [info]: No deposits to retry
+2025-09-28 07:26:06 [info]: Starting event monitoring...
+2025-09-28 07:26:06 [info]: Webhooks are enabled, WebSocket monitoring will be disabled
+2025-09-28 07:26:06 [info]: Deposit detection will be handled via Alchemy address activity webhooks
+2025-09-28 07:26:06 [info]: Webhook endpoint: /
+2025-09-28 07:26:06 [info]: Monitoring USDC: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:26:06 [info]: Monitoring DAI: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:26:06 [info]: ETH Planner: 0x5CbAFAE58F8722673026032d4975a85F79e1299f
+2025-09-28 07:26:06 [info]: ERC20 Planner: 0x487ed8087dC66F32c5009244C2399702b4D81067
+2025-09-28 07:26:06 [info]: Starting plan scheduler...
+2025-09-28 07:26:06 [info]: Starting DCA plan scheduler...
+2025-09-28 07:26:06 [info]: Loading existing DCA plans...
+2025-09-28 07:26:06 [info]: Querying plan events for ETH from block 36117599 to 36117609
+2025-09-28 07:26:06 [info]: Querying plan events for ERC20 from block 36117599 to 36117609
+2025-09-28 07:26:06 [error]: Failed to get plan events for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 01:56:06 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985f9f555d2f6042-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "bccedfd6-097b-40f7-a998-e7a4f3b0b4b2",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=qR4t6w_igIU7uKd6IlpCgcfNeed4qaza7CJVr_sBa3o-1759024566631-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":48,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x2271c5f, 0x2271c68]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x2271c5f\",\"toBlock\":\"latest\",\"address\":\"0x487ed8087dc66f32c5009244c2399702b4d81067\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":48,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:26:06 [warn]: Block range too large for ERC20, trying smaller range
+2025-09-28 07:26:06 [error]: Failed to get plan events for ETH
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 01:56:06 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985f9f5559e5a1ac-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "2f969353-7e55-470f-9ced-451ebc8da5b0",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=lN6B30y8Ab315A.yPbwOUh56NXpFPxknJtefwMhTZDI-1759024566632-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":47,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x2271c5f, 0x2271c68]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x2271c5f\",\"toBlock\":\"latest\",\"address\":\"0x5cbafae58f8722673026032d4975a85f79e1299f\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":47,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:26:06 [warn]: Block range too large for ETH, trying smaller range
+2025-09-28 07:26:07 [error]: Batch query also failed for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 01:56:07 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985f9f583d6fcdf6-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "f0e09f58-7198-45cd-ad4b-f08f59c61c8a",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=h0GRl32S4r5b_MWBQGWyBnGMTnKi.eaH27fScKZPL5o-1759024567098-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":55,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x22708e1, 0x22708ea]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x22708e1\",\"toBlock\":\"0x2271c69\",\"address\":\"0x487ed8087dc66f32c5009244c2399702b4d81067\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":55,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:26:07 [error]: Batch query also failed for ETH
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 01:56:07 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985f9f58cc7ca1ac-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "94acf153-4605-46de-8d4e-85a6e6fd9122",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=msFK_WES4KZELdzX12Br9LxeD3o8XiYD58cSlfeq4x0-1759024567191-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":56,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x22708e1, 0x22708ea]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x22708e1\",\"toBlock\":\"0x2271c69\",\"address\":\"0x5cbafae58f8722673026032d4975a85f79e1299f\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":56,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:26:07 [info]: Added wallet address to plan check: 0x0492D453e080Cb0f0b7D85533354589f62852d61
+2025-09-28 07:26:07 [info]: Checking plans for 1 addresses
+2025-09-28 07:26:07 [debug]: Checking plan for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ERC20
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ERC20",
+  "active": false,
+  "stable": "0x0000000000000000000000000000000000000000",
+  "amount": "0",
+  "interval": "0",
+  "nextExec": "0"
+}
+2025-09-28 07:26:07 [debug]: Plan not active for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ERC20
+2025-09-28 07:26:07 [debug]: Checking plan for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ETH
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "active": false,
+  "stable": "0x0000000000000000000000000000000000000000",
+  "amount": "0",
+  "interval": "0",
+  "nextExec": "0"
+}
+2025-09-28 07:26:58 [warn]: Invalid webhook signature
+{
+  "signature": "b69eff729c..."
+}
+2025-09-28 07:27:34 [info]: Webhook endpoint configured at /
+2025-09-28 07:27:34 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-28 07:27:34 [info]: Starting configuration validation...
+2025-09-28 07:27:34 [info]: Checking wallet health...
+2025-09-28 07:27:35 [info]: Wallet health check passed
+2025-09-28 07:27:35 [info]: Validating contract addresses...
+2025-09-28 07:27:35 [info]: Checking ethPlanner: 0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060
+2025-09-28 07:27:35 [info]: Checking erc20Planner: 0x487ed8087dC66F32c5009244C2399702b4D81067
+2025-09-28 07:27:35 [info]: Checking uniswapV3Router: 0x2626664c2603336E57B271c5C0b26F421741e481
+2025-09-28 07:27:35 [info]: Checking uniswapV3Factory: 0x1F98431c8aD98523631AE4a59f267346ea31F984
+2025-09-28 07:27:35 [info]: Checking usdc: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:27:35 [info]: Checking dai: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:27:35 [info]: Checking weth: 0x4200000000000000000000000000000000000006
+2025-09-28 07:27:35 [info]: Checking cbbtc: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+2025-09-28 07:27:35 [info]: All contract addresses validated
+2025-09-28 07:27:35 [info]: Testing blockchain connection...
+2025-09-28 07:27:35 [info]: Configuration validated successfully
+{
+  "latestBlock": 36117654,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "network": "base",
+  "chainId": 8453
+}
+2025-09-28 07:27:35 [info]: Checking for failed deposits to retry...
+2025-09-28 07:27:35 [info]: Starting retry of failed deposits
+2025-09-28 07:27:35 [info]: No deposits to retry
+2025-09-28 07:27:35 [info]: Starting event monitoring...
+2025-09-28 07:27:35 [info]: Webhooks are enabled, WebSocket monitoring will be disabled
+2025-09-28 07:27:35 [info]: Deposit detection will be handled via Alchemy address activity webhooks
+2025-09-28 07:27:35 [info]: Webhook endpoint: /
+2025-09-28 07:27:35 [info]: Monitoring USDC: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:27:35 [info]: Monitoring DAI: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:27:35 [info]: ETH Planner: 0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060
+2025-09-28 07:27:35 [info]: ERC20 Planner: 0x487ed8087dC66F32c5009244C2399702b4D81067
+2025-09-28 07:27:35 [info]: Starting plan scheduler...
+2025-09-28 07:27:35 [info]: Starting DCA plan scheduler...
+2025-09-28 07:27:35 [info]: Loading existing DCA plans...
+2025-09-28 07:27:35 [info]: Querying plan events for ETH from block 36117644 to 36117654
+2025-09-28 07:27:35 [info]: Querying plan events for ERC20 from block 36117644 to 36117654
+2025-09-28 07:27:36 [error]: Failed to get plan events for ETH
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 01:57:36 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fa18498bbfde7-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "0b42fe92-7aab-4478-bfa1-cf4c918a391f",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=LQyJy32uZA5FJd6hukgE6B7SDMk33qDwsWl9UanyHbw-1759024656124-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":47,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x2271c8c, 0x2271c95]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x2271c8c\",\"toBlock\":\"latest\",\"address\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":47,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:27:36 [warn]: Block range too large for ETH, trying smaller range
+2025-09-28 07:27:36 [error]: Failed to get plan events for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 01:57:36 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fa1849e1a3e53-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "2a2c624f-1f79-4dfc-89f1-0092261c3667",
+      "x-envoy-upstream-service-time": "2",
+      "set-cookie": "_cfuvid=m1_.c1Cllu0QyOXv.HhMQuqyKUH45H61SJRPaYjLkoo-1759024656130-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":48,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x2271c8c, 0x2271c95]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x2271c8c\",\"toBlock\":\"latest\",\"address\":\"0x487ed8087dc66f32c5009244c2399702b4d81067\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":48,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:27:36 [warn]: Block range too large for ERC20, trying smaller range
+2025-09-28 07:27:36 [error]: Batch query also failed for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 01:57:36 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fa18828163e53-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "25d2b6da-3bd2-4d98-a902-f6b83a701d44",
+      "x-envoy-upstream-service-time": "4",
+      "set-cookie": "_cfuvid=sN.56kbY9xF2WAiQPvUWmQa3GUFhvoQitaRC6FpIO.s-1759024656697-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":56,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x227090e, 0x2270917]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x227090e\",\"toBlock\":\"0x2271c96\",\"address\":\"0x487ed8087dc66f32c5009244c2399702b4d81067\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":56,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:27:36 [error]: Batch query also failed for ETH
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 01:57:36 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fa1881d5d3dcb-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "48b0f065-d79e-4efe-9531-f1fb0818780c",
+      "x-envoy-upstream-service-time": "2",
+      "set-cookie": "_cfuvid=sN.56kbY9xF2WAiQPvUWmQa3GUFhvoQitaRC6FpIO.s-1759024656697-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":55,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x227090e, 0x2270917]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x227090e\",\"toBlock\":\"0x2271c96\",\"address\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":55,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:27:36 [info]: Added wallet address to plan check: 0x0492D453e080Cb0f0b7D85533354589f62852d61
+2025-09-28 07:27:36 [info]: Checking plans for 1 addresses
+2025-09-28 07:27:37 [debug]: Checking plan for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ERC20
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ERC20",
+  "active": false,
+  "stable": "0x0000000000000000000000000000000000000000",
+  "amount": "0",
+  "interval": "0",
+  "nextExec": "0"
+}
+2025-09-28 07:27:37 [debug]: Plan not active for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ERC20
+2025-09-28 07:27:37 [debug]: Checking plan for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ETH
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "active": true,
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "100000",
+  "interval": "30",
+  "nextExec": "1759023713"
+}
+2025-09-28 07:32:31 [info]: Received SIGINT, starting graceful shutdown...
+2025-09-28 07:32:37 [info]: Webhook endpoint configured at /
+2025-09-28 07:32:37 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-28 07:32:37 [info]: Starting configuration validation...
+2025-09-28 07:32:37 [info]: Checking wallet health...
+2025-09-28 07:33:11 [info]: Wallet health check passed
+2025-09-28 07:33:11 [info]: Validating contract addresses...
+2025-09-28 07:33:11 [info]: Checking ethPlanner: 0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060
+2025-09-28 07:33:11 [info]: Checking erc20Planner: 0x2B7A919B1B1eFbbDCBb941d7e85e124bFBe0F146
+2025-09-28 07:33:11 [info]: Checking uniswapV3Router: 0x2626664c2603336E57B271c5C0b26F421741e481
+2025-09-28 07:33:11 [info]: Checking uniswapV3Factory: 0x33128a8fC17869897dcE68Ed026d694621f6FDfD
+2025-09-28 07:33:11 [info]: Checking usdc: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:33:11 [info]: Checking dai: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:33:11 [info]: Checking weth: 0x4200000000000000000000000000000000000006
+2025-09-28 07:33:11 [info]: Checking cbbtc: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+2025-09-28 07:33:11 [info]: All contract addresses validated
+2025-09-28 07:33:11 [info]: Testing blockchain connection...
+2025-09-28 07:33:11 [info]: Configuration validated successfully
+{
+  "latestBlock": 36117821,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "network": "base",
+  "chainId": 8453
+}
+2025-09-28 07:33:11 [info]: Checking for failed deposits to retry...
+2025-09-28 07:33:11 [info]: Starting retry of failed deposits
+2025-09-28 07:33:11 [info]: No deposits to retry
+2025-09-28 07:33:11 [info]: Starting event monitoring...
+2025-09-28 07:33:11 [info]: Webhooks are enabled, WebSocket monitoring will be disabled
+2025-09-28 07:33:11 [info]: Deposit detection will be handled via Alchemy address activity webhooks
+2025-09-28 07:33:11 [info]: Webhook endpoint: /
+2025-09-28 07:33:11 [info]: Monitoring USDC: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:33:11 [info]: Monitoring DAI: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:33:11 [info]: ETH Planner: 0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060
+2025-09-28 07:33:11 [info]: ERC20 Planner: 0x2B7A919B1B1eFbbDCBb941d7e85e124bFBe0F146
+2025-09-28 07:33:11 [info]: Starting plan scheduler...
+2025-09-28 07:33:11 [info]: Starting DCA plan scheduler...
+2025-09-28 07:33:11 [info]: Loading existing DCA plans...
+2025-09-28 07:33:11 [info]: Querying plan events for ETH from block 36117812 to 36117822
+2025-09-28 07:33:11 [info]: Querying plan events for ERC20 from block 36117812 to 36117822
+2025-09-28 07:33:13 [error]: Failed to get plan events for ETH
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:03:12 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fa9baaa1cfd85-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "db2f2c7f-f3a0-45c6-9e81-75009b0c55a2",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=49eA_hG7JZsBLt_i8P9ZkekvbPMJBkzqciMzcAW7KTQ-1759024992458-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":47,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x2271d34, 0x2271d3d]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x2271d34\",\"toBlock\":\"latest\",\"address\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":47,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:33:13 [warn]: Block range too large for ETH, trying smaller range
+2025-09-28 07:33:13 [error]: Failed to get plan events for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:03:12 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fa9baa9961e3f-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "4c98b45d-769e-4cab-be7b-6f014fd9abd3",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=Vy_AqU.LJg4.0bMK_zwtJS0_A6iWJ166Vm8WiLHCT3o-1759024992470-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":48,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x2271d34, 0x2271d3d]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x2271d34\",\"toBlock\":\"latest\",\"address\":\"0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":48,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:33:13 [warn]: Block range too large for ERC20, trying smaller range
+2025-09-28 07:33:16 [error]: Batch query also failed for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:03:14 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fa9c9df09f876-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "289bb0ec-2266-4435-b1b8-102a6ddd891b",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=zR92LZwfRvV9cmhTsWqFXXRvPR35PfzYeuKEvuRQXz4-1759024994873-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":55,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x22709b7, 0x22709c0]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x22709b7\",\"toBlock\":\"0x2271d3f\",\"address\":\"0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":55,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:33:16 [error]: Batch query also failed for ETH
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:03:15 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fa9cb59f51e3f-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "a19a8abf-6f8c-4407-bb9e-faf385006b3d",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=TPhQdBaK2mkx72AoApRKxwZLGnhiusTxZNsi9vyO1qM-1759024995118-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":54,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x22709b6, 0x22709bf]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x22709b6\",\"toBlock\":\"0x2271d3e\",\"address\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":54,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:33:16 [info]: Added wallet address to plan check: 0x0492D453e080Cb0f0b7D85533354589f62852d61
+2025-09-28 07:33:16 [info]: Checking plans for 1 addresses
+2025-09-28 07:33:17 [debug]: Checking plan for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ERC20
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ERC20",
+  "active": false,
+  "stable": "0x0000000000000000000000000000000000000000",
+  "amount": "0",
+  "interval": "0",
+  "nextExec": "0"
+}
+2025-09-28 07:33:17 [debug]: Plan not active for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ERC20
+2025-09-28 07:33:17 [debug]: Checking plan for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ETH
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "active": true,
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "100000",
+  "interval": "30",
+  "nextExec": "1759023713"
+}
+2025-09-28 07:33:17 [info]: Loaded user plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1",
+  "nextExecution": "2025-09-28T01:41:53.000Z"
+}
+2025-09-28 07:33:17 [info]: Loaded 1 active DCA plans
+2025-09-28 07:33:17 [info]: Event listeners set up for plan management
+2025-09-28 07:33:17 [info]: Cron job started with 30s interval
+2025-09-28 07:33:17 [info]: DCA plan scheduler started successfully
+2025-09-28 07:33:17 [info]: DCA Watcher Service running on port 3001
+2025-09-28 07:33:17 [info]: Services started successfully:
+{
+  "eventMonitor": true,
+  "planScheduler": true,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61"
+}
+2025-09-28 07:33:30 [info]: Found 1 plans due for execution
+2025-09-28 07:33:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:33:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:34:00 [info]: Found 1 plans due for execution
+2025-09-28 07:34:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:34:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:34:30 [info]: Found 1 plans due for execution
+2025-09-28 07:34:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:34:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:35:00 [info]: Found 1 plans due for execution
+2025-09-28 07:35:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:35:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:35:15 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "missing revert data in call exception; Transaction reverted without a reason string",
+    "code": "CALL_EXCEPTION",
+    "data": "0x",
+    "transaction": {
+      "to": "0x4200000000000000000000000000000000000006",
+      "data": "0x06fdde03",
+      "accessList": null
+    },
+    "error": {
+      "reason": "missing response",
+      "code": "SERVER_ERROR",
+      "requestBody": "{\"method\":\"eth_call\",\"params\":[{\"to\":\"0x4200000000000000000000000000000000000006\",\"data\":\"0x06fdde03\"},\"latest\"],\"id\":55,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "serverError": {
+        "errno": -60,
+        "code": "ETIMEDOUT",
+        "syscall": "read"
+      },
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    }
+  }
+}
+2025-09-28 07:35:15 [info]: Constructing fallback route
+2025-09-28 07:35:15 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:35:24 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "missing revert data in call exception; Transaction reverted without a reason string",
+    "code": "CALL_EXCEPTION",
+    "data": "0x",
+    "transaction": {
+      "to": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "data": "0x313ce567",
+      "accessList": null
+    },
+    "error": {
+      "reason": "missing response",
+      "code": "SERVER_ERROR",
+      "requestBody": "{\"method\":\"eth_call\",\"params\":[{\"to\":\"0x833589fcd6edb6e08f4c7c32d4f71b54bda02913\",\"data\":\"0x313ce567\"},\"latest\"],\"id\":63,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "serverError": {
+        "errno": -60,
+        "code": "ETIMEDOUT",
+        "syscall": "read"
+      },
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    }
+  }
+}
+2025-09-28 07:35:24 [info]: Constructing fallback route
+2025-09-28 07:35:24 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:35:30 [info]: Found 1 plans due for execution
+2025-09-28 07:35:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:35:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:36:00 [info]: Found 1 plans due for execution
+2025-09-28 07:36:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:36:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:36:30 [info]: Found 1 plans due for execution
+2025-09-28 07:36:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:36:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:37:00 [info]: Found 1 plans due for execution
+2025-09-28 07:37:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:37:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:37:02 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "missing revert data in call exception; Transaction reverted without a reason string",
+    "code": "CALL_EXCEPTION",
+    "data": "0x",
+    "transaction": {
+      "to": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "data": "0x95d89b41",
+      "accessList": null
+    },
+    "error": {
+      "reason": "timeout",
+      "code": "TIMEOUT",
+      "requestBody": "{\"method\":\"eth_call\",\"params\":[{\"to\":\"0x833589fcd6edb6e08f4c7c32d4f71b54bda02913\",\"data\":\"0x95d89b41\"},\"latest\"],\"id\":59,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "timeout": 120000,
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    }
+  }
+}
+2025-09-28 07:37:02 [info]: Constructing fallback route
+2025-09-28 07:37:02 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:37:30 [info]: Found 1 plans due for execution
+2025-09-28 07:37:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:37:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:37:39 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:37:39 [info]: Constructing fallback route
+2025-09-28 07:37:39 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:38:00 [info]: Found 1 plans due for execution
+2025-09-28 07:38:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:38:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:38:00 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:38:00 [info]: Constructing fallback route
+2025-09-28 07:38:00 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:38:30 [info]: Found 1 plans due for execution
+2025-09-28 07:38:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:38:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:38:30 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:38:30 [info]: Constructing fallback route
+2025-09-28 07:38:30 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:39:00 [info]: Found 1 plans due for execution
+2025-09-28 07:39:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:39:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:39:00 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:39:00 [info]: Constructing fallback route
+2025-09-28 07:39:00 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:39:30 [info]: Found 1 plans due for execution
+2025-09-28 07:39:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:39:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:39:30 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:39:30 [info]: Constructing fallback route
+2025-09-28 07:39:30 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:40:00 [info]: Found 1 plans due for execution
+2025-09-28 07:40:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:40:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:40:00 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:40:00 [info]: Constructing fallback route
+2025-09-28 07:40:00 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:40:15 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:40:15 [info]: Constructing fallback route
+2025-09-28 07:40:15 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:40:30 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:40:30 [info]: Constructing fallback route
+2025-09-28 07:40:30 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:40:30 [info]: Found 1 plans due for execution
+2025-09-28 07:40:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:40:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:40:30 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:40:30 [info]: Constructing fallback route
+2025-09-28 07:40:30 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:41:00 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:41:00 [info]: Constructing fallback route
+2025-09-28 07:41:00 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:41:00 [info]: Found 1 plans due for execution
+2025-09-28 07:41:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:41:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:41:30 [info]: Found 1 plans due for execution
+2025-09-28 07:41:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:41:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:42:00 [info]: Found 1 plans due for execution
+2025-09-28 07:42:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:42:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:42:15 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:42:15 [info]: Constructing fallback route
+2025-09-28 07:42:15 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:42:30 [info]: Found 1 plans due for execution
+2025-09-28 07:42:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:42:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:42:45 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:42:45 [info]: Constructing fallback route
+2025-09-28 07:42:45 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:43:30 [info]: Found 1 plans due for execution
+2025-09-28 07:43:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:43:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:44:30 [info]: Found 1 plans due for execution
+2025-09-28 07:44:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:44:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:44:30 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:44:30 [info]: Constructing fallback route
+2025-09-28 07:44:30 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:45:30 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:45:30 [info]: Constructing fallback route
+2025-09-28 07:45:30 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:45:30 [info]: Found 1 plans due for execution
+2025-09-28 07:45:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:45:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:47:37 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:47:37 [info]: Constructing fallback route
+2025-09-28 07:47:37 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:47:37 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:47:37 [info]: Constructing fallback route
+2025-09-28 07:47:37 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:47:37 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "could not detect network",
+    "code": "NETWORK_ERROR",
+    "event": "noNetwork"
+  }
+}
+2025-09-28 07:47:37 [info]: Constructing fallback route
+2025-09-28 07:47:37 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:51:11 [error]: Failed to find optimal route
+{
+  "error": {
+    "reason": "missing revert data in call exception; Transaction reverted without a reason string",
+    "code": "CALL_EXCEPTION",
+    "data": "0x",
+    "transaction": {
+      "to": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "data": "0x95d89b41",
+      "accessList": null
+    },
+    "error": {
+      "reason": "timeout",
+      "code": "TIMEOUT",
+      "requestBody": "{\"method\":\"eth_call\",\"params\":[{\"to\":\"0x833589fcd6edb6e08f4c7c32d4f71b54bda02913\",\"data\":\"0x95d89b41\"},\"latest\"],\"id\":103,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "timeout": 120000,
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    }
+  }
+}
+2025-09-28 07:51:11 [info]: Constructing fallback route
+2025-09-28 07:51:11 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:54:00 [info]: Found 1 plans due for execution
+2025-09-28 07:54:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:54:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:54:30 [info]: Found 1 plans due for execution
+2025-09-28 07:54:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:54:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:54:53 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 07:54:53 [info]: Constructing fallback route
+2025-09-28 07:54:53 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:54:57 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 07:54:57 [info]: Constructing fallback route
+2025-09-28 07:54:57 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:54:59 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 07:54:59 [info]: Constructing fallback route
+2025-09-28 07:54:59 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:55:00 [info]: Found 1 plans due for execution
+2025-09-28 07:55:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:55:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:55:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 07:55:04 [info]: Constructing fallback route
+2025-09-28 07:55:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:55:30 [info]: Found 1 plans due for execution
+2025-09-28 07:55:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:55:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:55:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 07:55:34 [info]: Constructing fallback route
+2025-09-28 07:55:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:56:00 [info]: Found 1 plans due for execution
+2025-09-28 07:56:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:56:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:56:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 07:56:04 [info]: Constructing fallback route
+2025-09-28 07:56:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 07:56:29 [info]: Received SIGINT, starting graceful shutdown...
+2025-09-28 07:59:27 [info]: Webhook endpoint configured at /
+2025-09-28 07:59:27 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-28 07:59:27 [info]: Starting configuration validation...
+2025-09-28 07:59:27 [info]: Checking wallet health...
+2025-09-28 07:59:28 [info]: Wallet health check passed
+2025-09-28 07:59:28 [info]: Validating contract addresses...
+2025-09-28 07:59:28 [info]: Checking ethPlanner: 0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060
+2025-09-28 07:59:28 [info]: Checking erc20Planner: 0x2B7A919B1B1eFbbDCBb941d7e85e124bFBe0F146
+2025-09-28 07:59:28 [info]: Checking uniswapV3Router: 0x2626664c2603336E57B271c5C0b26F421741e481
+2025-09-28 07:59:28 [info]: Checking uniswapV3Factory: 0x33128a8fC17869897dcE68Ed026d694621f6FDfD
+2025-09-28 07:59:28 [info]: Checking usdc: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:59:28 [info]: Checking dai: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:59:28 [info]: Checking weth: 0x4200000000000000000000000000000000000006
+2025-09-28 07:59:28 [info]: Checking cbbtc: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+2025-09-28 07:59:28 [info]: All contract addresses validated
+2025-09-28 07:59:28 [info]: Testing blockchain connection...
+2025-09-28 07:59:28 [info]: Configuration validated successfully
+{
+  "latestBlock": 36118610,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "network": "base",
+  "chainId": 8453
+}
+2025-09-28 07:59:28 [info]: Checking for failed deposits to retry...
+2025-09-28 07:59:28 [info]: Starting retry of failed deposits
+2025-09-28 07:59:28 [info]: No deposits to retry
+2025-09-28 07:59:28 [info]: Starting event monitoring...
+2025-09-28 07:59:28 [info]: Webhooks are enabled, WebSocket monitoring will be disabled
+2025-09-28 07:59:28 [info]: Deposit detection will be handled via Alchemy address activity webhooks
+2025-09-28 07:59:28 [info]: Webhook endpoint: /
+2025-09-28 07:59:28 [info]: Monitoring USDC: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 07:59:28 [info]: Monitoring DAI: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 07:59:28 [info]: ETH Planner: 0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060
+2025-09-28 07:59:28 [info]: ERC20 Planner: 0x2B7A919B1B1eFbbDCBb941d7e85e124bFBe0F146
+2025-09-28 07:59:28 [info]: Starting plan scheduler...
+2025-09-28 07:59:28 [info]: Starting DCA plan scheduler...
+2025-09-28 07:59:28 [info]: Loading existing DCA plans...
+2025-09-28 07:59:28 [info]: Querying plan events for ETH from block 36118600 to 36118610
+2025-09-28 07:59:28 [info]: Querying plan events for ERC20 from block 36118600 to 36118610
+2025-09-28 07:59:29 [error]: Failed to get plan events for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:29:29 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fd03a6ffece5a-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "08ccb5c6-452a-476c-95a7-8d3cc5c086e0",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=VQVS4P7k.kjINKBbAItvnbu7WcEHnRQWqItsMqCy2ds-1759026569367-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":48,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x2272048, 0x2272051]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x2272048\",\"toBlock\":\"latest\",\"address\":\"0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":48,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:59:29 [warn]: Block range too large for ERC20, trying smaller range
+2025-09-28 07:59:29 [error]: Failed to get plan events for ETH
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:29:29 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fd03a690b3dbd-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "d38f221b-0ed7-48a3-8536-c49e0517c7ab",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=w69dmNLLhXoID_IbJhQErG0kTJrbfXZhSM50lauouTI-1759026569371-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":47,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x2272048, 0x2272051]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x2272048\",\"toBlock\":\"latest\",\"address\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":47,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:59:29 [warn]: Block range too large for ETH, trying smaller range
+2025-09-28 07:59:29 [error]: Batch query also failed for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:29:29 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fd03dba49895e-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "acda5a1b-c3b5-4fb6-84aa-d93c48787c65",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=8KLcRfXk6k8ZSH2vZcZxGlWUFjeAd.qEk2jRkZ64YfI-1759026569894-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":53,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x2270ccb, 0x2270cd4]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x2270ccb\",\"toBlock\":\"0x2272053\",\"address\":\"0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":53,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:59:29 [error]: Batch query also failed for ETH
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:29:29 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985fd03dbb2c3dbd-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "2eeb0c70-bc9f-4e41-be11-852a28ebfa40",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=kyXsPkNuUqclsp2vKgZzVv8LOm0eILIUcntFddmblpU-1759026569896-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":54,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x2270ccb, 0x2270cd4]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x2270ccb\",\"toBlock\":\"0x2272053\",\"address\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":54,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 07:59:29 [info]: Added wallet address to plan check: 0x0492D453e080Cb0f0b7D85533354589f62852d61
+2025-09-28 07:59:29 [info]: Checking plans for 1 addresses
+2025-09-28 07:59:30 [debug]: Checking plan for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ERC20
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ERC20",
+  "active": false,
+  "stable": "0x0000000000000000000000000000000000000000",
+  "amount": "0",
+  "interval": "0",
+  "nextExec": "0"
+}
+2025-09-28 07:59:30 [debug]: Plan not active for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ERC20
+2025-09-28 07:59:30 [debug]: Checking plan for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ETH
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "active": true,
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "100000",
+  "interval": "30",
+  "nextExec": "1759023713"
+}
+2025-09-28 07:59:30 [info]: Loaded user plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1",
+  "nextExecution": "2025-09-28T01:41:53.000Z"
+}
+2025-09-28 07:59:30 [info]: Loaded 1 active DCA plans
+2025-09-28 07:59:30 [info]: Event listeners set up for plan management
+2025-09-28 07:59:30 [info]: Found 1 plans due for execution
+2025-09-28 07:59:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 07:59:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 07:59:30 [info]: Cron job started with 30s interval
+2025-09-28 07:59:30 [info]: DCA plan scheduler started successfully
+2025-09-28 07:59:30 [info]: DCA Watcher Service running on port 3001
+2025-09-28 07:59:30 [info]: Services started successfully:
+{
+  "eventMonitor": true,
+  "planScheduler": true,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61"
+}
+2025-09-28 07:59:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 07:59:34 [info]: Constructing fallback route
+2025-09-28 07:59:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:00:00 [info]: Found 1 plans due for execution
+2025-09-28 08:00:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:00:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:00:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:00:04 [info]: Constructing fallback route
+2025-09-28 08:00:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:00:24 [info]: Processing address activity webhook
+{
+  "webhookId": "wh_qhgtb68ly2rodeby",
+  "event": {
+    "network": "BASE_MAINNET",
+    "activity": [
+      {
+        "fromAddress": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+        "toAddress": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146",
+        "blockNum": "0x227206e",
+        "hash": "0xaf33be008061a98bab58f463d60dabe3f742c42cfbc08e5b449a22b100515fb4",
+        "value": 0.4,
+        "asset": "USDC",
+        "category": "token",
+        "rawContract": {
+          "rawValue": "0x0000000000000000000000000000000000000000000000000000000000061a80",
+          "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "decimals": 6
+        },
+        "log": {
+          "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000002acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+            "0x0000000000000000000000002b7a919b1b1efbbdcbb941d7e85e124bfbe0f146"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000061a80",
+          "blockHash": "0x56c5485e3bc895eeb620d9803b6039d2429e66a35168b88d5e851619d7715a89",
+          "blockNumber": "0x227206e",
+          "blockTimestamp": "0x68d89dbf",
+          "transactionHash": "0xaf33be008061a98bab58f463d60dabe3f742c42cfbc08e5b449a22b100515fb4",
+          "transactionIndex": "0x193",
+          "logIndex": "0x29a",
+          "removed": false
+        }
+      }
+    ],
+    "source": "chainlake-kafka"
+  }
+}
+2025-09-28 08:00:24 [info]: Found activity data
+{
+  "activityCount": 1
+}
+2025-09-28 08:00:24 [info]: USDC deposit detected via webhook
+{
+  "from": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "to": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146",
+  "amount": "0.4",
+  "txHash": "0xaf33be008061a98bab58f463d60dabe3f742c42cfbc08e5b449a22b100515fb4",
+  "blockNumber": 36118638
+}
+2025-09-28 08:00:24 [info]: Processing deposit event
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "amount": "400000",
+  "plannerContract": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146"
+}
+2025-09-28 08:00:24 [info]: Starting deposit swap execution
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "amount": "400000",
+  "plannerContract": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146"
+}
+2025-09-28 08:00:24 [info]: Waiting for 1 confirmations
+{
+  "txHash": "0xaf33be008061a98bab58f463d60dabe3f742c42cfbc08e5b449a22b100515fb4"
+}
+2025-09-28 08:00:25 [info]: Transaction confirmed with 1 confirmations
+{
+  "txHash": "0xaf33be008061a98bab58f463d60dabe3f742c42cfbc08e5b449a22b100515fb4",
+  "blockNumber": 36118638
+}
+2025-09-28 08:00:25 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "tokenOut": "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf",
+  "amountIn": "0.4",
+  "slippageTolerance": 50
+}
+2025-09-28 08:00:30 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:00:30 [info]: Constructing fallback route
+2025-09-28 08:00:30 [info]: Fetching price for USDC
+{
+  "priceId": "0xeaa020c61cc479712813461ce153894a96a6c00b21ed0cfc2798d1f9a9e9c94a"
+}
+2025-09-28 08:00:30 [info]: Found 1 plans due for execution
+2025-09-28 08:00:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:00:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:00:30 [info]: Processing address activity webhook
+{
+  "webhookId": "wh_qhgtb68ly2rodeby",
+  "event": {
+    "network": "BASE_MAINNET",
+    "activity": [
+      {
+        "fromAddress": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+        "toAddress": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146",
+        "blockNum": "0x227206e",
+        "hash": "0xaf33be008061a98bab58f463d60dabe3f742c42cfbc08e5b449a22b100515fb4",
+        "value": 0.4,
+        "asset": "USDC",
+        "category": "token",
+        "rawContract": {
+          "rawValue": "0x0000000000000000000000000000000000000000000000000000000000061a80",
+          "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "decimals": 6
+        },
+        "log": {
+          "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000002acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+            "0x0000000000000000000000002b7a919b1b1efbbdcbb941d7e85e124bfbe0f146"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000061a80",
+          "blockHash": "0x56c5485e3bc895eeb620d9803b6039d2429e66a35168b88d5e851619d7715a89",
+          "blockNumber": "0x227206e",
+          "blockTimestamp": "0x68d89dbf",
+          "transactionHash": "0xaf33be008061a98bab58f463d60dabe3f742c42cfbc08e5b449a22b100515fb4",
+          "transactionIndex": "0x193",
+          "logIndex": "0x29a",
+          "removed": false
+        }
+      }
+    ],
+    "source": "chainlake-kafka"
+  }
+}
+2025-09-28 08:00:30 [info]: Found activity data
+{
+  "activityCount": 1
+}
+2025-09-28 08:00:30 [info]: USDC deposit detected via webhook
+{
+  "from": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "to": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146",
+  "amount": "0.4",
+  "txHash": "0xaf33be008061a98bab58f463d60dabe3f742c42cfbc08e5b449a22b100515fb4",
+  "blockNumber": 36118638
+}
+2025-09-28 08:00:30 [info]: Processing deposit event
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "amount": "400000",
+  "plannerContract": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146"
+}
+2025-09-28 08:00:30 [info]: Starting deposit swap execution
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "amount": "400000",
+  "plannerContract": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146"
+}
+2025-09-28 08:00:30 [info]: Ignoring older deposit, newer one already pending
+{
+  "existingBlock": 36118638,
+  "newBlock": 36118638,
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "token": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+}
+2025-09-28 08:00:30 [error]: Deposit swap failed
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "error": "Newer deposit already pending for this user+token combination"
+}
+2025-09-28 08:00:31 [info]: Retrieved price for USDC
+{
+  "price": 0.99977243,
+  "confidence": 0.00077428,
+  "publishTime": 1759026629
+}
+2025-09-28 08:00:31 [info]: Fetching price for BTC
+{
+  "priceId": "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43"
+}
+2025-09-28 08:00:31 [info]: Retrieved price for BTC
+{
+  "price": 109561.60162679,
+  "confidence": 28.78162678,
+  "publishTime": 1759026629
+}
+2025-09-28 08:00:31 [info]: Calculated minimum amount out
+{
+  "tokenInSymbol": "USDC",
+  "tokenOutSymbol": "CBBTC",
+  "amountInUSD": 0.39990897200000003,
+  "outputTokenPrice": 109561.60162679,
+  "expectedOutputAmount": 0.0000036500832961738514,
+  "slippageBps": 50,
+  "minAmountOut": 0.0000036318328796929823,
+  "outputTokenDecimals": 8,
+  "minAmountOutInTokenUnits": "363.18328796929825"
+}
+2025-09-28 08:00:31 [info]: Calculated minimum amount out with price feed
+{
+  "tokenIn": "USDC",
+  "tokenOut": "CBBTC",
+  "amountIn": "0.4",
+  "amountInUSD": 0.39990897200000003,
+  "slippageBps": 50,
+  "minAmountOut": "363"
+}
+2025-09-28 08:00:34 [info]: Multi-hop swap transaction sent
+{
+  "txHash": "0xb8724f93aa7b78b297cc5c3e43349e927ebf82eed8ee2fe8777ab6c9ba9d477c",
+  "gasEstimate": "318646"
+}
+2025-09-28 08:00:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:00:34 [info]: Constructing fallback route
+2025-09-28 08:00:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:00:34 [info]: Deposit swap execution completed
+{
+  "success": true,
+  "txHash": "0xb8724f93aa7b78b297cc5c3e43349e927ebf82eed8ee2fe8777ab6c9ba9d477c",
+  "outputAmount": "363",
+  "gasUsed": "253165"
+}
+2025-09-28 08:00:34 [info]: Deposit swap completed successfully
+{
+  "user": "0x2acdf6a2f893687ccd341a1ad7e27102b665d8c4",
+  "txHash": "0xb8724f93aa7b78b297cc5c3e43349e927ebf82eed8ee2fe8777ab6c9ba9d477c",
+  "outputAmount": "363",
+  "gasUsed": "253165"
+}
+2025-09-28 08:00:36 [info]: Processing address activity webhook
+{
+  "webhookId": "wh_qhgtb68ly2rodeby",
+  "event": {
+    "network": "BASE_MAINNET",
+    "activity": [
+      {
+        "fromAddress": "0x0492d453e080cb0f0b7d85533354589f62852d61",
+        "toAddress": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146",
+        "blockNum": "0x2272074",
+        "hash": "0xb8724f93aa7b78b297cc5c3e43349e927ebf82eed8ee2fe8777ab6c9ba9d477c",
+        "value": 0,
+        "asset": "ETH",
+        "category": "external",
+        "rawContract": {
+          "rawValue": "0x0",
+          "decimals": 18
+        }
+      }
+    ],
+    "source": "chainlake-kafka"
+  }
+}
+2025-09-28 08:00:36 [info]: Found activity data
+{
+  "activityCount": 1
+}
+2025-09-28 08:00:36 [info]: Processing address activity webhook
+{
+  "webhookId": "wh_qhgtb68ly2rodeby",
+  "event": {
+    "network": "BASE_MAINNET",
+    "activity": [
+      {
+        "fromAddress": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146",
+        "toAddress": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "blockNum": "0x2272074",
+        "hash": "0xb8724f93aa7b78b297cc5c3e43349e927ebf82eed8ee2fe8777ab6c9ba9d477c",
+        "value": 0,
+        "typeTraceAddress": "CALL_0",
+        "asset": "ETH",
+        "category": "internal",
+        "rawContract": {
+          "rawValue": "0x0",
+          "decimals": 18
+        }
+      },
+      {
+        "fromAddress": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146",
+        "toAddress": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "blockNum": "0x2272074",
+        "hash": "0xb8724f93aa7b78b297cc5c3e43349e927ebf82eed8ee2fe8777ab6c9ba9d477c",
+        "value": 0,
+        "typeTraceAddress": "CALL_1",
+        "asset": "ETH",
+        "category": "internal",
+        "rawContract": {
+          "rawValue": "0x0",
+          "decimals": 18
+        }
+      },
+      {
+        "fromAddress": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146",
+        "toAddress": "0x2626664c2603336e57b271c5c0b26f421741e481",
+        "blockNum": "0x2272074",
+        "hash": "0xb8724f93aa7b78b297cc5c3e43349e927ebf82eed8ee2fe8777ab6c9ba9d477c",
+        "value": 0,
+        "typeTraceAddress": "CALL_2",
+        "asset": "ETH",
+        "category": "internal",
+        "rawContract": {
+          "rawValue": "0x0",
+          "decimals": 18
+        }
+      },
+      {
+        "fromAddress": "0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146",
+        "toAddress": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+        "blockNum": "0x2272074",
+        "hash": "0xb8724f93aa7b78b297cc5c3e43349e927ebf82eed8ee2fe8777ab6c9ba9d477c",
+        "value": 0,
+        "typeTraceAddress": "CALL_3",
+        "asset": "ETH",
+        "category": "internal",
+        "rawContract": {
+          "rawValue": "0x0",
+          "decimals": 18
+        }
+      }
+    ]
+  }
+}
+2025-09-28 08:00:36 [info]: Found activity data
+{
+  "activityCount": 4
+}
+2025-09-28 08:00:36 [warn]: Invalid webhook signature
+{
+  "signature": "dfd130f79a..."
+}
+2025-09-28 08:01:00 [info]: Found 1 plans due for execution
+2025-09-28 08:01:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:01:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:01:03 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:01:03 [info]: Constructing fallback route
+2025-09-28 08:01:03 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:01:30 [info]: Found 1 plans due for execution
+2025-09-28 08:01:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:01:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:01:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:01:34 [info]: Constructing fallback route
+2025-09-28 08:01:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:02:00 [info]: Found 1 plans due for execution
+2025-09-28 08:02:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:02:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:02:02 [warn]: Invalid webhook signature
+{
+  "signature": "dfd130f79a..."
+}
+2025-09-28 08:02:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:02:04 [info]: Constructing fallback route
+2025-09-28 08:02:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:02:30 [info]: Found 1 plans due for execution
+2025-09-28 08:02:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:02:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:02:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:02:34 [info]: Constructing fallback route
+2025-09-28 08:02:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:03:00 [info]: Found 1 plans due for execution
+2025-09-28 08:03:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:03:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:03:02 [warn]: Invalid webhook signature
+{
+  "signature": "dfd130f79a..."
+}
+2025-09-28 08:03:08 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:03:08 [info]: Constructing fallback route
+2025-09-28 08:03:08 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:03:30 [info]: Found 1 plans due for execution
+2025-09-28 08:03:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:03:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:03:36 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:03:36 [info]: Constructing fallback route
+2025-09-28 08:03:36 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:04:00 [info]: Found 1 plans due for execution
+2025-09-28 08:04:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:04:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:04:03 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:04:03 [info]: Constructing fallback route
+2025-09-28 08:04:03 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:04:30 [info]: Found 1 plans due for execution
+2025-09-28 08:04:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:04:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:04:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:04:34 [info]: Constructing fallback route
+2025-09-28 08:04:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:05:00 [info]: Found 1 plans due for execution
+2025-09-28 08:05:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:05:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:05:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:05:04 [info]: Constructing fallback route
+2025-09-28 08:05:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:05:30 [info]: Found 1 plans due for execution
+2025-09-28 08:05:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:05:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:05:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:05:34 [info]: Constructing fallback route
+2025-09-28 08:05:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:06:00 [info]: Found 1 plans due for execution
+2025-09-28 08:06:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:06:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:06:03 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:06:03 [info]: Constructing fallback route
+2025-09-28 08:06:03 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:06:30 [info]: Found 1 plans due for execution
+2025-09-28 08:06:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:06:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:06:35 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:06:35 [info]: Constructing fallback route
+2025-09-28 08:06:35 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:07:00 [info]: Found 1 plans due for execution
+2025-09-28 08:07:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:07:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:07:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:07:04 [info]: Constructing fallback route
+2025-09-28 08:07:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:07:30 [info]: Found 1 plans due for execution
+2025-09-28 08:07:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:07:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:07:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:07:34 [info]: Constructing fallback route
+2025-09-28 08:07:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:08:00 [info]: Found 1 plans due for execution
+2025-09-28 08:08:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:08:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:08:05 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:08:05 [info]: Constructing fallback route
+2025-09-28 08:08:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:08:30 [info]: Found 1 plans due for execution
+2025-09-28 08:08:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:08:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:08:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:08:34 [info]: Constructing fallback route
+2025-09-28 08:08:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:09:00 [info]: Found 1 plans due for execution
+2025-09-28 08:09:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:09:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:09:05 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:09:05 [info]: Constructing fallback route
+2025-09-28 08:09:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:09:30 [info]: Found 1 plans due for execution
+2025-09-28 08:09:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:09:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:09:35 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:09:35 [info]: Constructing fallback route
+2025-09-28 08:09:35 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:10:00 [info]: Found 1 plans due for execution
+2025-09-28 08:10:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:10:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:10:05 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:10:05 [info]: Constructing fallback route
+2025-09-28 08:10:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:10:30 [info]: Found 1 plans due for execution
+2025-09-28 08:10:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:10:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:10:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:10:34 [info]: Constructing fallback route
+2025-09-28 08:10:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:11:00 [info]: Found 1 plans due for execution
+2025-09-28 08:11:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:11:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:11:05 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:11:05 [info]: Constructing fallback route
+2025-09-28 08:11:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:11:30 [info]: Found 1 plans due for execution
+2025-09-28 08:11:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:11:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:11:35 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:11:35 [info]: Constructing fallback route
+2025-09-28 08:11:35 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:12:00 [info]: Found 1 plans due for execution
+2025-09-28 08:12:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:12:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:12:05 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:12:05 [info]: Constructing fallback route
+2025-09-28 08:12:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:12:30 [info]: Found 1 plans due for execution
+2025-09-28 08:12:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:12:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:12:33 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:12:33 [info]: Constructing fallback route
+2025-09-28 08:12:33 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:13:00 [info]: Found 1 plans due for execution
+2025-09-28 08:13:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:13:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:13:03 [warn]: Invalid webhook signature
+{
+  "signature": "dfd130f79a..."
+}
+2025-09-28 08:13:03 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:13:03 [info]: Constructing fallback route
+2025-09-28 08:13:03 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:13:30 [info]: Found 1 plans due for execution
+2025-09-28 08:13:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:13:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:13:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:13:34 [info]: Constructing fallback route
+2025-09-28 08:13:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:14:00 [info]: Found 1 plans due for execution
+2025-09-28 08:14:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:14:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:14:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:14:04 [info]: Constructing fallback route
+2025-09-28 08:14:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:14:30 [info]: Found 1 plans due for execution
+2025-09-28 08:14:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:14:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:14:36 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:14:36 [info]: Constructing fallback route
+2025-09-28 08:14:36 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:15:00 [info]: Found 1 plans due for execution
+2025-09-28 08:15:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:15:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:15:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:15:04 [info]: Constructing fallback route
+2025-09-28 08:15:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:15:30 [info]: Found 1 plans due for execution
+2025-09-28 08:15:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:15:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:15:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:15:34 [info]: Constructing fallback route
+2025-09-28 08:15:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:16:00 [info]: Found 1 plans due for execution
+2025-09-28 08:16:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:16:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:16:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:16:04 [info]: Constructing fallback route
+2025-09-28 08:16:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:16:30 [info]: Found 1 plans due for execution
+2025-09-28 08:16:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:16:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:16:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:16:34 [info]: Constructing fallback route
+2025-09-28 08:16:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:17:00 [info]: Found 1 plans due for execution
+2025-09-28 08:17:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:17:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:17:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:17:04 [info]: Constructing fallback route
+2025-09-28 08:17:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:17:30 [info]: Found 1 plans due for execution
+2025-09-28 08:17:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:17:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:17:35 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:17:35 [info]: Constructing fallback route
+2025-09-28 08:17:35 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:18:00 [info]: Found 1 plans due for execution
+2025-09-28 08:18:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:18:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:18:05 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:18:05 [info]: Constructing fallback route
+2025-09-28 08:18:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:18:30 [info]: Found 1 plans due for execution
+2025-09-28 08:18:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:18:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:18:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:18:34 [info]: Constructing fallback route
+2025-09-28 08:18:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:19:00 [info]: Found 1 plans due for execution
+2025-09-28 08:19:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:19:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:19:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:19:04 [info]: Constructing fallback route
+2025-09-28 08:19:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:19:30 [info]: Found 1 plans due for execution
+2025-09-28 08:19:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:19:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:19:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:19:34 [info]: Constructing fallback route
+2025-09-28 08:19:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:20:00 [info]: Found 1 plans due for execution
+2025-09-28 08:20:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:20:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:20:03 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:20:03 [info]: Constructing fallback route
+2025-09-28 08:20:03 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:20:30 [info]: Found 1 plans due for execution
+2025-09-28 08:20:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:20:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:20:35 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:20:35 [info]: Constructing fallback route
+2025-09-28 08:20:35 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:21:00 [info]: Found 1 plans due for execution
+2025-09-28 08:21:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:21:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:21:03 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:21:03 [info]: Constructing fallback route
+2025-09-28 08:21:03 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:21:30 [info]: Found 1 plans due for execution
+2025-09-28 08:21:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:21:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:21:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:21:34 [info]: Constructing fallback route
+2025-09-28 08:21:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:22:00 [info]: Found 1 plans due for execution
+2025-09-28 08:22:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:22:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:22:05 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:22:05 [info]: Constructing fallback route
+2025-09-28 08:22:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:22:30 [info]: Found 1 plans due for execution
+2025-09-28 08:22:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:22:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:22:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:22:34 [info]: Constructing fallback route
+2025-09-28 08:22:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:23:00 [info]: Found 1 plans due for execution
+2025-09-28 08:23:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:23:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:23:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:23:04 [info]: Constructing fallback route
+2025-09-28 08:23:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:23:30 [info]: Found 1 plans due for execution
+2025-09-28 08:23:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:23:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:23:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:23:34 [info]: Constructing fallback route
+2025-09-28 08:23:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:24:00 [info]: Found 1 plans due for execution
+2025-09-28 08:24:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:24:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:24:05 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:24:05 [info]: Constructing fallback route
+2025-09-28 08:24:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:24:30 [info]: Found 1 plans due for execution
+2025-09-28 08:24:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:24:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:24:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:24:34 [info]: Constructing fallback route
+2025-09-28 08:24:34 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:25:00 [info]: Found 1 plans due for execution
+2025-09-28 08:25:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:25:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:25:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:25:04 [info]: Constructing fallback route
+2025-09-28 08:25:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:25:30 [info]: Found 1 plans due for execution
+2025-09-28 08:25:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:25:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:25:35 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:25:35 [info]: Constructing fallback route
+2025-09-28 08:25:35 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:26:00 [info]: Found 1 plans due for execution
+2025-09-28 08:26:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:26:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:26:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:26:04 [info]: Constructing fallback route
+2025-09-28 08:26:04 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:26:30 [info]: Found 1 plans due for execution
+2025-09-28 08:26:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:26:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:26:35 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:26:35 [info]: Constructing fallback route
+2025-09-28 08:26:35 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "sending a transaction requires a signer",
+    "code": "UNSUPPORTED_OPERATION",
+    "operation": "sendTransaction"
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:26:59 [info]: Received SIGINT, starting graceful shutdown...
+2025-09-28 08:27:46 [info]: Webhook endpoint configured at /
+2025-09-28 08:27:46 [info]: Starting DCA Watcher Service
+{
+  "network": "base",
+  "chainId": 8453,
+  "port": 3001
+}
+2025-09-28 08:27:46 [info]: Starting configuration validation...
+2025-09-28 08:27:46 [info]: Checking wallet health...
+2025-09-28 08:27:47 [info]: Wallet health check passed
+2025-09-28 08:27:47 [info]: Validating contract addresses...
+2025-09-28 08:27:47 [info]: Checking ethPlanner: 0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060
+2025-09-28 08:27:47 [info]: Checking erc20Planner: 0x2B7A919B1B1eFbbDCBb941d7e85e124bFBe0F146
+2025-09-28 08:27:47 [info]: Checking uniswapV3Router: 0x2626664c2603336E57B271c5C0b26F421741e481
+2025-09-28 08:27:47 [info]: Checking uniswapV3Factory: 0x33128a8fC17869897dcE68Ed026d694621f6FDfD
+2025-09-28 08:27:47 [info]: Checking usdc: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 08:27:47 [info]: Checking dai: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 08:27:47 [info]: Checking weth: 0x4200000000000000000000000000000000000006
+2025-09-28 08:27:47 [info]: Checking cbbtc: 0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf
+2025-09-28 08:27:47 [info]: All contract addresses validated
+2025-09-28 08:27:47 [info]: Testing blockchain connection...
+2025-09-28 08:27:47 [info]: Configuration validated successfully
+{
+  "latestBlock": 36119460,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "network": "base",
+  "chainId": 8453
+}
+2025-09-28 08:27:47 [info]: Checking for failed deposits to retry...
+2025-09-28 08:27:47 [info]: Starting retry of failed deposits
+2025-09-28 08:27:47 [info]: No deposits to retry
+2025-09-28 08:27:47 [info]: Starting event monitoring...
+2025-09-28 08:27:47 [info]: Webhooks are enabled, WebSocket monitoring will be disabled
+2025-09-28 08:27:47 [info]: Deposit detection will be handled via Alchemy address activity webhooks
+2025-09-28 08:27:47 [info]: Webhook endpoint: /
+2025-09-28 08:27:47 [info]: Monitoring USDC: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+2025-09-28 08:27:47 [info]: Monitoring DAI: 0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb
+2025-09-28 08:27:47 [info]: ETH Planner: 0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060
+2025-09-28 08:27:47 [info]: ERC20 Planner: 0x2B7A919B1B1eFbbDCBb941d7e85e124bFBe0F146
+2025-09-28 08:27:47 [info]: Starting plan scheduler...
+2025-09-28 08:27:47 [info]: Starting DCA plan scheduler...
+2025-09-28 08:27:47 [info]: Loading existing DCA plans...
+2025-09-28 08:27:48 [info]: Querying plan events for ETH from block 36119450 to 36119460
+2025-09-28 08:27:48 [info]: Querying plan events for ERC20 from block 36119450 to 36119460
+2025-09-28 08:27:48 [error]: Failed to get plan events for ETH
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:57:48 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985ff9b79df90b5f-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "e3d0bbba-a1a4-44da-984c-9dae289b633e",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=QbBbKaBTVYvaTRbZOdEz3ioZCzVfI0aSLoiZTlT_l.Y-1759028268752-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":47,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x227239a, 0x22723a3]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x227239a\",\"toBlock\":\"latest\",\"address\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":47,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 08:27:48 [warn]: Block range too large for ETH, trying smaller range
+2025-09-28 08:27:48 [error]: Failed to get plan events for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:57:48 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985ff9b7991cd083-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "c60354f0-86c2-4677-9836-ee6d7aa8e220",
+      "x-envoy-upstream-service-time": "3",
+      "set-cookie": "_cfuvid=hK8f6eoxxBalcmVb0eMw9wIsegngGA8TXUreicz5lDE-1759028268753-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":48,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x227239a, 0x22723a3]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x227239a\",\"toBlock\":\"latest\",\"address\":\"0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":48,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 08:27:48 [warn]: Block range too large for ERC20, trying smaller range
+2025-09-28 08:27:49 [error]: Batch query also failed for ETH
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:57:49 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985ff9ba6b98fe17-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "50d0115e-4c69-48f7-9e0d-44971f45e71b",
+      "x-envoy-upstream-service-time": "4",
+      "set-cookie": "_cfuvid=54VVLNQwG9aheR3rVL1ElAckDb9AoXoveqQOJjdsWNQ-1759028269208-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":55,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x227101c, 0x2271025]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x227101c\",\"toBlock\":\"0x22723a4\",\"address\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":55,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 08:27:49 [error]: Batch query also failed for ERC20
+{
+  "error": {
+    "reason": "bad response",
+    "code": "SERVER_ERROR",
+    "status": 400,
+    "headers": {
+      "date": "Sun, 28 Sep 2025 02:57:49 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "cf-ray": "985ff9ba6ea9f88a-SIN",
+      "cf-cache-status": "DYNAMIC",
+      "access-control-allow-origin": "*",
+      "vary": "accept-encoding",
+      "access-control-allow-credentials": "true",
+      "x-alchemy-response-status": "400",
+      "x-alchemy-trace-id": "094d0018-ed1b-4c2f-bc48-6338dcdab4a2",
+      "x-envoy-upstream-service-time": "2",
+      "set-cookie": "_cfuvid=rTGwJPw85oD3U5Uzvn7J4k2p5lDuyAjFUokofEe4z9A-1759028269211-0.0.1.1-604800000; path=/; domain=.g.alchemy.com; HttpOnly; Secure; SameSite=None",
+      "server": "cloudflare"
+    },
+    "body": "{\"jsonrpc\":\"2.0\",\"id\":54,\"error\":{\"code\":-32600,\"message\":\"Under the Free tier plan, you can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x227101c, 0x2271025]. Upgrade to PAYG for expanded block range.\"}}",
+    "requestBody": "{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x227101c\",\"toBlock\":\"0x22723a4\",\"address\":\"0x2b7a919b1b1efbbdcbb941d7e85e124bfbe0f146\",\"topics\":[\"0x082338a3e86dfc270117f2bf80eaa7890cdc282c243a10f5fb21214f4b80475b\"]}],\"id\":54,\"jsonrpc\":\"2.0\"}",
+    "requestMethod": "POST",
+    "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+  }
+}
+2025-09-28 08:27:49 [info]: Added wallet address to plan check: 0x0492D453e080Cb0f0b7D85533354589f62852d61
+2025-09-28 08:27:49 [info]: Checking plans for 1 addresses
+2025-09-28 08:27:49 [debug]: Checking plan for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ETH
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "active": true,
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "100000",
+  "interval": "30",
+  "nextExec": "1759023713"
+}
+2025-09-28 08:27:49 [info]: Loaded user plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1",
+  "nextExecution": "2025-09-28T01:41:53.000Z"
+}
+2025-09-28 08:27:49 [debug]: Checking plan for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ERC20
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ERC20",
+  "active": false,
+  "stable": "0x0000000000000000000000000000000000000000",
+  "amount": "0",
+  "interval": "0",
+  "nextExec": "0"
+}
+2025-09-28 08:27:49 [debug]: Plan not active for user 0x0492D453e080Cb0f0b7D85533354589f62852d61 on ERC20
+2025-09-28 08:27:49 [info]: Loaded 1 active DCA plans
+2025-09-28 08:27:49 [info]: Event listeners set up for plan management
+2025-09-28 08:27:49 [info]: Cron job started with 30s interval
+2025-09-28 08:27:49 [info]: DCA plan scheduler started successfully
+2025-09-28 08:27:49 [info]: DCA Watcher Service running on port 3001
+2025-09-28 08:27:49 [info]: Services started successfully:
+{
+  "eventMonitor": true,
+  "planScheduler": true,
+  "walletAddress": "0x0492D453e080Cb0f0b7D85533354589f62852d61"
+}
+2025-09-28 08:28:00 [info]: Found 1 plans due for execution
+2025-09-28 08:28:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:28:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:28:03 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:28:03 [info]: Constructing fallback route
+2025-09-28 08:28:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "insufficient funds for intrinsic transaction cost",
+    "code": "INSUFFICIENT_FUNDS",
+    "error": {
+      "reason": "processing response error",
+      "code": "SERVER_ERROR",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":99,\"error\":{\"code\":-32003,\"message\":\"insufficient funds for gas * price + value: have 1924190311800324 want 225065881500000000\"}}",
+      "error": {
+        "code": -32003
+      },
+      "requestBody": "{\"method\":\"eth_estimateGas\",\"params\":[{\"type\":\"0x2\",\"maxFeePerGas\":\"0x59759654\",\"maxPriorityFeePerGas\":\"0x59682f00\",\"from\":\"0x0492d453e080cb0f0b7d85533354589f62852d61\",\"to\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"data\":\"0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4\"}],\"id\":99,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    },
+    "method": "estimateGas",
+    "transaction": {
+      "from": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+      "maxPriorityFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59682f00"
+      },
+      "maxFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59759654"
+      },
+      "to": "0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060",
+      "data": "0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4",
+      "type": 2,
+      "accessList": null
+    }
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:28:30 [info]: Found 1 plans due for execution
+2025-09-28 08:28:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:28:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:28:35 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:28:35 [info]: Constructing fallback route
+2025-09-28 08:28:36 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "insufficient funds for intrinsic transaction cost",
+    "code": "INSUFFICIENT_FUNDS",
+    "error": {
+      "reason": "processing response error",
+      "code": "SERVER_ERROR",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":178,\"error\":{\"code\":-32003,\"message\":\"insufficient funds for gas * price + value: have 1924190311800324 want 225069154650000000\"}}",
+      "error": {
+        "code": -32003
+      },
+      "requestBody": "{\"method\":\"eth_estimateGas\",\"params\":[{\"type\":\"0x2\",\"maxFeePerGas\":\"0x59761e12\",\"maxPriorityFeePerGas\":\"0x59682f00\",\"from\":\"0x0492d453e080cb0f0b7d85533354589f62852d61\",\"to\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"data\":\"0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4\"}],\"id\":178,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    },
+    "method": "estimateGas",
+    "transaction": {
+      "from": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+      "maxPriorityFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59682f00"
+      },
+      "maxFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59761e12"
+      },
+      "to": "0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060",
+      "data": "0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4",
+      "type": 2,
+      "accessList": null
+    }
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:29:00 [info]: Found 1 plans due for execution
+2025-09-28 08:29:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:29:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:29:03 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:29:03 [info]: Constructing fallback route
+2025-09-28 08:29:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "insufficient funds for intrinsic transaction cost",
+    "code": "INSUFFICIENT_FUNDS",
+    "error": {
+      "reason": "processing response error",
+      "code": "SERVER_ERROR",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":248,\"error\":{\"code\":-32003,\"message\":\"insufficient funds for gas * price + value: have 1924190311800324 want 225071269350000000\"}}",
+      "error": {
+        "code": -32003
+      },
+      "requestBody": "{\"method\":\"eth_estimateGas\",\"params\":[{\"type\":\"0x2\",\"maxFeePerGas\":\"0x5976aef2\",\"maxPriorityFeePerGas\":\"0x59682f00\",\"from\":\"0x0492d453e080cb0f0b7d85533354589f62852d61\",\"to\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"data\":\"0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4\"}],\"id\":248,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    },
+    "method": "estimateGas",
+    "transaction": {
+      "from": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+      "maxPriorityFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59682f00"
+      },
+      "maxFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x5976aef2"
+      },
+      "to": "0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060",
+      "data": "0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4",
+      "type": 2,
+      "accessList": null
+    }
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:29:30 [info]: Found 1 plans due for execution
+2025-09-28 08:29:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:29:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:29:34 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:29:34 [info]: Constructing fallback route
+2025-09-28 08:29:36 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "insufficient funds for intrinsic transaction cost",
+    "code": "INSUFFICIENT_FUNDS",
+    "error": {
+      "reason": "processing response error",
+      "code": "SERVER_ERROR",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":327,\"error\":{\"code\":-32003,\"message\":\"insufficient funds for gas * price + value: have 1924190311800324 want 225072345300000000\"}}",
+      "error": {
+        "code": -32003
+      },
+      "requestBody": "{\"method\":\"eth_estimateGas\",\"params\":[{\"type\":\"0x2\",\"maxFeePerGas\":\"0x5976dfc2\",\"maxPriorityFeePerGas\":\"0x59682f00\",\"from\":\"0x0492d453e080cb0f0b7d85533354589f62852d61\",\"to\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"data\":\"0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4\"}],\"id\":327,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    },
+    "method": "estimateGas",
+    "transaction": {
+      "from": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+      "maxPriorityFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59682f00"
+      },
+      "maxFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x5976dfc2"
+      },
+      "to": "0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060",
+      "data": "0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4",
+      "type": 2,
+      "accessList": null
+    }
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:30:00 [info]: Found 1 plans due for execution
+2025-09-28 08:30:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:30:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:30:03 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:30:03 [info]: Constructing fallback route
+2025-09-28 08:30:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "insufficient funds for intrinsic transaction cost",
+    "code": "INSUFFICIENT_FUNDS",
+    "error": {
+      "reason": "processing response error",
+      "code": "SERVER_ERROR",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":397,\"error\":{\"code\":-32003,\"message\":\"insufficient funds for gas * price + value: have 1924190311800324 want 225073137300000000\"}}",
+      "error": {
+        "code": -32003
+      },
+      "requestBody": "{\"method\":\"eth_estimateGas\",\"params\":[{\"type\":\"0x2\",\"maxFeePerGas\":\"0x5977103c\",\"maxPriorityFeePerGas\":\"0x59682f00\",\"from\":\"0x0492d453e080cb0f0b7d85533354589f62852d61\",\"to\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"data\":\"0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4\"}],\"id\":397,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    },
+    "method": "estimateGas",
+    "transaction": {
+      "from": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+      "maxPriorityFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59682f00"
+      },
+      "maxFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x5977103c"
+      },
+      "to": "0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060",
+      "data": "0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4",
+      "type": 2,
+      "accessList": null
+    }
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:30:30 [info]: Found 1 plans due for execution
+2025-09-28 08:30:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:30:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:30:35 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:30:35 [info]: Constructing fallback route
+2025-09-28 08:30:36 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "insufficient funds for intrinsic transaction cost",
+    "code": "INSUFFICIENT_FUNDS",
+    "error": {
+      "reason": "processing response error",
+      "code": "SERVER_ERROR",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":476,\"error\":{\"code\":-32003,\"message\":\"insufficient funds for gas * price + value: have 1924190311800324 want 225076130250000000\"}}",
+      "error": {
+        "code": -32003
+      },
+      "requestBody": "{\"method\":\"eth_estimateGas\",\"params\":[{\"type\":\"0x2\",\"maxFeePerGas\":\"0x5977a248\",\"maxPriorityFeePerGas\":\"0x59682f00\",\"from\":\"0x0492d453e080cb0f0b7d85533354589f62852d61\",\"to\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"data\":\"0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4\"}],\"id\":476,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    },
+    "method": "estimateGas",
+    "transaction": {
+      "from": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+      "maxPriorityFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59682f00"
+      },
+      "maxFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x5977a248"
+      },
+      "to": "0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060",
+      "data": "0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4",
+      "type": 2,
+      "accessList": null
+    }
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:31:00 [info]: Found 1 plans due for execution
+2025-09-28 08:31:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:31:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:31:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:31:04 [info]: Constructing fallback route
+2025-09-28 08:31:06 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "insufficient funds for intrinsic transaction cost",
+    "code": "INSUFFICIENT_FUNDS",
+    "error": {
+      "reason": "processing response error",
+      "code": "SERVER_ERROR",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":555,\"error\":{\"code\":-32003,\"message\":\"insufficient funds for gas * price + value: have 1924190311800324 want 225077977350000000\"}}",
+      "error": {
+        "code": -32003
+      },
+      "requestBody": "{\"method\":\"eth_estimateGas\",\"params\":[{\"type\":\"0x2\",\"maxFeePerGas\":\"0x5977e93c\",\"maxPriorityFeePerGas\":\"0x59682f00\",\"from\":\"0x0492d453e080cb0f0b7d85533354589f62852d61\",\"to\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"data\":\"0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4\"}],\"id\":555,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    },
+    "method": "estimateGas",
+    "transaction": {
+      "from": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+      "maxPriorityFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59682f00"
+      },
+      "maxFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x5977e93c"
+      },
+      "to": "0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060",
+      "data": "0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4",
+      "type": 2,
+      "accessList": null
+    }
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:31:30 [info]: Found 1 plans due for execution
+2025-09-28 08:31:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:31:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:31:35 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:31:35 [info]: Constructing fallback route
+2025-09-28 08:31:37 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "insufficient funds for intrinsic transaction cost",
+    "code": "INSUFFICIENT_FUNDS",
+    "error": {
+      "reason": "processing response error",
+      "code": "SERVER_ERROR",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":625,\"error\":{\"code\":-32003,\"message\":\"insufficient funds for gas * price + value: have 1924190311800324 want 225079485300000000\"}}",
+      "error": {
+        "code": -32003
+      },
+      "requestBody": "{\"method\":\"eth_estimateGas\",\"params\":[{\"type\":\"0x2\",\"maxFeePerGas\":\"0x59785adc\",\"maxPriorityFeePerGas\":\"0x59682f00\",\"from\":\"0x0492d453e080cb0f0b7d85533354589f62852d61\",\"to\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"data\":\"0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4\"}],\"id\":625,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    },
+    "method": "estimateGas",
+    "transaction": {
+      "from": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+      "maxPriorityFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59682f00"
+      },
+      "maxFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59785adc"
+      },
+      "to": "0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060",
+      "data": "0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4",
+      "type": 2,
+      "accessList": null
+    }
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:32:00 [info]: Found 1 plans due for execution
+2025-09-28 08:32:00 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:32:00 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:32:04 [error]: Failed to find optimal route
+{
+  "error": {}
+}
+2025-09-28 08:32:04 [info]: Constructing fallback route
+2025-09-28 08:32:05 [error]: Failed to execute DCA plan
+{
+  "error": {
+    "reason": "insufficient funds for intrinsic transaction cost",
+    "code": "INSUFFICIENT_FUNDS",
+    "error": {
+      "reason": "processing response error",
+      "code": "SERVER_ERROR",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":697,\"error\":{\"code\":-32003,\"message\":\"insufficient funds for gas * price + value: have 1924190311800324 want 225079521000000000\"}}",
+      "error": {
+        "code": -32003
+      },
+      "requestBody": "{\"method\":\"eth_estimateGas\",\"params\":[{\"type\":\"0x2\",\"maxFeePerGas\":\"0x59784b84\",\"maxPriorityFeePerGas\":\"0x59682f00\",\"from\":\"0x0492d453e080cb0f0b7d85533354589f62852d61\",\"to\":\"0x4ed34e5b1e85080ef5011dcd7272e4cfd9ef5060\",\"data\":\"0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4\"}],\"id\":697,\"jsonrpc\":\"2.0\"}",
+      "requestMethod": "POST",
+      "url": "https://base-mainnet.g.alchemy.com/v2/YUOPnilJ5zuIqykiGiqZJdqhcmP9k9Ya"
+    },
+    "method": "estimateGas",
+    "transaction": {
+      "from": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+      "maxPriorityFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59682f00"
+      },
+      "maxFeePerGas": {
+        "type": "BigNumber",
+        "hex": "0x59784b84"
+      },
+      "to": "0x4Ed34E5B1e85080ef5011dCd7272e4Cfd9ef5060",
+      "data": "0xa7327cbc0000000000000000000000000492d453e080cb0f0b7d85533354589f62852d6100000000000000000000000000000000000000000000000001617eb90b26c00000000000000000000000000000000000000000000000000000000000000001f4",
+      "type": 2,
+      "accessList": null
+    }
+  },
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH"
+}
+2025-09-28 08:32:30 [info]: Found 1 plans due for execution
+2025-09-28 08:32:30 [info]: Executing DCA plan
+{
+  "user": "0x0492D453e080Cb0f0b7D85533354589f62852d61",
+  "plannerType": "ETH",
+  "stable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "amount": "0.1"
+}
+2025-09-28 08:32:30 [info]: Finding optimal route
+{
+  "tokenIn": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "tokenOut": "0x4200000000000000000000000000000000000006",
+  "amountIn": "0.1",
+  "slippageTolerance": 50
+}
+2025-09-28 08:32:32 [info]: Received SIGINT, starting graceful shutdown...

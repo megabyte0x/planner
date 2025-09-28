@@ -14,10 +14,19 @@ const InvestmentPlanModal = ({ isOpen, onClose, onConfirm }) => {
   };
 
   const handleConfirm = () => {
-    if (amount && frequency) {
-      onConfirm({ amount, frequency });
-      onClose();
+    if (!amount || !frequency) return;
+
+    // Parse the amount value, removing $ if present
+    const numericAmount = parseFloat(amount.replace('$', ''));
+
+    // If the amount is less than 0.5 USDC, return without doing anything
+    if (numericAmount < 0.5) {
+      alert('Minimum investment amount is $0.5 USDC');
+      return;
     }
+
+    onConfirm({ amount, frequency });
+    onClose();
   };
 
   if (!isOpen) return null;

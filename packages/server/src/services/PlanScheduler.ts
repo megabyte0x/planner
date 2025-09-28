@@ -23,6 +23,7 @@ interface PlanExecution {
 
 export class PlanScheduler {
   private provider: ethers.providers.JsonRpcProvider;
+  private signer: ethers.Wallet;
   private ethPlannerContract: ethers.Contract;
   private erc20PlannerContract: ethers.Contract;
   private routeOptimizer: RouteOptimizer;
@@ -32,17 +33,18 @@ export class PlanScheduler {
 
   constructor() {
     this.provider = new ethers.providers.JsonRpcProvider(config.network.rpcHttp);
+    this.signer = new ethers.Wallet(config.privateKey, this.provider);
 
     this.ethPlannerContract = new ethers.Contract(
       config.network.contracts.ethPlanner,
       PLANNER_ABI,
-      this.provider
+      this.signer
     );
 
     this.erc20PlannerContract = new ethers.Contract(
       config.network.contracts.erc20Planner,
       PLANNER_ABI,
-      this.provider
+      this.signer
     );
 
     this.routeOptimizer = new RouteOptimizer();
@@ -103,18 +105,45 @@ export class PlanScheduler {
     logger.info('Loading existing DCA plans...');
 
     try {
-      // Get plan events from both contracts to find all users with plans
+      // First, try to get plan events (this may fail with free tier Alchemy)
       const [ethPlanEvents, erc20PlanEvents] = await Promise.all([
         this.getPlanEvents(this.ethPlannerContract, PlannerType.ETH),
         this.getPlanEvents(this.erc20PlannerContract, PlannerType.ERC20)
       ]);
 
       const allEvents = [...ethPlanEvents, ...erc20PlanEvents];
+      const usersFromEvents = new Set(allEvents.map(event => event.user));
+
+      // Always check the wallet address that runs this service (common case)
+      const walletPrivateKey = process.env.WATCHER_PRIVATE_KEY;
+      if (walletPrivateKey) {
+        try {
+          const wallet = new ethers.Wallet(walletPrivateKey);
+          usersFromEvents.add(wallet.address);
+          logger.info(`Added wallet address to plan check: ${wallet.address}`);
+        } catch (error) {
+          logger.warn('Failed to derive wallet address from private key', { error });
+        }
+      }
+
+      // Add any known addresses from environment
+      const knownAddresses = process.env.KNOWN_PLAN_ADDRESSES?.split(',').map(addr => addr.trim()) || [];
+      knownAddresses.forEach(addr => {
+        if (ethers.utils.isAddress(addr)) {
+          usersFromEvents.add(addr);
+          logger.info(`Added known address to plan check: ${addr}`);
+        }
+      });
+
+      if (usersFromEvents.size === 0) {
+        logger.warn('No users found from events or known addresses');
+        return;
+      }
 
       // Process each unique user
-      const users = new Set(allEvents.map(event => event.user));
+      logger.info(`Checking plans for ${usersFromEvents.size} addresses`);
 
-      for (const user of users) {
+      for (const user of usersFromEvents) {
         await Promise.all([
           this.loadUserPlan(user, PlannerType.ETH),
           this.loadUserPlan(user, PlannerType.ERC20)
@@ -130,20 +159,18 @@ export class PlanScheduler {
   }
 
   private async getPlanEvents(contract: ethers.Contract, plannerType: PlannerType): Promise<Array<{ user: string }>> {
-    // When webhooks are enabled, we don't query for historical events
-    // Instead, we rely on webhook notifications for new plan events
-    if (config.webhook?.enabled) {
-      logger.info(`Skipping historical plan event query for ${plannerType} - webhooks enabled`);
-      return [];
-    }
-
     try {
       const currentBlock = await this.provider.getBlockNumber();
-      // Use smaller block range to avoid Alchemy free tier limits
-      const fromBlock = Math.max(0, currentBlock - 10); // Look back only 10 blocks
+      // Use small block range for free tier compatibility
+      const blocksToLookBack = 10; // Maximum for Alchemy free tier
+      const fromBlock = Math.max(0, currentBlock - blocksToLookBack);
+
+      logger.info(`Querying plan events for ${plannerType} from block ${fromBlock} to ${currentBlock}`);
 
       const filter = contract.filters.PlanCreated();
       const events = await contract.queryFilter(filter, fromBlock);
+
+      logger.info(`Found ${events.length} PlanCreated events for ${plannerType}`);
 
       return events.map(event => {
         return {
@@ -152,6 +179,50 @@ export class PlanScheduler {
       });
     } catch (error) {
       logger.error(`Failed to get plan events for ${plannerType}`, { error });
+
+      // If event querying fails, try to check some known addresses or use a different approach
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      if (errorMessage?.includes('query returned more than') || errorMessage?.includes('block range')) {
+        logger.warn(`Block range too large for ${plannerType}, trying smaller range`);
+        return await this.getPlanEventsWithSmallerRange(contract, plannerType);
+      }
+
+      return [];
+    }
+  }
+
+  private async getPlanEventsWithSmallerRange(contract: ethers.Contract, plannerType: PlannerType): Promise<Array<{ user: string }>> {
+    try {
+      const currentBlock = await this.provider.getBlockNumber();
+      // Try smaller ranges in batches
+      const batchSize = 5000;
+      const maxBatches = 10; // Limit to prevent infinite loops
+      const allUsers = new Set<string>();
+
+      for (let i = 0; i < maxBatches; i++) {
+        const fromBlock = Math.max(0, currentBlock - (batchSize * (i + 1)));
+        const toBlock = currentBlock - (batchSize * i);
+
+        if (fromBlock >= toBlock) break;
+
+        const filter = contract.filters.PlanCreated();
+        const events = await contract.queryFilter(filter, fromBlock, toBlock);
+
+        events.forEach(event => {
+          if (event.args?.[0]) {
+            allUsers.add(event.args[0]);
+          }
+        });
+
+        // Small delay to avoid rate limiting
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+
+      logger.info(`Found ${allUsers.size} unique users from batch query for ${plannerType}`);
+
+      return Array.from(allUsers).map(user => ({ user }));
+    } catch (error) {
+      logger.error(`Batch query also failed for ${plannerType}`, { error });
       return [];
     }
   }
@@ -164,8 +235,19 @@ export class PlanScheduler {
 
       const planData = await contract.plans(user);
 
+      logger.debug(`Checking plan for user ${user} on ${plannerType}`, {
+        user,
+        plannerType,
+        active: planData.active,
+        stable: planData.stable,
+        amount: planData.amount.toString(),
+        interval: planData.interval.toString(),
+        nextExec: planData.nextExec.toString()
+      });
+
       // Check if plan is active
       if (!planData.active) {
+        logger.debug(`Plan not active for user ${user} on ${plannerType}`);
         return;
       }
 
@@ -351,6 +433,23 @@ export class PlanScheduler {
         amount: ethers.utils.formatUnits(plan.amount, this.getTokenDecimals(plan.stable))
       });
 
+      // Check if we have sufficient balance for gas
+      const balance = await this.provider.getBalance(this.signer.address);
+      const currentGasPrice = await this.provider.getGasPrice();
+      const estimatedGasCost = currentGasPrice.mul(500000); // Rough estimate
+
+      if (balance.lt(estimatedGasCost)) {
+        const shortfall = estimatedGasCost.sub(balance);
+        logger.error('Insufficient balance for gas fees', {
+          walletAddress: this.signer.address,
+          currentBalance: ethers.utils.formatEther(balance) + ' ETH',
+          estimatedGasCost: ethers.utils.formatEther(estimatedGasCost) + ' ETH',
+          shortfall: ethers.utils.formatEther(shortfall) + ' ETH'
+        });
+
+        throw new Error(`Insufficient balance for gas fees. Need ${ethers.utils.formatEther(shortfall)} ETH more. Please fund wallet ${this.signer.address}`);
+      }
+
       // Determine target token
       const targetToken = plannerType === PlannerType.ETH
         ? config.network.tokens.weth
@@ -374,19 +473,39 @@ export class PlanScheduler {
         ? this.ethPlannerContract
         : this.erc20PlannerContract;
 
+      // Get current gas price and optimize
+      const gasPrice = await this.provider.getGasPrice();
+      const maxGasPrice = ethers.utils.parseUnits(config.maxGasPriceGwei.toString(), 'gwei');
+
+      // Use lower of current gas price or configured max
+      const optimizedGasPrice = gasPrice.gt(maxGasPrice) ? maxGasPrice : gasPrice;
+
+      // Gas optimization options
+      const gasOptions = {
+        gasPrice: optimizedGasPrice,
+        gasLimit: 500000 // Set a reasonable gas limit to prevent over-estimation
+      };
+
+      logger.debug('Gas optimization settings', {
+        currentGasPrice: ethers.utils.formatUnits(gasPrice, 'gwei') + ' gwei',
+        maxConfiguredGasPrice: ethers.utils.formatUnits(maxGasPrice, 'gwei') + ' gwei',
+        usingGasPrice: ethers.utils.formatUnits(optimizedGasPrice, 'gwei') + ' gwei',
+        gasLimit: gasOptions.gasLimit
+      });
+
       let tx;
       if (route.isMultiHop && route.path) {
         // Multi-hop execution
         const targetDecimals = plannerType === PlannerType.ETH ? 18 : 8;
         const minAmountOutParsed = ethers.utils.parseUnits(minAmountOut, targetDecimals);
 
-        tx = await contract.executePlan(user, minAmountOutParsed, route.path);
+        tx = await contract.executePlan(user, minAmountOutParsed, route.path, gasOptions);
       } else if (route.fee) {
         // Single-hop execution
         const targetDecimals = plannerType === PlannerType.ETH ? 18 : 8;
         const minAmountOutParsed = ethers.utils.parseUnits(minAmountOut, targetDecimals);
 
-        tx = await contract.executePlanSingleIn(user, minAmountOutParsed, route.fee);
+        tx = await contract.executePlanSingleIn(user, minAmountOutParsed, route.fee, gasOptions);
       } else {
         throw new Error('Invalid route configuration');
       }
