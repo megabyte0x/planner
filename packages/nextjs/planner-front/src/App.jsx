@@ -5,6 +5,8 @@ import EthereumPage from './EthereumPage';
 import BitcoinBuyPage from './BitcoinBuyPage';
 import EthereumBuyPage from './EthereumBuyPage';
 import PortfolioPage from './PortfolioPage';
+import BuyDirectlyModal from './BuyDirectlyModal';
+import SuccessCelebrationModal from './SuccessCelebrationModal';
 import './App.css'
 import './Dashboard.css'
 
@@ -12,6 +14,10 @@ function App() {
   const [isWalletConnected, setIsWalletConnected] = useState(false);
   const [walletAddress, setWalletAddress] = useState("");
   const [currentPage, setCurrentPage] = useState('home'); // 'home', 'dashboard', 'bitcoin', 'portfolio'
+  const [isBuyModalOpen, setIsBuyModalOpen] = useState(false);
+  const [buyModalToken, setBuyModalToken] = useState('BTC');
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [purchaseData, setPurchaseData] = useState({ amount: '', token: 'BTC' });
 
   const connectWallet = async () => {
     try {
@@ -92,6 +98,21 @@ function App() {
 
   const goToEthereumBuyPage = () => {
     setCurrentPage('ethereum-buy');
+  };
+
+  const openBuyModal = (token) => {
+    setBuyModalToken(token);
+    setIsBuyModalOpen(true);
+  };
+
+  const handleBuyModalConfirm = (buyData) => {
+    console.log('Buy directly confirmed:', buyData);
+    setPurchaseData(buyData);
+    setShowSuccess(true);
+  };
+
+  const handleSuccessClose = () => {
+    setShowSuccess(false);
   };
 
   const goToPortfolioPage = () => {
@@ -216,7 +237,7 @@ function App() {
                 <div className="test-btc-price">$98,000</div>
               </div>
             </div>
-            <button className="start-btn" onClick={goToBitcoinBuyPage}>Start</button>
+            <button className="start-btn" onClick={() => openBuyModal('BTC')}>Start</button>
           </div>
 
           <div className="test-eth-card">
@@ -229,9 +250,25 @@ function App() {
                 <div className="test-eth-price">$4,300</div>
               </div>
             </div>
-            <button className="start-btn" onClick={goToEthereumBuyPage}>Start</button>
+            <button className="start-btn" onClick={() => openBuyModal('ETH')}>Start</button>
           </div>
         </div>
+
+        {/* Buy Directly Modal */}
+        <BuyDirectlyModal
+          isOpen={isBuyModalOpen}
+          onClose={() => setIsBuyModalOpen(false)}
+          onConfirm={handleBuyModalConfirm}
+          token={buyModalToken}
+        />
+
+        {/* Success Celebration Modal */}
+        <SuccessCelebrationModal
+          isOpen={showSuccess}
+          onClose={handleSuccessClose}
+          amount={purchaseData.amount}
+          token={purchaseData.token}
+        />
       </div>
     );
   }
