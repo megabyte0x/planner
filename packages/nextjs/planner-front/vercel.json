@@ -1,0 +1,27 @@
+{
+  "functions": {
+    "app/api/hello.js": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "env": {
+    "SENTRY_DISABLED": "true",
+    "DISABLE_SENTRY": "true"
+  },
+  "build": {
+    "env": {
+      "SENTRY_DISABLED": "true"
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Sentry-Disabled",
+          "value": "true"
+        }
+      ]
+    }
+  ]
+}
