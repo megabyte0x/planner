@@ -40,7 +40,7 @@ const SuccessCelebrationModal = ({ isOpen, onClose, amount, token }) => {
         
         {/* Success Message */}
         <div className="success-message">
-          <div className="amount-text">{amount} of {token}</div>
+          <div className="amount-text">${amount} of {token}</div>
           <div className="success-text">bought successfully !</div>
         </div>
       </div>

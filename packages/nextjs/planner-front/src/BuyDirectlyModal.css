@@ -49,13 +49,58 @@
   font-weight: bold;
   color: #333;
   text-align: center;
-  margin: 0 0 32px 0;
+  margin: 0 0 24px 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.balance-section {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.balance-label {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.balance-amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.balance-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #22c55e;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.balance-currency {
+  font-size: 16px;
+  font-weight: 500;
+  color: #6b7280;
   font-family: system-ui, -apple-system, sans-serif;
 }
 
 .input-group {
   margin-bottom: 24px;
   position: relative;
+}
+
+.input-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
 .amount-input {
@@ -157,6 +202,15 @@
   cursor: not-allowed;
   box-shadow: none;
   transform: none;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 12px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 500;
 }
 
 /* Mobile Responsive */
